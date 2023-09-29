@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 import { SafeUser } from '@/app/types';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import useLoginModal from '@/app/hooks/useLoginModal';
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
 
@@ -24,6 +25,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
 }) => {
   const router = useRouter();
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -74,7 +76,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/cars')}
                 />
                 <MenuItem
-                  label="Airbnb your home"
+                  label="your"
                   onClick={() => {}}
                 />
                 <hr />
@@ -87,7 +89,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
               <>
                 <MenuItem
                   label="Login"
-                  onClick={() => {}}
+                  onClick={loginModal.onOpen}
                 />
                 <MenuItem
                   label="Sign up"
