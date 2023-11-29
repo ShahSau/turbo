@@ -14,9 +14,7 @@ import {
 } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { AiFillGithub } from 'react-icons/ai';
-import { FaFacebook } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
-
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 
@@ -104,19 +102,13 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
-      />
-      <Button
-        outline
-        label="Continue with Facebook"
-        icon={FaFacebook}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <p>

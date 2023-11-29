@@ -9,6 +9,7 @@ function ModalsProvider() {
     <>
       <LoginModal />
       <RegisterModal />
+
     </>
   );
 }

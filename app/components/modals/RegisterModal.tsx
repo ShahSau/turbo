@@ -9,9 +9,9 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
-import { FaFacebook } from 'react-icons/fa';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import { signIn } from 'next-auth/react';
 import Modal from './Modal';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
@@ -98,19 +98,13 @@ const RegisterModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
-      />
-      <Button
-        outline
-        label="Continue with Facebook"
-        icon={FaFacebook}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div
         className="
