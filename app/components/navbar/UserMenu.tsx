@@ -13,6 +13,7 @@ import { SafeUser } from '@/app/types';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import useRentModal from '@/app/hooks/useRentModal';
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
 
@@ -26,6 +27,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,14 +35,23 @@ const UserMenu: React.FC<UserMenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
+  // eslint-disable-next-line consistent-return
+  const onRent = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
+
+    rentModal.onOpen();
+  }, [loginModal, rentModal, currentUser]);
+
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
-          onClick={() => {}}
+          onClick={onRent}
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
-          Rent car now
+          Add a car
         </div>
         <div
           onClick={toggleOpen}
@@ -76,8 +87,12 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/cars')}
                 />
                 <MenuItem
-                  label="your"
-                  onClick={() => {}}
+                  label="My profile"
+                  onClick={() => router.push('/profile')}
+                />
+                <MenuItem
+                  label="Add a car"
+                  onClick={() => rentModal.onOpen()}
                 />
                 <hr />
                 <MenuItem
