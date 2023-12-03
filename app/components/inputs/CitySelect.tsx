@@ -7,7 +7,7 @@
 
 import Select from 'react-select';
 import React from 'react';
-import cities from './CityData';
+import cities from '../CityData';
 
 export type CountrySelectValue = {
   label: string;
