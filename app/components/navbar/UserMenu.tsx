@@ -87,10 +87,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/cars')}
                 />
                 <MenuItem
-                  label="My profile"
-                  onClick={() => router.push('/profile')}
-                />
-                <MenuItem
                   label="Add a car"
                   onClick={() => rentModal.onOpen()}
                 />

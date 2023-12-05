@@ -11,6 +11,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import useLoginModal from '@/app/hooks/useLoginModal';
 import { signIn } from 'next-auth/react';
 import Modal from './Modal';
 import Input from '../inputs/Input';
@@ -19,6 +20,7 @@ import Button from '../Button';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -41,6 +43,7 @@ const RegisterModal = () => {
     axios.post('/api/register', data)
       .then(() => {
         registerModal.onClose();
+        loginModal.onOpen();
         toast.success('Account created successfully!');
       })
 

@@ -28,7 +28,8 @@ interface ListingCardProps {
   disabled?: boolean;
   actionLabel?: string;
   actionId?: string;
-  currentUser?: SafeUser | null
+  currentUser?: SafeUser | null;
+
 }
 
 const ListingCard: React.FC<ListingCardProps> = ({
@@ -42,7 +43,6 @@ const ListingCard: React.FC<ListingCardProps> = ({
 }) => {
   const router = useRouter();
   const { getByValue } = useCountries();
-
   const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
