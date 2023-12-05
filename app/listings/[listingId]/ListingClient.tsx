@@ -60,7 +60,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
   }, [reservations]);
 
   const category = useMemo(() => categories.find((items) => items.label === listing.category), [listing.category]);
-
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
@@ -106,7 +105,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
       const dayCount = differenceInDays(
         dateRange.endDate,
         dateRange.startDate,
-      );
+      ) + 1;
 
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
@@ -116,7 +115,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
     }
   }, [dateRange, listing.price]);
 
-  console.log(listing);
   return (
     <Container>
       <div
@@ -137,7 +135,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
               user={listing.user}
               category={category}
               title={listing.title}
-              price={listing.price}
+              // price={listing.price}
               passangersCount={listing.passangersCount}
               cylindersCount={listing.cylindersCount}
               mileageCount={listing.mileageCount}

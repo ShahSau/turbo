@@ -10,6 +10,12 @@ import useCountries from '@/app/hooks/useCountries';
 import { SafeUser } from '@/app/types';
 
 import cities from '@/app/components/CityData';
+import { IoIosPeople, IoLogoModelS } from 'react-icons/io';
+import { FaGasPump } from 'react-icons/fa6';
+import { PiCylinderLight } from 'react-icons/pi';
+import { BsSpeedometer } from 'react-icons/bs';
+import { GiGearStickPattern, GiSteeringWheel } from 'react-icons/gi';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 import Avatar from '../Avatar';
 import ListingCategory from './ListingCategory';
 
@@ -26,7 +32,7 @@ interface ListingInfoProps {
   } | undefined
   locationValue: string;
   title: string;
-  price: number;
+  // price: number;
   passangersCount:number;
   cylindersCount:number;
   mileageCount:number;
@@ -41,7 +47,7 @@ interface ListingInfoProps {
 const ListingInfo: React.FC<ListingInfoProps> = ({
   user,
   title,
-  price,
+  // price,
   passangersCount,
   cylindersCount,
   mileageCount,
@@ -59,7 +65,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   // const coordinates = getByValue(locationValue)?.latlng;
   const cityValue = cities.find((item) => item.label === locationValue);
   const coordinates = cityValue?.latlng;
-  console.log(cityValue?.latlng);
+
   return (
     <div className="col-span-4 flex flex-col gap-8">
       <div className="flex flex-col gap-2">
@@ -67,7 +73,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
           className=" text-xl font-semibold flex flex-row items-center gap-2 "
         >
           <div>
-            Hosted by
+            Offered by
             {' '}
             {user?.name}
           </div>
@@ -75,57 +81,47 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         </div>
         <div className=" flex flex-row items-center gap-4 font-light text-neutral-500 ">
           <div>
+            <IoIosPeople className="w-8 h-8" />
+            {' '}
             {passangersCount}
-            {' '}
-            passangers
           </div>
           <div>
+            <PiCylinderLight className="w-8 h-8" />
+            {' '}
             {cylindersCount}
-            {' '}
-            cylinders
           </div>
           <div>
+            <BsSpeedometer className="w-8 h-8" />
+            {' '}
             {mileageCount}
-            {' '}
-            mileage
           </div>
           <div>
+            <IoLogoModelS className="w-8 h-8" />
+            {' '}
             {model}
-            {' '}
-            model
           </div>
           <div>
+            <FaGasPump className="w-8 h-8" />
+            {' '}
             {fuelType}
-            {' '}
-            fuelType
           </div>
           <div>
-            {transmissionType}
+            <GiSteeringWheel className="w-8 h-8" />
             {' '}
-            transmissionType
-          </div>
-          <div>
-            {maker}
-            {' '}
-            maker
-          </div>
-          <div>
-            {year}
-            {' '}
-            year
-          </div>
-          <div>
             {driveType}
-            {' '}
-            driveType
           </div>
           <div>
-            {price}
+            <GiGearStickPattern className="w-8 h-8" />
             {' '}
-            price
+            {transmissionType}
           </div>
-
+          <div>
+            <FaRegCalendarAlt className="w-8 h-8" />
+            {' '}
+            {year}
+          </div>
         </div>
+
       </div>
       <hr />
       {category && (
@@ -138,6 +134,10 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       <hr />
       <div className="text-lg font-light text-neutral-500">
         {title}
+        {' '}
+        by
+        {' '}
+        {maker}
       </div>
       <hr />
       <Map center={coordinates} />

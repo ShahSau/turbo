@@ -39,7 +39,7 @@ ListingReservationProps
         {price}
       </div>
       <div className="font-light text-neutral-600">
-        day
+        per day
       </div>
     </div>
     <hr />
