@@ -21,6 +21,7 @@ import { categories } from '@/app/components/navbar/Categories';
 import ListingHead from '@/app/components/listings/ListingHead';
 import ListingInfo from '@/app/components/listings/ListingInfo';
 import ListingReservation from '@/app/components/listings/ListingReservation';
+import { loadStripe } from '@stripe/stripe-js';
 
 const initialDateRange = {
   startDate: new Date(),
@@ -64,31 +65,59 @@ const ListingClient: React.FC<ListingClientProps> = ({
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
+  );
+
   const onCreateReservation = useCallback(
+
     // eslint-disable-next-line consistent-return
     () => {
       if (!currentUser) {
         return loginModal.onOpen();
       }
       setIsLoading(true);
-
-      axios.post('/api/reservations', {
-        totalPrice,
+      axios.post('/api/payment',
+      {
+        totalPrice: totalPrice,
+        listingId: listing?.id || 0,
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
-        listingId: listing?.id,
-      })
-        .then(() => {
-          toast.success('Listing reserved!');
-          setDateRange(initialDateRange);
-          router.push('/trips');
-        })
-        .catch(() => {
-          toast.error('Something went wrong.');
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+      },
+      {
+        headers:{
+          "Content-Type": "application/json",
+        },
+      }
+      )
+      .then((res) => {
+        
+        console.log(res)
+        const stripe = stripePromise;
+        router.push(res.data.url);
+        // router.push(res.session.url);
+        
+        //router.push('/trips');
+      }
+      )
+
+      // axios.post('/api/reservations', {
+      //   totalPrice,
+      //   startDate: dateRange.startDate,
+      //   endDate: dateRange.endDate,
+      //   listingId: listing?.id,
+      // })
+      //   .then(() => {
+      //     toast.success('Listing reserved!');
+      //     setDateRange(initialDateRange);
+      //     router.push('/trips');
+      //   })
+      //   .catch(() => {
+      //     toast.error('Something went wrong.');
+      //   })
+      //   .finally(() => {
+      //     setIsLoading(false);
+      //   });
     },
     [
       totalPrice,
