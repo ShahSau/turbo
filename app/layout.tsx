@@ -1,5 +1,5 @@
 import React from 'react';
-import { Roboto } from 'next/font/google';
+// import { Roboto } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/navbar/Navbar';
 import ClientOnly from './components/ClientOnly';
@@ -8,16 +8,17 @@ import ToasterProvider from './providers/ToasterProvider';
 import LoginModal from './components/modals/LoginModal';
 import RentModal from './components/modals/RentModal';
 import getCurrentUser from './actions/getCurrentUser';
+import Footer from './components/Footer';
 
 export const metadata = {
   title: 'Turbo',
   description: 'Rent a car in 30 seconds',
 };
 
-const font = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-});
+// const font = Roboto({
+//   weight: '400',
+//   subsets: ['latin'],
+// });
 
 export default async function RootLayout({
   children,
@@ -27,7 +28,8 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
   return (
     <html lang="en">
-      <body className={font.className}>
+      {/* <body className={font.className}> */}
+      <body>
         <ClientOnly>
           <ToasterProvider />
           <LoginModal />
@@ -38,8 +40,9 @@ export default async function RootLayout({
         <div className="pb-20 pt-28">
           {children}
         </div>
-
+        <Footer />
       </body>
+
     </html>
   );
 }

@@ -32,14 +32,8 @@ export async function POST (request:Request, res:Response) {
             },
           ],
       mode: 'payment',
-      //http://localhost:3000/success?q=rental&id=656b210d9ebb5a5fc694c8e8&startDate=2024-01-07T23:00:00.000Z&endDate=2024-01-09T23:00:00.000Z&totalPrice=120
        success_url:`http://localhost:3000/success?type=rental&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}`,
        cancel_url: 'http://localhost:3000'
     })
-    // if (session.url) {
-    //   router.push(session.url);
-    // }
-    // res.redirected(303, session.url);
     return new NextResponse(JSON.stringify({ url: session.url }))
-    // return NextResponse.json(session.url)
 }

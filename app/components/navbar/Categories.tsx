@@ -61,8 +61,9 @@ function Categories() {
   const params = useSearchParams();
   const category = params?.get('category');
   const pathname = usePathname();
-  const isMainPage = pathname === '/';
+  const isMainPage = pathname === '/search';
 
+  //categories is only shown on the search page
   if (!isMainPage) {
     return null;
   }
@@ -70,7 +71,7 @@ function Categories() {
   return (
     <Container>
       <div
-        className="pt-4 flex flex-row items-center justify-between overflow-x-auto "
+        className="pt-4 flex flex-row items-center justify-between overflow-x-auto"
       >
         {categories.map((item) => (
           <CategoryBox

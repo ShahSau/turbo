@@ -10,13 +10,13 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useCallback } from 'react';
 import { IconType } from 'react-icons';
 
-interface CategoryBoxProps {
+interface CategoryBoxRepairProps {
   icon: IconType,
   label: string;
   selected?: boolean;
 }
 
-const CategoryBox: React.FC<CategoryBoxProps> = ({
+const CategoryBoxRepair: React.FC<CategoryBoxRepairProps> = ({
   icon: Icon,
   label,
   selected,
@@ -41,7 +41,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     }
 
     const url = qs.stringifyUrl({
-      url: '/search',
+      url: '/searchRepair',
       query: updatedQuery,
     }, { skipNull: true });
 
@@ -61,4 +61,4 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
   );
 };
 
-export default CategoryBox;
+export default CategoryBoxRepair;
