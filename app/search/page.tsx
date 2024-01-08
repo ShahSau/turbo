@@ -19,7 +19,7 @@ interface HomeProps {
     if (listings.length === 0) {
       return (
         <ClientOnly>
-          <EmptyState showReset />
+          <EmptyState showReset urlLink='/search'/>
         </ClientOnly>
       );
     }

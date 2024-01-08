@@ -124,22 +124,3 @@ export default async function getListings(
     throw new Error(error);
   }
 }
-
-
-export interface IRepairParams {
-
-  // fix the data structure before working on it
-  // userId?: string;
-  // startDate?: string;
-  // endDate?: string;
-  // locationValue?: string;
-  // category?: string;
-  // passangersCount?: number;
-  // cylindersCount?: number;
-  // mileageCount?: number;
-  // model?: string;
-  // fuelType?: string;
-  // transmissionType?: string;
-  // driveType?: string;
-  // year?: number
-}

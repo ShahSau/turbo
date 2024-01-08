@@ -14,8 +14,10 @@ import { SafeUser } from '@/app/types';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRentModal from '@/app/hooks/useRentModal';
+import useRepairModal from '@/app/hooks/useRepairModal';
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
+
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -28,6 +30,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+  const repairModal = useRepairModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -90,6 +93,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 <MenuItem
                   label="Add a car"
                   onClick={() => rentModal.onOpen()}
+                />
+                <hr />
+                <MenuItem
+                  label="Add a service"
+                  onClick={() => repairModal.onOpenRe()}
+                />
+                <MenuItem
+                  label="My reserved services"
+                  onClick={() => router.push('/services')}
+                />
+                <MenuItem
+                  label="My offers"
+                  onClick={() => router.push('/offers')}
                 />
                 <hr />
                 <MenuItem

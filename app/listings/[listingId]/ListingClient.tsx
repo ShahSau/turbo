@@ -21,6 +21,7 @@ import ListingHead from '@/app/components/listings/ListingHead';
 import ListingInfo from '@/app/components/listings/ListingInfo';
 import ListingReservation from '@/app/components/listings/ListingReservation';
 import { loadStripe } from '@stripe/stripe-js';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const initialDateRange = {
   startDate: new Date(),
@@ -127,6 +128,9 @@ const ListingClient: React.FC<ListingClientProps> = ({
         className="max-w-screen-lg mx-auto md:mt-10"
       >
         <div className="flex flex-col gap-6">
+          <div className='flex items-center gap-1 text-sm'>
+            <FaArrowLeft /><button onClick={() => router.back() } className='text-lg'>Back</button>
+          </div>
           <ListingHead
             title={listing.title}
             imageSrc={listing.imageSrc}

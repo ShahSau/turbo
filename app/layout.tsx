@@ -10,7 +10,8 @@ import RentModal from './components/modals/RentModal';
 import getCurrentUser from './actions/getCurrentUser';
 import Footer from './components/Footer';
 import SearchModal from './components/modals/SearchModal';
-
+import RepairSearchModal from './components/modals/RepairSearchModal';
+import RepairModal from './components/modals/RepairModal';
 export const metadata = {
   title: 'Turbo',
   description: 'Rent a car in 30 seconds',
@@ -36,7 +37,9 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <SearchModal />
+          <RepairSearchModal />
           <RentModal />
+          <RepairModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
         <div className="pb-20 pt-28">

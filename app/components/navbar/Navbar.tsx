@@ -10,7 +10,8 @@ import Logo from './Logo';
 import Search from './Search';
 import UserMenu from './UserMenu';
 import Categories from './Categories';
-
+import CategoriesRepair from './Categoriesrepair';
+import SearchRepair from './SearchRepair';
 interface NavbarProps {
   currentUser?: SafeUser | null;
 }
@@ -27,7 +28,9 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
       </Container>
       <Search />
+      <SearchRepair />
       <Categories />
+      <CategoriesRepair />
     </div>
   </div>
 );
