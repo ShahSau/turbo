@@ -35,6 +35,7 @@ export default async function getListings(
       driveType,
       year,
     } = params;
+    console.log('params', params);
 
     const query: any = {};
 
@@ -47,13 +48,13 @@ export default async function getListings(
     }
 
     if (cylindersCount) {
-      query.roomCount = {
+      query.cylindersCount = {
         gte: +cylindersCount,
       };
     }
 
     if (passangersCount) {
-      query.guestCount = {
+      query.passangersCount = {
         gte: +passangersCount,
       };
     }
@@ -79,7 +80,7 @@ export default async function getListings(
     }
 
     if (mileageCount) {
-      query.bathroomCount = {
+      query.mileageCount = {
         gte: +mileageCount,
       };
     }

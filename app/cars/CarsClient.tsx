@@ -45,27 +45,29 @@ const CarsClient: React.FC<CarsClientProps> = ({
 
   return (
     <Container>
-      <Heading
-        title="Cars"
-        subtitle="List of cars"
-      />
-      <div
-        className=" mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
-      >
-        {cars.map((car: any) => {
-          console.log(car);
-          return(
-          <ListingCard
-            key={car.id}
-            data={car}
-            actionId={car.id}
-            onAction={onCancel}
-            disabled={deletingId === car.id}
-            actionLabel="Delete Car"
-            currentUser={currentUser}
-          />
-          )
-})}
+      <div className='mt-10'>
+        <Heading
+          title="Cars"
+          subtitle="List of cars"
+        />
+        <div
+          className=" mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
+        >
+          {cars.map((car: any) => {
+            console.log(car);
+            return(
+            <ListingCard
+              key={car.id}
+              data={car}
+              actionId={car.id}
+              onAction={onCancel}
+              disabled={deletingId === car.id}
+              actionLabel="Delete Car"
+              currentUser={currentUser}
+            />
+            )
+          })}
+        </div>
       </div>
     </Container>
   );

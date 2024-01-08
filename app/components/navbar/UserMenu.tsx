@@ -46,12 +46,13 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   return (
     <div className="relative">
-      <div className="flex flex-row items-center gap-3">
+      <div className="flex flex-row items-center gap-12">
         <div
-          onClick={onRent}
+          // onClick={onRent}
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
-          Add a car
+          {/* Add a car */}
+          
         </div>
         <div
           onClick={toggleOpen}
@@ -65,7 +66,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
       </div>
       {isOpen && (
         <div
-          className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm"
+          className="absolute rounded-xl shadow-md w-[145px] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm"
         >
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
