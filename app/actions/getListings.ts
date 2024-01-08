@@ -35,7 +35,6 @@ export default async function getListings(
       driveType,
       year,
     } = params;
-    console.log('params', params);
 
     const query: any = {};
 

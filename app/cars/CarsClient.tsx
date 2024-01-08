@@ -8,7 +8,7 @@ import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { SafeReservation, SafeUser, SafeCar, SafeListing } from '@/app/types';
+import { SafeUser, SafeListing } from '@/app/types';
 
 import Heading from '@/app/components/Heading';
 import Container from '@/app/components/Container';
@@ -32,7 +32,7 @@ const CarsClient: React.FC<CarsClientProps> = ({
 
     axios.delete(`/api/listings/${id}`)
       .then(() => {
-        toast.success('Listings deleted');
+        toast.success('Car is removed from the database');
         router.refresh();
       })
       .catch((error) => {
@@ -54,7 +54,6 @@ const CarsClient: React.FC<CarsClientProps> = ({
           className=" mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
         >
           {cars.map((car: any) => {
-            console.log(car);
             return(
             <ListingCard
               key={car.id}

@@ -8,7 +8,6 @@ import axios from 'axios';
 import React, {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
-import { toast } from 'react-hot-toast';
 import { Range } from 'react-date-range';
 import { useRouter } from 'next/navigation';
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
@@ -91,33 +90,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
       }
       )
       .then((res) => {
-        
-        console.log(res)
         const stripe = stripePromise;
         router.push(res.data.url);
-        // router.push(res.session.url);
-        
-        //router.push('/trips');
       }
       )
 
-      // axios.post('/api/reservations', {
-      //   totalPrice,
-      //   startDate: dateRange.startDate,
-      //   endDate: dateRange.endDate,
-      //   listingId: listing?.id,
-      // })
-      //   .then(() => {
-      //     toast.success('Listing reserved!');
-      //     setDateRange(initialDateRange);
-      //     router.push('/trips');
-      //   })
-      //   .catch(() => {
-      //     toast.error('Something went wrong.');
-      //   })
-      //   .finally(() => {
-      //     setIsLoading(false);
-      //   });
     },
     [
       totalPrice,

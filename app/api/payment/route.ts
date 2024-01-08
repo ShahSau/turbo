@@ -6,18 +6,11 @@ export async function POST (request:Request, res:Response) {
   
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
     let data = await request.json();
-    console.log(data)
     let totalPrice = data.totalPrice
     let id = data.listingId
     let startDate = data.startDate
     let endDate = data.endDate
     const session = await stripe.checkout.sessions.create({
-        // line_items: [
-        //     {
-        //         price: priceId,
-        //         quantity: 1
-        //     }
-        // ],
         line_items: [
             {
               price_data: {

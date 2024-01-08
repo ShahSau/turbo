@@ -43,9 +43,13 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
         await request();
         router.refresh();
-        toast.success('Success');
+        if(hasFavorited){
+          toast.success('Car has been removed from your favorites.');
+        }else{
+          toast.success('Car has been added to your favorites.');
+        }
       } catch (error) {
-        toast.error('Something went wrong.');
+        toast.error('Something went wrong. Please try again.');
       }
     },
     [

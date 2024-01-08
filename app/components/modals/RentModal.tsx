@@ -144,14 +144,14 @@ const RentModal: React.FC = () => {
 
     axios.post('/api/listings', data)
       .then(() => {
-        toast.success('Listing created!');
+        toast.success('Car listing is created!');
         router.refresh();
         reset();
         setStep(STEPS.CATEGORY);
         rentModal.onClose();
       })
       .catch(() => {
-        toast.error('Something went wrong.');
+        toast.error('Something went wrong. Please try again later.');
       })
       .finally(() => {
         setIsLoading(false);

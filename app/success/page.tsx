@@ -25,7 +25,7 @@ const page = () => {
                     listingId: id,
                   })
                     .then(() => {
-                      toast.success('Listing reserved!');
+                      toast.success('Car is now reserved for you!');
                       router.push('/trips');
                     })
                     .catch(() => {
