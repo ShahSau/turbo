@@ -16,37 +16,27 @@ export const categories = [
   {
     label: 'Breaks',
     icon: FcAutomotive,
-    description: 'Fix your breaks',
-  },
-  {
-    label: 'Tuning',
-    icon: FaCarTunnel,
-    description: 'Tune your car',
-  },
-  {
-    label: 'Winter Check',
-    icon: IoSnowSharp,
-    description: 'Check your car for winter',
+    description: 'Breaks items for your car',
   },
   {
     label: 'Wheel',
     icon: GiCarWheel,
-    description: 'Fix your wheels',
+    description: 'Wheel items for your car',
   },
   {
     label: 'Battery',
     icon: GiCarBattery,
-    description: 'Fix your battery',
+    description: 'Battery items for your car',
   },
   {
     label: 'Door',
     icon: GiCarDoor,
-    description: 'Fix your door',
+    description: 'Door items for your car',
   },
   {
     label: 'Seat',
     icon: GiCarSeat,
-    description: 'Fix your seat',
+    description: 'Seat items for your car',
   },
 
 ];
@@ -55,7 +45,7 @@ function CategoriesRepair() {
   const params = useSearchParams();
   const category = params?.get('category');
   const pathname = usePathname();
-  const isMainPage = pathname === '/searchRepair';
+  const isMainPage = pathname === '/searchEquipment';
 
   //categories is only shown on the search page
   if (!isMainPage) {

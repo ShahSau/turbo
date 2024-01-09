@@ -6,17 +6,21 @@ import useRepairModal from '@/app/hooks/useRepairModal'
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
+
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import Heading from '../Heading';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
-import CitySelect from '../inputs/CitySelect';
+import Counter from '../inputs/Counter';
+import CategoryInput from '../inputs/CategoryInput';
+import { categories } from '../navbar/Categoriesrepair';
+import useEquipmentModal from '@/app/hooks/useEquipmentModal';
 
 
 enum STEPS {
-    LOCATION = 0,
+    CATEGORY = 0,
     IMAGES = 1,
     DESCRIPTION = 2,
     PRICE = 3,
@@ -24,10 +28,10 @@ enum STEPS {
 
 
 
-const RepairModal = () => {
-  const repairModal = useRepairModal()
+const EquipmentModal = () => {
+  const equipmentModal = useEquipmentModal()
   const router = useRouter();
-  const [step, setStep] = useState(STEPS.LOCATION);
+  const [step, setStep] = useState(STEPS.CATEGORY);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -41,8 +45,8 @@ const RepairModal = () => {
     reset,
   } = useForm<FieldValues>({
     defaultValues: {
-        // category: '',
-        location: null,
+        category: '',
+        amount: 1,
         imageSrc: '',
         price: 50,
         title: '',
@@ -50,15 +54,10 @@ const RepairModal = () => {
       },
     });
 
-    const location = watch('location');
-    //const category = watch('category');
+    const amount = watch('amount');
+    const category = watch('category');
     const imageSrc = watch('imageSrc');
     const description = watch('description');
-
-    const Map = useMemo(() => dynamic(() => import('../Map'), {
-        ssr: false,
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), [location]);
     
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
@@ -82,15 +81,16 @@ const RepairModal = () => {
       return onNext();
     }
 
+    console.log("DDDDDD",data);
     setIsLoading(true);
 
-    axios.post('/api/services', data)
+    axios.post('/api/equipment', data)
       .then(() => {
-        toast.success('Service listing is created!');
+        toast.success('Equipment listing is created!');
         router.refresh();
         reset();
-        setStep(STEPS.LOCATION);
-        repairModal.onCloseRe();
+        setStep(STEPS.CATEGORY);
+        equipmentModal.onCloseE();
       })
       .catch(() => {
         toast.error('Something went wrong. Please try again later.');
@@ -110,7 +110,7 @@ const RepairModal = () => {
 
 
   const secondaryActionLabel = useMemo(() => {
-        if (step === STEPS.LOCATION) {
+        if (step === STEPS.CATEGORY) {
         return undefined;
         }
     
@@ -120,34 +120,32 @@ const RepairModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes your service?"
+        title="What type of equipment are you selling?"
         subtitle="Pick a category"
       />
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto"
+      >
+        {categories.map((item) => (
+          <div key={item.label} className="col-span-1">
+            <CategoryInput
+              onClick={(category) => setCustomValue('category', category)}
+              selected={category === item.label}
+              label={item.label}
+              icon={item.icon}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 
-  if (step === STEPS.LOCATION) {
-    bodyContent = (
-      <div className="flex flex-col gap-8">
-        <Heading
-          title="Where is your you located?"
-          subtitle="Help guests find your service"
-        />
-        <CitySelect
-          value={location}
-          onChange={(value: any) => setCustomValue('location', value)}
-        />
-
-        <Map center={location?.latlng} />
-      </div>
-    );
-  }
 
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your service"
+          title="Add a photo of your equipment"
           subtitle=""
         />
         <ImageUpload
@@ -162,7 +160,7 @@ const RepairModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Describe your service"
+          title="Describe your equipment"
           subtitle="Short and sweet works best!"
         />
         <Input
@@ -190,8 +188,8 @@ const RepairModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Now, set your price"
-          subtitle="How much do you charge per hour?"
+          title="Now, set your price and how many items you have"
+          subtitle=""
         />
         <Input
           id="price"
@@ -203,6 +201,12 @@ const RepairModal = () => {
           errors={errors}
           required
         />
+        <Counter
+          onChange={(value) => setCustomValue('amount', value)}
+          value={amount}
+          title="No of Items"
+          subtitle="How many items do you have?"
+        />
       </div>
     );
   }
@@ -210,16 +214,16 @@ const RepairModal = () => {
   return (
     <Modal
       disabled={isLoading}
-      isOpen={repairModal.isOpenRe}
-      onClose={repairModal.onCloseRe}
+      isOpen={equipmentModal.isOpenE}
+      onClose={equipmentModal.onCloseE}
       onSubmit={handleSubmit(onSubmit)}
-      title="Create a new service"
+      title="Sell you equipment"
       actionLabel={actionLabel}
-      secondaryActionLabel={step === STEPS.LOCATION ? undefined : secondaryActionLabel}
-      secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
+      secondaryActionLabel={step === STEPS.CATEGORY ? undefined : secondaryActionLabel}
+      secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
       body={bodyContent}
     />
   )
 }
 
-export default RepairModal
+export default EquipmentModal

@@ -12,15 +12,15 @@ import Footer from './components/Footer';
 import SearchModal from './components/modals/SearchModal';
 import RepairSearchModal from './components/modals/RepairSearchModal';
 import RepairModal from './components/modals/RepairModal';
+import EquipmentModal from './components/modals/EquipmentModal';
+
+
 export const metadata = {
   title: 'Turbo',
   description: 'Rent a car in 30 seconds',
 };
 
-// const font = Roboto({
-//   weight: '400',
-//   subsets: ['latin'],
-// });
+
 
 export default async function RootLayout({
   children,
@@ -39,6 +39,7 @@ export default async function RootLayout({
           <RepairSearchModal />
           <RentModal />
           <RepairModal />
+          <EquipmentModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
         <div className="pb-20 pt-28">

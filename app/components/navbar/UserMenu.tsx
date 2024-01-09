@@ -17,6 +17,8 @@ import useRentModal from '@/app/hooks/useRentModal';
 import useRepairModal from '@/app/hooks/useRepairModal';
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
+import useEquipmentModal from '@/app/hooks/useEquipmentModal';
+
 
 
 interface UserMenuProps {
@@ -31,6 +33,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
   const repairModal = useRepairModal();
+  const equipmentModal = useEquipmentModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -106,6 +109,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 <MenuItem
                   label="My offers"
                   onClick={() => router.push('/offers')}
+                />
+                <hr />
+                <MenuItem
+                  label="Add equipment"
+                  onClick={() => equipmentModal.onOpenE()}
+                />
+                <MenuItem
+                  label="My equipments"
+                  onClick={() => router.push('/equipments')}
+                />
+                <MenuItem
+                  label="My reserved equipments"
+                  onClick={() => router.push('/equipmentReservations')}
                 />
                 <hr />
                 <MenuItem

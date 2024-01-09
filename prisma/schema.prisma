@@ -27,6 +27,8 @@ model User {
   reservations Reservation[]
   services Service[]
   serviceReservation ServiceReservation[]
+  equipment Equipment[]
+  equipmentReservation EquipmentReservation[]
 }
 
 model Account {
@@ -110,4 +112,32 @@ model ServiceReservation {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+}
+
+model Equipment {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  title String
+  imageSrc String
+  description String
+  price Int
+  category String
+  amount Int
+  createdAt DateTime @default(now())
+
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  equipmentReservation EquipmentReservation[]
+}
+
+model EquipmentReservation {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  equipmentId String @db.ObjectId
+  amount Int
+  totalPrice Int
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  equipment Equipment @relation(fields: [equipmentId], references: [id], onDelete: Cascade)
 }
