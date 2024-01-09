@@ -41,7 +41,7 @@ const CategoryBoxRepair: React.FC<CategoryBoxRepairProps> = ({
     }
 
     const url = qs.stringifyUrl({
-      url: '/searchRepair',
+      url: '/searchEquipment',
       query: updatedQuery,
     }, { skipNull: true });
 

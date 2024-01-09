@@ -1,14 +1,11 @@
 import React from 'react'
 import Container from '@/app/components/Container';
-import ListingCard from '@/app/components/listings/ListingCard';
 import EmptyState from '@/app/components/EmptyState';
-// import getListings, {
-//   IRepairParams,
-// } from '@/app/actions/getListings';
 import getServices,{IServicesParams} from '../actions/getServices';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import ClientOnly from '../components/ClientOnly';
 import ServiceCard from '../components/services/ServiceCard';
+
 
 interface SearchProps {
   searchParams: IServicesParams

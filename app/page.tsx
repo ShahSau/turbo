@@ -140,7 +140,7 @@ const services = [
     description: 'Premium gear for professionals and hobbyists alike.',
     imageSrc: 'https://images.unsplash.com/photo-1606577924006-27d39b132ae2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhciUyMHNlcnZpY2V8ZW58MHx8MHx8fDA%3D',
     imageAlt: 'Car shop services',
-    href: '/searchShop',
+    href: '/searchEquipment',
   },
 ]
 
