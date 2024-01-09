@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({
       <Search />
       <SearchRepair />
       <Categories />
-      <CategoriesRepair />
+      {/* <CategoriesRepair /> */}
     </div>
   </div>
 );
