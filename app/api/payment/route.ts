@@ -10,6 +10,7 @@ export async function POST (request:Request, res:Response) {
     let id = data.listingId
     let startDate = data.startDate
     let endDate = data.endDate
+    let type = data.type
     const session = await stripe.checkout.sessions.create({
         line_items: [
             {
@@ -17,7 +18,7 @@ export async function POST (request:Request, res:Response) {
                 currency: "USD",
                 product_data: {
                   name: "turbo",
-                  description: "Unlimited AI Generations"
+                  description: "Car Rental and more"
                 },
                 unit_amount: totalPrice * 100,
               },
@@ -25,7 +26,7 @@ export async function POST (request:Request, res:Response) {
             },
           ],
       mode: 'payment',
-       success_url:`http://localhost:3000/success?type=rental&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}`,
+       success_url:`http://localhost:3000/success?type=${type}&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}`,
        cancel_url: 'http://localhost:3000'
     })
     return new NextResponse(JSON.stringify({ url: session.url }))

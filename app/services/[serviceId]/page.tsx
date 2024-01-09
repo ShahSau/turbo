@@ -23,7 +23,7 @@ interface IServiceParams {
         </ClientOnly>
       );
     }
-    console.log(listing);
+  
     return (
       <ClientOnly>
         <ServiceClient

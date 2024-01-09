@@ -20,9 +20,8 @@ import {
 
 } from '@/app/types';
 
-// import HeartButton from '../HeartButton';
 import Button from '../Button';
-// import ClientOnly from '../ClientOnly';
+
 
 interface ServiceCardProps {
   data: SafeListing;
@@ -111,6 +110,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           {!reservation && (
             <div className="font-light">per day</div>
           )}
+          
         </div>
         {onAction && actionLabel && (
           <Button

@@ -36,6 +36,26 @@ const page = () => {
                     });
                 }, 5000);
         }
+        else if(type === 'service'){
+            setTimeout(() => {
+                axios.post('/api/serviceReservations', {
+                    totalPrice,
+                    startDate,
+                    endDate,
+                    serviceId: id,
+                  })
+                    .then(() => {
+                      toast.success('Service is now reserved for you!');
+                      router.push('/serviceReservations?serviceId='+id);
+                    })
+                    .catch(() => {
+                      toast.error('Something went wrong.');
+                    })
+                    .finally(() => {
+                      setIsLoading(false);
+                    });
+                }, 5000);
+        }
     },[])
 
   return (
@@ -45,7 +65,8 @@ const page = () => {
             <div className="flex flex-col items-center justify-center">
                 <div className="text-2xl font-bold text-center">Success!</div>
                 <div className="text-xl font-bold text-center">Your reservation is being processed.</div>
-                <div className="text-xl font-bold text-center">You will be redirected to your trips page shortly.</div>
+                {type === 'rental' && <div className="text-xl font-bold text-center">You will be redirected to your trips page shortly.</div>}
+                {type === 'service' && <div className="text-xl font-bold text-center">You will be redirected to your my service reservation page shortly.</div>}
                 </div>
         )}
        </div>

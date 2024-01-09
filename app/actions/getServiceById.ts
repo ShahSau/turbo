@@ -9,7 +9,6 @@ export default async function getServiceById(
 ) {
   try {
     const { serviceId } = params;
-    console.log("ddd", serviceId)
     const listing = await prisma.service.findUnique({
       where: {
         id: serviceId,

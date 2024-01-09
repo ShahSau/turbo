@@ -83,6 +83,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
         listingId: listing?.id || 0,
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
+        type: 'rental',
       },
       {
         headers:{

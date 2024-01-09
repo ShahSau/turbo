@@ -13,10 +13,9 @@ import { useRouter } from 'next/navigation';
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
 import useLoginModal from '@/app/hooks/useLoginModal';
-import { SafeListing, SafeReservation, SafeUser, SafeService, SafeServiceReservation } from '@/app/types';
+import { SafeUser, SafeService, SafeServiceReservation } from '@/app/types';
 
 import Container from '@/app/components/Container';
-import { categories } from '@/app/components/navbar/Categories';
 
 import ListingReservation from '@/app/components/listings/ListingReservation';
 import { loadStripe } from '@stripe/stripe-js';
@@ -84,6 +83,7 @@ const ServiceClient: React.FC<ListingClientProps> = ({
         listingId: service?.id || 0,
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
+        type: 'service',
       },
       {
         headers:{
@@ -145,7 +145,6 @@ const ServiceClient: React.FC<ListingClientProps> = ({
             
             <ServiceInfo
               user={service.user}
-              // category={category}
               title={service.title}
               description={service.description}
               locationValue={service.locationValue}

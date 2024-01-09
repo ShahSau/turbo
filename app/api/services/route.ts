@@ -17,7 +17,6 @@ export async function POST(
   const {
     title,
     imageSrc,
-    category,
     location,
     description,
     price,
@@ -35,7 +34,6 @@ export async function POST(
       imageSrc,
       description,
       locationValue: location.label,
-      category,
       price: parseInt(price, 10),
       userId: currentUser.id,
     },
