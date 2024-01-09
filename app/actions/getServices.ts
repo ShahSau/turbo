@@ -36,16 +36,24 @@ export default async function getServices(
       }
   
 
-    if (startDate && endDate) {
+      if (startDate && endDate) {
         query.NOT = {
-            serviceReservations: {
-                some: {
-                    startDate: { lte: startDate },
-                    endDate: { gte: endDate },
+          serviceReservation: {
+            some: {
+              OR: [
+                {
+                  endDate: { gte: startDate },
+                  startDate: { lte: startDate },
                 },
+                {
+                  startDate: { lte: endDate },
+                  endDate: { gte: endDate },
+                },
+              ],
             },
+          },
         };
-    }
+      }
 
   
       const services = await prisma.service.findMany({

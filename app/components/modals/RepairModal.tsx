@@ -19,11 +19,10 @@ import { categories } from '../navbar/Categoriesrepair';
 
 
 enum STEPS {
-    CATEGORY = 0,
-    LOCATION = 1,
-    IMAGES = 2,
-    DESCRIPTION = 3,
-    PRICE = 4,
+    LOCATION = 0,
+    IMAGES = 1,
+    DESCRIPTION = 2,
+    PRICE = 3,
 }
 
 
@@ -31,7 +30,7 @@ enum STEPS {
 const RepairModal = () => {
   const repairModal = useRepairModal()
   const router = useRouter();
-  const [step, setStep] = useState(STEPS.CATEGORY);
+  const [step, setStep] = useState(STEPS.LOCATION);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -45,7 +44,7 @@ const RepairModal = () => {
     reset,
   } = useForm<FieldValues>({
     defaultValues: {
-        category: '',
+        // category: '',
         location: null,
         imageSrc: '',
         price: 50,
@@ -55,7 +54,7 @@ const RepairModal = () => {
     });
 
     const location = watch('location');
-    const category = watch('category');
+    //const category = watch('category');
     const imageSrc = watch('imageSrc');
     const description = watch('description');
 
@@ -93,7 +92,7 @@ const RepairModal = () => {
         toast.success('Service listing is created!');
         router.refresh();
         reset();
-        setStep(STEPS.CATEGORY);
+        setStep(STEPS.LOCATION);
         repairModal.onCloseRe();
       })
       .catch(() => {
@@ -114,7 +113,7 @@ const RepairModal = () => {
 
 
   const secondaryActionLabel = useMemo(() => {
-        if (step === STEPS.CATEGORY) {
+        if (step === STEPS.LOCATION) {
         return undefined;
         }
     
@@ -127,7 +126,7 @@ const RepairModal = () => {
         title="Which of these best describes your service?"
         subtitle="Pick a category"
       />
-      <div
+      {/* <div
         className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto"
       >
         {categories.map((item) => (
@@ -140,7 +139,7 @@ const RepairModal = () => {
             />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 
@@ -231,10 +230,10 @@ const RepairModal = () => {
       isOpen={repairModal.isOpenRe}
       onClose={repairModal.onCloseRe}
       onSubmit={handleSubmit(onSubmit)}
-      title="Rent a car"
+      title="Create a new service"
       actionLabel={actionLabel}
-      secondaryActionLabel={step === STEPS.CATEGORY ? undefined : secondaryActionLabel}
-      secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
+      secondaryActionLabel={step === STEPS.LOCATION ? undefined : secondaryActionLabel}
+      secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
       body={bodyContent}
     />
   )

@@ -61,7 +61,7 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
               actionId={service.id}
               onAction={onCancel}
               disabled={deletingId === service.id}
-              actionLabel="Delete Car"
+              actionLabel="Delete Service"
               currentUser={currentUser}
             />
             )
