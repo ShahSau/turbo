@@ -134,8 +134,8 @@ const RepairSearchModal = () => {
       bodyContent = (
         <div className="flex flex-col gap-8">
           <Heading
-            title="When do you plan to go?"
-            subtitle="Make sure everyone is free!"
+            title="When do you need the fixing?"
+            subtitle=""
           />
           <Calendar
             onChange={(value) => setDateRange(value.selection)}
@@ -145,63 +145,6 @@ const RepairSearchModal = () => {
       )
     }
   
-    // if (step === STEPS.INFO) {
-    //   bodyContent = (
-    //     <div className="flex flex-col gap-8">
-    //       <Heading
-    //         title="More information"
-    //         subtitle="Find your perfect place!"
-    //       />
-    //       <Counter 
-    //         onChange={(value) => setPassangersCount(value)}
-    //         value={passangersCount}
-    //         title="Passangers" 
-    //         subtitle="How many passangers do you have?"
-    //       />
-    //       <hr />
-    //       <div className="flex flex-row gap-3">
-    //             <p>Fuel Type:</p>
-    //             {fuelTypes.map((item) => (
-    //             <div 
-    //                 key={item.value}
-    //                 onClick={() => setFuelType(item.value)}
-    //                 className={`flex flex-row items-center gap-2 p-2 rounded-md cursor-pointer 
-    //                 ${fuelType === item.value ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
-    //             >
-    //                 <div className="text-sm">
-    //                 {item.label}
-    //                 </div>
-    //             </div>
-    //             ))}
-    //       </div>
-    //       <hr />
-    //       <div className="flex flex-row gap-3">
-    //             <p>Transmission Type:</p>
-    //             {transmissionTypes.map((item) => (
-    //             <div 
-    //                 key={item.value}
-    //                 onClick={() => setTransmissionType(item.value)}
-    //                 className={`flex flex-row items-center gap-2 p-2 rounded-md cursor-pointer 
-    //                 ${transmissionType === item.value ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-500'}`}
-    //             >
-    //                 <div className="text-sm">
-    //                 {item.label}
-    //                 </div>
-    //             </div>
-    //             ))}
-    //       </div>
-    //       <hr />
-    //       <Counter 
-    //         onChange={(value) => {
-    //           setCylindersCount(value)
-    //         }}
-    //         value={cylindersCount}
-    //         title="Cylinders"
-    //         subtitle="How many cylinders does your car have?"
-    //       />
-    //     </div>
-    //   )
-    // }
   
     return (
       <Modal
