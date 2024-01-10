@@ -40,7 +40,6 @@ interface HomeProps {
                 data={equipment}
               />
             ))}
-            <p>{equipments.length}</p>
           </div>
         </Container>
       </ClientOnly>
