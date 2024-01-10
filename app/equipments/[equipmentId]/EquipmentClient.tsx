@@ -90,7 +90,7 @@ const disabledDates =  service.amount !== 0 ? false : true;
 useEffect(() => {
   
 if(service.price && service.amount){
-    setTotalPrice(service.price * service.amount)
+    setTotalPrice(service.price * 1)  // for now we are allowing user to buy only one item at a time
 }
 }, [service.price, service.amount])
 

@@ -81,7 +81,6 @@ const EquipmentModal = () => {
       return onNext();
     }
 
-    console.log("DDDDDD",data);
     setIsLoading(true);
 
     axios.post('/api/equipment', data)

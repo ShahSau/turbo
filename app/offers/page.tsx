@@ -22,7 +22,6 @@ const page = async() => {
   }
 
   const services = await getServices({ userId: currentUser.id });
-  console.log(services)
 
   if (services.length === 0) {
     return (

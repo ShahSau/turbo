@@ -31,6 +31,7 @@ interface ServiceCardProps {
   actionLabel?: string;
   actionId?: string;
   currentUser?: SafeUser | null;
+  date?: Date;
 
 }
 
@@ -41,6 +42,7 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
   disabled,
   actionLabel,
   actionId = '',
+  date,
   currentUser,
 }) => {
   const router = useRouter();
@@ -76,6 +78,13 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [reservation]);
 
+
+const dateTimeFormat = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
   return (
     <div
       onClick={() => router.push(`/equipments/${data.id}`)}
@@ -107,11 +116,13 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
             {' '}
             {price}
           </div>
-          {!reservation && (
+          {!reservation && !date && (
             <div className="font-light">per piece</div>
           )}
-          
         </div>
+        {date && (
+            <div className="font-light">You bought this on {dateTimeFormat.format(date)}</div>
+          )}
         {onAction && actionLabel && (
           <Button
             disabled={disabled}
