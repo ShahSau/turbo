@@ -60,7 +60,6 @@ const ServiceClient: React.FC<ListingClientProps> = ({
     return dates;
   }, [reservations]);
 
-  //const category = useMemo(() => categories.find((items) => items.label === service.category), [service.category]);
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(service.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);

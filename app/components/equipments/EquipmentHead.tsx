@@ -12,7 +12,6 @@ import Heading from '../Heading';
 
 interface ServiceHeadProps {
   title: string;
-//   locationValue: string;
   imageSrc: string;
   id: string;
   currentUser?: SafeUser | null
@@ -31,7 +30,6 @@ const EquipmentHead: React.FC<ServiceHeadProps> = ({
     <>
       <Heading
         title={title}
-        // subtitle={locationValue}
       />
       <div className="w-full h-[60vh] overflow-hidden rounded-xl relative ">
         <Image

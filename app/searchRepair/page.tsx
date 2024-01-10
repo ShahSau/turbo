@@ -11,8 +11,6 @@ interface SearchProps {
   searchParams: IServicesParams
 }
 
-
-// fix data structure before working on it
 const Search = async ({ searchParams }: SearchProps) => {
   const services = await getServices(searchParams);
   const currentUser = await getCurrentUser();

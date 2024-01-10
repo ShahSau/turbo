@@ -50,11 +50,15 @@ const UserMenu: React.FC<UserMenuProps> = ({
     rentModal.onOpen();
   }, [loginModal, rentModal, currentUser]);
 
+  const logout = () => {
+    signOut();
+    router.replace('/');
+  }
+
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-12">
         <div
-          // onClick={onRent}
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
           {/* Add a car */}
@@ -117,16 +121,16 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem
                   label="My equipments"
-                  onClick={() => router.push('/equipments')}
+                  onClick={() => router.push('/offerEquipments')}
                 />
                 <MenuItem
-                  label="My reserved equipments"
+                  label="Things I bought"
                   onClick={() => router.push('/equipmentReservations')}
                 />
                 <hr />
                 <MenuItem
                   label="Logout"
-                  onClick={() => signOut()}
+                  onClick={() => logout()}
                 />
               </>
             ) : (

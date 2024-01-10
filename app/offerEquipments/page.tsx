@@ -3,7 +3,9 @@ import ClientOnly from '@/app/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import getServices from '../actions/getServices';
-import ServicesClient from './ServicesClient';
+import getEquipments from '../actions/getEquipments';
+import EqupimentClient from './EqupimentClient';
+
 
 const page = async() => {
   const currentUser = await getCurrentUser();
@@ -19,14 +21,14 @@ const page = async() => {
     );
   }
 
-  const services = await getServices({ userId: currentUser.id });
+  const equipment = await getEquipments({ userId: currentUser.id });
 
-  if (services.length === 0) {
+  if (equipment.length === 0) {
     return (
       <ClientOnly>
         <EmptyState
-          title="No services found"
-          subtitle="Looks like you havent advertize any services."
+          title="No Equipment found"
+          subtitle="Looks like you havent advertize any equipment yet"
         />
       </ClientOnly>
     );
@@ -34,10 +36,10 @@ const page = async() => {
 
   return (
     <ClientOnly>
-      <ServicesClient
-        services={services}
-        currentUser={currentUser}
-      />
+        <EqupimentClient
+            equipments={equipment}
+            currentUser={currentUser}
+            />
     </ClientOnly>
   );
   

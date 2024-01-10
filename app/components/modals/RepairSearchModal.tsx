@@ -21,7 +21,6 @@ import useRepairSearchModal from '@/app/hooks/useRepairSearchModal';
 enum STEPS {
   LOCATION = 0,
   DATE = 1,
-  // INFO = 2,
 }
 
 
@@ -33,10 +32,6 @@ const RepairSearchModal = () => {
     const [step, setStep] = useState(STEPS.LOCATION);
   
     const [location, setLocation] = useState<CountrySelectValue>();
-    // const [passangersCount, setPassangersCount] = useState(1);
-    // const [cylindersCount, setCylindersCount] = useState(1);
-    // const [fuelType, setFuelType] = useState(fuelTypes[0].value);
-    // const [transmissionType, setTransmissionType] = useState(transmissionTypes[0].value);
     const [dateRange, setDateRange] = useState<Range>({
       startDate: new Date(),
       endDate: new Date(),

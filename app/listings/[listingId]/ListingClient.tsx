@@ -146,7 +146,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
               user={listing.user}
               category={category}
               title={listing.title}
-              // price={listing.price}
               passangersCount={listing.passangersCount}
               cylindersCount={listing.cylindersCount}
               mileageCount={listing.mileageCount}

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Roboto } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/navbar/Navbar';
 import ClientOnly from './components/ClientOnly';
@@ -45,7 +44,7 @@ export default async function RootLayout({
         <div className="pb-20 pt-28">
           {children}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
 
     </html>

@@ -8,19 +8,19 @@ import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { SafeUser, SafeService } from '@/app/types';
+import { SafeUser, SafeService, SafeEquipment } from '@/app/types';
 
 import Heading from '@/app/components/Heading';
 import Container from '@/app/components/Container';
-import ServiceCard from '../components/services/ServiceCard';
+import EquipmentCard from '../components/equipments/EquipmentCard';
 interface ServicesClientProps {
-  services: SafeService[],
+  equipments: SafeEquipment[],
   // eslint-disable-next-line react/require-default-props
   currentUser?: SafeUser | null,
 }
 
-const ServicesClient: React.FC<ServicesClientProps> = ({
-  services,
+const EqupimentClient: React.FC<ServicesClientProps> = ({
+  equipments,
   currentUser,
 }) => {
   const router = useRouter();
@@ -29,9 +29,9 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
   const onCancel = useCallback((id: string) => {
     setDeletingId(id);
 
-    axios.delete(`/api/services/${id}`)
+    axios.delete(`/api/equipment/${id}`)
       .then(() => {
-        toast.success('Service is removed from the database');
+        toast.success('Equipment is removed from the database');
         router.refresh();
       })
       .catch((error) => {
@@ -52,9 +52,9 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
         <div
           className=" mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
         >
-          {services.map((service: any) => {
+          {equipments.map((service: any) => {
             return(
-            <ServiceCard
+            <EquipmentCard
               key={service.id}
               data={service}
               actionId={service.id}
@@ -71,4 +71,4 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
   );
 };
 
-export default ServicesClient;
+export default EqupimentClient;

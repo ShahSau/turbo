@@ -32,7 +32,6 @@ interface ListingInfoProps {
   } | undefined
   locationValue: string;
   title: string;
-  // price: number;
   passangersCount:number;
   cylindersCount:number;
   mileageCount:number;
@@ -47,7 +46,6 @@ interface ListingInfoProps {
 const ListingInfo: React.FC<ListingInfoProps> = ({
   user,
   title,
-  // price,
   passangersCount,
   cylindersCount,
   mileageCount,
@@ -62,7 +60,6 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
 }) => {
   const { getByValue } = useCountries();
 
-  // const coordinates = getByValue(locationValue)?.latlng;
   const cityValue = cities.find((item) => item.label === locationValue);
   const coordinates = cityValue?.latlng;
 

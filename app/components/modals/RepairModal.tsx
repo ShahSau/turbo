@@ -41,7 +41,6 @@ const RepairModal = () => {
     reset,
   } = useForm<FieldValues>({
     defaultValues: {
-        // category: '',
         location: null,
         imageSrc: '',
         price: 50,
@@ -51,7 +50,6 @@ const RepairModal = () => {
     });
 
     const location = watch('location');
-    //const category = watch('category');
     const imageSrc = watch('imageSrc');
     const description = watch('description');
 

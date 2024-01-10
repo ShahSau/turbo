@@ -8,15 +8,11 @@ export default async function getUserById(
   userId: string,
 ) {
   try {
-    // const { userId } = params;
 
     const user = await prisma.user.findUnique({
       where: {
         id: userId,
       },
-    //   include: {
-    //     user: true,
-    //   },
     });
 
     if (!user) {

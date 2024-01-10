@@ -38,7 +38,6 @@ const ServiceInfo: React.FC<ListingInfoProps> = ({
 }) => {
   const { getByValue } = useCountries();
 
-  // const coordinates = getByValue(locationValue)?.latlng;
   const cityValue = cities.find((item) => item.label === locationValue);
   const coordinates = cityValue?.latlng;
 

@@ -19,7 +19,6 @@ import {
 
 import HeartButton from '../HeartButton';
 import Button from '../Button';
-// import ClientOnly from '../ClientOnly';
 
 interface ListingCardProps {
   data: SafeListing;

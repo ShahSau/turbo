@@ -3,12 +3,9 @@ import EmptyState from '@/app/components/EmptyState';
 import ClientOnly from '@/app/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import getServiceReservations from '../actions/getServiceReservation';
-import { useSearchParams } from 'next/navigation';
 import getEquipmentReservations from '../actions/getEquipmentReservation';
 import EquipmentReservationsClient from './EquipmentReservationClient';
 
-//import ServiceReservationsClient from './ServiceReservationsClient';
 
 const ReservationsPage = async () => {
   const currentUser = await getCurrentUser();

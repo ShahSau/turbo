@@ -15,6 +15,17 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   const reservations = await getReservations(params);
   const currentUser = await getCurrentUser();
 
+  if (!currentUser) {
+    return (
+      <ClientOnly>
+        <EmptyState
+          title="Unauthorized"
+          subtitle="Please login"
+        />
+      </ClientOnly>
+    );
+  }
+
   if (!listing) {
     return (
       <ClientOnly>

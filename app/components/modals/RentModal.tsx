@@ -85,10 +85,7 @@ const RentModal: React.FC = () => {
     defaultValues: {
       category: '',
       location: null,
-      //   guestCount: 1,
       passangersCount: 1,
-      //   roomCount: 1,
-      //   bathroomCount: 1,
       cylindersCount: 1,
       mileageCount: 70,
       imageSrc: '',

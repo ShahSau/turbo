@@ -50,7 +50,6 @@ const Modal: React.FC<ModalProps> = ({
       if (onClose) {
         onClose();
       }
-      // onClose();
     }, 300);
   }, [onClose, disabled]);
 
@@ -61,7 +60,6 @@ const Modal: React.FC<ModalProps> = ({
     if (onSubmit) {
       onSubmit();
     }
-    // onSubmit();
   }, [onSubmit, disabled]);
 
   const handleSecondaryAction = useCallback(() => {

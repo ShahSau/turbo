@@ -24,7 +24,7 @@ export default async function getServiceReservations(
     //   query.userId = userId;
     // }
 
-    // in case of service reservations, userId is the authorId and service.uerserId is the creator of the service
+    // in case of equipment reservations, userId is the authorId and equipment.uerserId is the creator of the equipment
     if (authorId) {
       query.userId = authorId;
     }

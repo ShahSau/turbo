@@ -1,6 +1,6 @@
 'use client';
 
-//import useSearchModal from '@/app/hooks/useSearchModal';
+
 import useRepairSearchModal from '@/app/hooks/useRepairSearchModal';
 import { usePathname } from 'next/navigation';
 import React from 'react';
