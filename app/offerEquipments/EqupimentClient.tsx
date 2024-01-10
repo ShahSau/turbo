@@ -60,7 +60,7 @@ const EqupimentClient: React.FC<ServicesClientProps> = ({
               actionId={service.id}
               onAction={onCancel}
               disabled={deletingId === service.id}
-              actionLabel="Delete Service"
+              actionLabel="Delete Equipment"
               currentUser={currentUser}
             />
             )
