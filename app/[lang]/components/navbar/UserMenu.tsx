@@ -87,19 +87,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
               <>
                 <MenuItem
                   label={dictionary.navBar.trips}
-                  onClick={() => router.push('/trips')}
+                  onClick={() => router.push(`/${lang}/trips`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.favorites}
-                  onClick={() => router.push('/favorites')}
+                  onClick={()=> router.push(`/${lang}/favorites`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.reservations}
-                  onClick={() => router.push('/reservations')}
+                  onClick={() => router.push(`/${lang}/reservations`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.cars}
-                  onClick={() => router.push('/cars')}
+                  onClick={() => router.push(`/${lang}/cars`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.car}
@@ -112,11 +112,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem
                   label={dictionary.navBar.reservedOffers}
-                  onClick={() => router.push('/serviceReservations')}
+                  onClick={() => router.push(`/${lang}/serviceReservations`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.offers}
-                  onClick={() => router.push('/offers')}
+                  onClick={() => router.push(`/${lang}/offers`)}
                 />
                 <hr />
                 <MenuItem
@@ -125,11 +125,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem
                   label={dictionary.navBar.myEquipment}
-                  onClick={() => router.push('/offerEquipments')}
+                  onClick={() => router.push(`/${lang}/offerEquipments`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.reservedEquipment}
-                  onClick={() => router.push('/equipmentReservations')}
+                  onClick={() => router.push(`/${lang}/equipmentReservations`)}
                 />
                 <hr />
                 <MenuItem

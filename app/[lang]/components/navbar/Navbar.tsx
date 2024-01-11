@@ -27,10 +27,12 @@ const Navbar: React.FC<NavbarProps> = ({
   <div className="fixed w-full bg-white z-10 shadow-sm">
     <div className="py-4 border-b-[1px]">
       <Container>
-        <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
+        <div className="flex flex-row items-end justify-between gap-3 md:gap-0">
           <Logo lang={lang}/>
-          <LocaleSwitcher />
-          <UserMenu currentUser={currentUser} dictionary={dictionary} lang={lang}/>
+          <div className="flex flex-row items-center gap-3 md:gap-5">
+            <LocaleSwitcher />
+            <UserMenu currentUser={currentUser} dictionary={dictionary} lang={lang}/>
+          </div>
         </div>
       </Container>
       <Search />

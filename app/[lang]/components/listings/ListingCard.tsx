@@ -77,6 +77,15 @@ const ListingCard: React.FC<ListingCardProps> = ({
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [reservation]);
 
+    if(lang === 'de' || lang === 'fi'){
+      data.price = data.price * 0.85
+    }
+    if(lang === 'sv'){
+      data.price = data.price * 0.9
+     }
+
+    console.log(lang)
+
   return (
     <div
       onClick={() => router.push(`/listings/${data.id}`)}
@@ -113,12 +122,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
         </div>
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">
-            $
+            {lang === 'en' ? '$' : lang === 'de' ? '€' : lang === 'fi' ? '€' : lang === 'sv' ? 'kr' : '$'}
             {' '}
-            {price}
+            {/* {price} */}
+
+            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? (price*0.9) : price}
           </div>
           {!reservation && (
-            <div className="font-light">{dictionary.listingClient.day}</div>
+            <div className="font-light">day</div>
           )}
         </div>
         {onAction && actionLabel && (
