@@ -11,6 +11,7 @@ export async function POST (request:Request, res:Response) {
     let startDate = data.startDate
     let endDate = data.endDate
     let type = data.type
+    let lang = data.lang
     const session = await stripe.checkout.sessions.create({
         line_items: [
             {
@@ -26,7 +27,7 @@ export async function POST (request:Request, res:Response) {
             },
           ],
       mode: 'payment',
-       success_url:`http://localhost:3000/success?type=${type}&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}`,
+       success_url:`http://localhost:3000/success?type=${type}&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}&lang=${lang}`,
        cancel_url: 'http://localhost:3000'
     })
     return new NextResponse(JSON.stringify({ url: session.url }))

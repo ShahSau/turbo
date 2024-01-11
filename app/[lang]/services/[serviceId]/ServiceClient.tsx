@@ -87,6 +87,7 @@ const ServiceClient: React.FC<ListingClientProps> = ({
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
         type: 'service',
+        lang: lang,
       },
       {
         headers:{

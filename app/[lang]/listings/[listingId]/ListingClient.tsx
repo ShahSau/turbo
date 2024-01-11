@@ -140,6 +140,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
         type: 'rental',
+        lang: lang,
       },
       {
         headers:{

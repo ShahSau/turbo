@@ -96,6 +96,7 @@ const categories = [
          totalPrice: totalPrice,
          listingId: service?.id || 0,
          type: 'equipment',
+         lang: lang,
        },
        {
          headers:{
