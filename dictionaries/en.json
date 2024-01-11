@@ -65,6 +65,7 @@
         "noReservationsDesc":"Looks like you have no reservations.",
         "cancel": "Cancel reservation"
     },
+    "moneySign":"$",
     "cars":{
         "title":"Cars",
         "desc":"View your cars here",

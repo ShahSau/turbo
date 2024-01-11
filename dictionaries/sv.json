@@ -65,6 +65,7 @@
     "noReservationsDesc": "Du verkar inte ha några reservationer.",
     "cancel": "Avboka bokning"
   },
+  "moneySign":"kr",
   "cars": {
     "title": "Bilar",
     "desc": "Se dina bilar här",

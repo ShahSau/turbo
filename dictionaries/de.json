@@ -65,6 +65,7 @@
     "noReservationsDesc": "Sieht so aus, als hätten Sie keine Reservierungen.",
     "cancel": "Reservierung stornieren"
   },
+  "moneySign":"€",
   "cars": {
     "title": "Autos",
     "desc": "Sehen Sie sich hier Ihre Autos an",

@@ -19,8 +19,8 @@ import Heading from '../Heading';
 import Button from '../Button';
 
 interface RegisterProps {
-  dictionary: any;
-  lang: any;
+  dictionary?: any;
+  lang?: any;
 }
 
 const RegisterModal: React.FC<RegisterProps> = ({

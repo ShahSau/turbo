@@ -38,7 +38,7 @@ ListingReservationProps
   >
     <div className="flex flex-row items-center gap-1 p-4">
       <div className="text-2xl font-semibold">
-        $
+        {dictionary.moneySign}
         {' '}
         {price}
       </div>
@@ -68,7 +68,7 @@ ListingReservationProps
         {dictionary.listingClient.total}
       </div>
       <div>
-        $
+        {dictionary.moneySign}
         {' '}
         {totalPrice}
       </div>

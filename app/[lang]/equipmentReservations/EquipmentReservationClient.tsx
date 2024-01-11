@@ -45,6 +45,8 @@ const EquipmentReservationsClient: React.FC<ReservationsClientProps> = ({
                 key={reservation.id}
                 data={reservation.equipment}
                 date={reservation.equipment.createdAt}
+                dictionary={dictionary}
+                lang={lang}
             />
 
           ))}

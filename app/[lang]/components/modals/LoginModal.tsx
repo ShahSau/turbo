@@ -24,8 +24,8 @@ import Heading from '../Heading';
 import Button from '../Button';
 
 interface LoginProps {
-  dictionary: any;
-  lang: any;
+  dictionary?: any;
+  lang?: any;
 }
 
 const LoginModal: React.FC<LoginProps> = ({

@@ -66,6 +66,8 @@ const EqupimentClient: React.FC<ServicesClientProps> = ({
               disabled={deletingId === service.id}
               actionLabel={dictionary.myEquipment.delete}
               currentUser={currentUser}
+              dictionary={dictionary}
+              lang={lang}
             />
             )
           })}

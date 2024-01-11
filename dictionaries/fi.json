@@ -65,6 +65,7 @@
     "noReservationsDesc": "Sinulla ei näytä olevan varauksia.",
     "cancel": "Peruuta varaus"
   },
+  "moneySign":"€",
   "cars": {
     "title": "Autot",
     "desc": "Katso autosi tästä",
