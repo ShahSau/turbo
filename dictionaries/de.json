@@ -1,0 +1,287 @@
+{
+  "Home": {
+    "title": "Konzentrieren Sie sich auf das Wesentliche",
+    "desc": "Willkommen bei Turbo, wo Komfort auf Mobilität trifft! Unsere benutzerfreundliche Plattform ermöglicht es Ihnen, die Welt nach Ihren Wünschen zu erkunden und bietet ein nahtloses und problemloses Mietwagenerlebnis. Entdecken Sie die Freiheit, mit unserer vielfältigen Fahrzeugflotte, die von eleganten Limousinen bis hin zu geräumigen SUVs reicht, dorthin zu fahren, wohin Ihre Reise Sie auch führt.",
+    "services": {
+      "title": "Unsere Dienstleistungen",
+      "services": [
+        {
+          "title": "Autovermietung",
+          "desc": "Autovermietung leicht gemacht mit Turbo."
+        },
+        {
+          "title": "Autoreparatur",
+          "desc": "Beste Autoreparaturdienste in der Stadt."
+        },
+        {
+          "title": "Geschäft",
+          "desc": "Premium-Ausrüstung für Profis und Hobbyisten gleichermaßen."
+        }
+      ]
+    },
+    "testimonialsTitle":"Wir haben mit Tausenden von tollen Menschen zusammengearbeitet",
+    "featuredTestimonial": {
+      "title": "Ausgezeichnete Erfahrung mit der Autovermietungs-App! Der Buchungsvorgang verlief schnell und problemlos und das Auto war in einem hervorragenden Zustand. Werde es auf jeden Fall wieder verwenden!"
+    },
+    "testimonials": {
+      "Leslie": "IIch liebe die Benutzerfreundlichkeit dieser Autovermietungs-App. Sie machte das Finden und Reservieren eines Autos unglaublich einfach. Die Benutzeroberfläche der App ist intuitiv und der gesamte Mietvorgang verlief reibungslos. ",
+      "Ethan": "Beeindruckt von der großen Auswahl an Fahrzeugoptionen, die in der App verfügbar sind. Von preisgünstig bis luxuriös ist für jeden etwas dabei. Außerdem war der Kundenservice reaktionsschnell und hilfsbereit. ",
+      "Olivia": "Hatte dank dieser Autovermietungs-App einen fantastischen Roadtrip. Die Abholung und Rückgabe verliefen bequem und die Preise waren angemessen. Ich kann es auf jeden Fall Freunden und der Familie empfehlen ",
+      "Lindsay": "Die Echtzeit-Updates der App zur Fahrzeugverfügbarkeit haben mir viel Zeit gespart. Ich konnte kurzfristig ein Auto finden und buchen. Toller Service und transparente Preise!",
+      "Courtney": "Reibungsloses Mieterlebnis von Anfang bis Ende. Die Funktionen der App, wie GPS-Navigation und Kraftstoffverfolgung, haben meiner Reise einen Mehrwert verliehen. Wird meine erste Anlaufstelle für zukünftige Anmietungen sein.",
+      "Tom": "Schnelle Antwort vom Kundensupport, als ich eine Frage hatte. Das Team war freundlich und hat mein Problem umgehend gelöst. Ich schätze den hervorragenden Service!",
+      "Whitney": "Die Autovermietungs-App hat meine Erwartungen übertroffen. Der Mietvorgang verlief schnell und das Auto war sauber und gepflegt. Ich werde es auf jeden Fall wieder nutzen!",
+      "Leonard": "Die Autovermietungs-App ist einfach zu bedienen und verfügt über eine einfache, unkomplizierte Benutzeroberfläche. Ich konnte mein Auto in weniger als einer Minute buchen. Sehr empfehlenswert! ",
+      "Floyd": "Ich liebe das Treueprogramm! Ich habe Punkte für meine Anmietung gesammelt und einen Rabatt auf meine nächste Buchung erhalten. Es ist großartig zu sehen, dass die App treue Kunden belohnt. ",
+      "Emily": "Ich schätze die Flexibilität, meine Reservierung einfach über die App zu ändern. Dadurch war die Anpassung meiner Reisepläne stressfrei. Aufgrund der Bequemlichkeit sehr zu empfehlen."
+    }
+  },
+  "notFound": {
+    "title": "Sieht so aus, als hätten Sie das Tor zum großen Nichts gefunden",
+    "desc": "Das tut mir leid! "
+  },
+  "unauthorized": {
+    "title": "Sie sind nicht berechtigt, diese Seite anzuzeigen",
+    "desc": "Bitte melden Sie sich an, um diese Seite anzuzeigen"
+  },
+  "trips": {
+    "title": "Reisen",
+    "desc": "Sehen Sie sich hier Ihre Reisen an",
+    "noTrips": "Sie haben keine Reisen",
+    "noTripsDesc": "Anscheinend haben Sie keine Fahrten reserviert.",
+    "cancel": "Reservierung stornieren"
+  },
+  "favorites": {
+    "title": "Favoriten",
+    "desc": "Liste der Autos, die Sie favorisiert haben!",
+    "noFavorites": "Sie haben keine Favoriten",
+    "noFavoritesDesc": "Anscheinend haben Sie keine Reisen zu Ihren Favoriten hinzugefügt. ",
+    "cancel": "Von Favoriten entfernen"
+  },
+  "reservations": {
+    "title": "Reservierungen",
+    "desc": "Sehen Sie sich hier Ihre Reservierungen an",
+    "noReservations": "Sie haben keine Reservierungen",
+    "noReservationsDesc": "Sieht so aus, als hätten Sie keine Reservierungen.",
+    "cancel": "Reservierung stornieren"
+  },
+  "cars": {
+    "title": "Autos",
+    "desc": "Sehen Sie sich hier Ihre Autos an",
+    "noCars": "Sie haben keine Autos",
+    "noCarsDesc": "Es sieht so aus, als hätten Sie keine Autos zum Mieten zur Verfügung.",
+    "cancel": "aus der Datenbank entfernen",
+    "removed": "„Auto wurde aus der Datenbank entfernt.“",
+    "delete": "Ein Auto löschen",
+    "favYes": "Das Auto wurde zu Ihren Favoriten hinzugefügt.",
+    "favNo": "Das Auto wurde aus Ihren Favoriten entfernt.",
+    "error": "Etwas ist schief gelaufen. "
+  },
+  "rentModal": {
+    "main": "Autovermietungen",
+    "title": "Welche davon beschreibt Ihr Auto am besten?",
+    "pick": "Wählen Sie eine Kategorie",
+    "Lsuv": "Liste der SUVs",
+    "Lconv": "Liste der Cabrios",
+    "Lelec": "Liste der Elektroautos",
+    "Lminivan": "Liste der Minivans",
+    "Lpickup": "Liste der Pickup-Trucks",
+    "L4wheel": "Liste der Allradantriebe",
+    "Lsports": "Liste der Sportwagen",
+    "locationTitle": "Wo ist Ihr Auto geparkt?",
+    "locationDesc": "Helfen Sie Mietern, Ihr Auto zu finden",
+    "infoTitle": "Teilen Sie einige Grundlagen zu Ihrem Auto mit",
+    "passangerTitle": "Passagier",
+    "passangerDesc": "Wie viele Passagiere passen in Ihr Auto?",
+    "cylinderTitle": "Zylinder",
+    "cylinderDesc": "Wie viele Zylinder hat Ihr Auto?",
+    "mileageTitle": "Kilometerstand",
+    "mileageDesc": "Wie viele Meilen wurde Ihr Auto gefahren?",
+    "fuelTitle": "Wählen Sie den Kraftstofftyp",
+    "drivenTitle": "Wählen Sie „Gesteuerter Typ“ aus",
+    "autoTitle": "Automatisch / Manuell",
+    "imageTitle": "Fügen Sie ein Foto Ihres Autos hinzu",
+    "imageUpload": "Klicken Sie zum Hochladen",
+    "citySelect": "Überall",
+    "descTitle": "Beschreiben Sie Ihr Auto",
+    "descDesc": "Kurz und bündig funktioniert am besten!",
+    "titleTitle": "Titel",
+    "modal": "Modell des Autos",
+    "maker": "Hersteller des Autos",
+    "made": "Wann wurde es hergestellt?",
+    "priceTitle": "Legen Sie nun Ihren Preis fest",
+    "priceDesc": "Wie viel verlangen Sie pro Stunde?",
+    "price": "Preis",
+    "created": "Fahrzeugangebot ist erstellt!",
+    "failed": "Etwas ist schief gelaufen. ",
+    "create": "Erstellen",
+    "next": "Nächste",
+    "back": "Zurück"
+  },
+  "navBar": {
+    "trips": "Meine Reisen",
+    "reservations": "Meine Reservierungen",
+    "favorites": "Meine Favoriten",
+    "cars": "Meine Autos",
+    "car": "Fügen Sie ein Auto hinzu",
+    "service": "Fügen Sie einen Dienst hinzu",
+    "reservedOffers": "Meine reservierten Dienste",
+    "offers": "Meine Angebote",
+    "equipment": "Fügen Sie eine Ausrüstung hinzu",
+    "reservedEquipment": "Dinge, die ich gekauft habe",
+    "myEquipment": "Meine Ausrüstung",
+    "logout": "Ausloggen",
+    "login": "Anmeldung",
+    "signup": "Melden Sie sich an"
+  },
+  "serviceReservation": {
+    "title": "Reservierte Dienste",
+    "desc": "Buchungen für Ihren Service",
+    "noServices": "Sie haben keine Dienste",
+    "noServicesDesc": "Anscheinend haben Sie keine Dienste reserviert.",
+    "cancel": "Reservierung stornieren"
+  },
+  "serviceOffers": {
+    "title": "Bietet an",
+    "desc": "Liste Ihrer Angebote",
+    "noServices": "Keine Dienste gefunden",
+    "noServicesDesc": "Sieht so aus, als hätten Sie keine Dienstleistungen beworben.",
+    "cancel": "Reservierung stornieren"
+  },
+  "repairModal": {
+    "title": "Welche davon beschreibt Ihren Service am besten?",
+    "pick": "Wählen Sie eine Kategorie",
+    "locationTitle": "Wo befindet sich Ihr Du?",
+    "locationDesc": "Helfen Sie Mietern, Ihren Service zu finden",
+    "photoTitle": "Fügen Sie ein Foto Ihrer Dienstleistung hinzu",
+    "descTitle": "Beschreiben Sie Ihren Service",
+    "descDesc": "Kurz und bündig funktioniert am besten!",
+    "titleTitle": "Titel",
+    "desc": "Beschreibung",
+    "priceTitle": "Legen Sie nun Ihren Preis fest",
+    "priceDesc": "Wie viel verlangen Sie pro Stunde?",
+    "price": "Preis",
+    "createService": "Erstellen Sie einen neuen Dienst",
+    "created": "Leistungsverzeichnis ist erstellt!",
+    "failed": "Etwas ist schief gelaufen. ",
+    "create": "Erstellen",
+    "next": "Nächste",
+    "back": "Zurück"
+  },
+  "equipmentModal": {
+    "categoryTitle": "Welche Art von Ausrüstung verkaufen Sie?",
+    "pick": "Wählen Sie eine Kategorie",
+    "photoTitle": "Fügen Sie ein Foto Ihrer Ausrüstung hinzu",
+    "descTitle": "Beschreiben Sie Ihre Ausrüstung",
+    "descDesc": "Kurz und bündig funktioniert am besten!",
+    "titleTitle": "Titel",
+    "desc": "Beschreibung",
+    "priceTitle": "Legen Sie nun Ihren Preis und Ihre Menge fest",
+    "price": "Preis",
+    "quantity": "Menge",
+    "quantityDesc": "Wie viele davon verkaufen Sie?",
+    "createEquipment": "Verkaufen Sie Ihre Ausrüstung",
+    "created": "Geräteliste ist erstellt!",
+    "failed": "Etwas ist schief gelaufen. ",
+    "create": "Erstellen",
+    "next": "Nächste",
+    "back": "Zurück"
+  },
+  "equipmentReservation": {
+    "title": "Gekaufte Ausrüstung",
+    "desc": "Liste Ihrer gekauften Geräte",
+    "noServices": "Keine Ausrüstung gefunden",
+    "noServicesDesc": "Sieht so aus, als hätten Sie keine Ausrüstung gekauft.",
+    "cancel": "Reservierung stornieren"
+  },
+  "myEquipment": {
+    "title": "Meine Ausrüstung",
+    "desc": "Liste Ihrer Ausrüstungen",
+    "noEquipment": "Keine Ausrüstung gefunden",
+    "noEquipmentDesc": "Sieht so aus, als hätten Sie keine Werbung für Ausrüstung gemacht.",
+    "cancel": "Reservierung stornieren",
+    "removed": "Ausrüstung wird aus der Datenbank entfernt",
+    "delete": "Ausrüstung löschen"
+  },
+  "login": {
+    "title": "Willkommen zurück!",
+    "desc": "Melde dich in deinem Konto an",
+    "email": "Email",
+    "password": "Passwort",
+    "login": "Anmeldung",
+    "signup": "Ein Konto erstellen",
+    "signupTitle": "Zum ersten Mal mit Turbo?",
+    "failed": "Fehler bei der Anmeldung. ",
+    "success": "Sie sind jetzt eingeloggt!",
+    "google": "Melden Sie sich mit Google an",
+    "github": "Melden Sie sich mit Github an",
+    "continue": "Weitermachen"
+  },
+  "register": {
+    "title": "Ein Konto erstellen",
+    "desc": "Willkommen bei Turbo Car Rental",
+    "toast": "Konto erfolgreich erstellt!",
+    "name": "Name",
+    "google": "Weiter mit Google",
+    "github": "Fahren Sie mit Github fort",
+    "account": "Sie haben bereits ein Konto?",
+    "login": "Anmeldung",
+    "register": "Registrieren"
+  },
+  "searchModal": {
+    "search": "Suchen",
+    "next": "Nächste",
+    "back": "Zurück",
+    "headingTitle": "Wo gehst du hin?",
+    "headingDesc": "Finden Sie das perfekte Auto für Ihre nächste Reise",
+    "dateTitle": "Wann planen Sie zu gehen?",
+    "dateDesc": "Wählen Sie die Daten aus, an denen Sie das Auto benötigen",
+    "infoTitle": "Mehr Informationen",
+    "infoDesc": "Finden Sie das perfekte Auto für Ihre nächste Reise",
+    "passangerTitle": "Passagier",
+    "passangerDesc": "Wie viele Personen sind unterwegs?",
+    "fuelType": "Treibstoffart",
+    "transmissionType": "Übertragungsart",
+    "cylinderTitle": "Zylinder",
+    "cylinderDesc": "Wie viele Zylinder hat Ihr Auto?",
+    "title": "Filter"
+  },
+  "repairSearchModal": {
+    "search": "Suchen",
+    "next": "Nächste",
+    "back": "Zurück",
+    "headingTitle": "Wo bist du gerade?",
+    "headingDesc": "Finden Sie den perfekten Service für Ihr Auto",
+    "dateTitle": "Wann benötigen Sie den Service?",
+    "filters": "Filter"
+  },
+  "empty": {
+    "title": "Keine genauen Übereinstimmungen",
+    "desc": "Versuchen Sie, einige Ihrer Filter zu ändern oder zu entfernen.",
+    "button": "Entfernen Sie alle Filter"
+  },
+  "listingClient": {
+    "back": "Zurück",
+    "order": "Sortieren nach",
+    "by": "von",
+    "day": "pro Tag",
+    "reserve": "Reservieren",
+    "total": "Gesamt",
+    "offer": "Angeboten von",
+    "buy": "Kaufen",
+    "youB": "Du hast das hier gekauft",
+    "price": "pro Preis"
+  },
+  "equipmentModel": {
+    "breakTitle": "Brechen",
+    "breakDesc": "Zerstört Gegenstände für Ihr Auto",
+    "wheelTitle": "Rad",
+    "wheelDesc": "Radartikel für Ihr Auto",
+    "batteryTitle": "Batterie",
+    "batteryDesc": "Batterieartikel für Ihr Auto",
+    "doorTitle": "Tür",
+    "doorDesc": "Türartikel für Ihr Auto",
+    "seatTitle": "Sitz",
+    "seatDesc": "Sitzartikel für Ihr Auto"
+  }
+}

@@ -1,287 +1,287 @@
 {
-    "Home":{
-        "title":"Focus on what matters Sv",
-        "desc":"Welcome to Turbo, where convenience meets mobility! Our user-friendly platform empowers you to explore the world on your terms, offering a seamless and hassle-free car rental experience. Discover the freedom to go wherever your journey takes you with our diverse fleet of vehicles, ranging from sleek sedans to spacious SUVs.",
-        "services":{
-            "title":"Our Services",
-            "services":[
-                {
-                    "title":"Car Rental",
-                    "desc":"Car rental made easy with Turbo."
-                },
-                {
-                    "title":"Car Repair",
-                    "desc":"Best car repair services in town."
-                },
-                {
-                    "title":"Shop",
-                    "desc":"Premium gear for professionals and hobbyists alike."
-                }
-            ]
+  "Home": {
+    "title": "Fokusera på det som är viktigt",
+    "desc": "Välkommen till Turbo, där bekvämlighet möter rörlighet! Vår användarvänliga plattform ger dig möjlighet att utforska världen på dina villkor, och erbjuder en sömlös och problemfri biluthyrningsupplevelse. Upptäck friheten att åka vart än din resa tar dig med vår mångsidiga fordonsflotta, allt från eleganta sedaner till rymliga stadsjeepar.",
+    "services": {
+      "title": "Våra tjänster",
+      "services": [
+        {
+          "title": "Biluthyrning",
+          "desc": "Biluthyrning på ett enkelt sätt med Turbo."
         },
-        "featuredTestimonial":{
-            "title":"Excellent experience with the car rental app! The booking process was quick and hassle-free, and the car was in great condition. Will definitely use it again!"
+        {
+          "title": "Bil reparation",
+          "desc": "Bästa bilreparationstjänsterna i stan."
         },
-        "testimonials":{
-            "Leslie": "I love how user-friendly this car rental app is. It made finding and reserving a car incredibly easy. The app's interface is intuitive, and the entire rental process was smooth.",
-            "Ethan":"Impressed with the wide range of car options available on the app. From budget-friendly to luxury, there's something for everyone. Plus, the customer service was responsive and helpful.",
-            "Olivia":"Had a fantastic road trip thanks to this car rental app. The pick-up and drop-off were convenient, and the rates were reasonable. Definitely recommending it to friends and family",
-            "Lindsay":"The app's real-time updates on vehicle availability saved me a lot of time. I was able to find and book a car on short notice. Great service and transparent pricing!",
-            "Courtney":"Smooth rental experience from start to finish. The app's features, like GPS navigation and fuel tracking, added value to my journey. Will be my go-to for future rentals.",
-            "Tom":"Quick response from customer support when I had a query. The team was friendly and resolved my issue promptly. Appreciate the excellent service!",
-            "Whitney":"The car rental app exceeded my expectations. The rental process was quick, and the car was clean and well-maintained. Will use it again for sure!",
-            "Leonard":"The car rental app is easy to use and has a simple, straightforward interface. I was able to book my car in under a minute. Highly recommended!",
-            "Floyd":"Love the loyalty program! Earned points on my rental and got a discount on my next booking. It's great to see the app rewarding loyal customers.",
-            "Emily":"I appreciated the flexibility to modify my reservation easily through the app. It made adjusting my travel plans stress-free. Highly recommended for its convenience."
+        {
+          "title": "affär",
+          "desc": "Premiumutrustning för både proffs och hobbyister."
         }
+      ]
     },
-    "notFound":{
-        "title":"Looks like you've found the doorway to the great nothing",
-        "desc":"Sorry about that! Please visit our homepage to get where you need to go"
+    "testimonialsTitle":"Vi har arbetat med tusentals fantastiska människor",
+    "featuredTestimonial": {
+      "title": "Utmärkt upplevelse med biluthyrningsappen! Bokningsprocessen var snabb och problemfri, och bilen var i bra skick. Kommer definitivt använda den igen! "
     },
-    "unauthorized":{
-        "title":"You are not authorized to view this page",
-        "desc":"Please login to view this page"
-    },
-    "trips":{
-        "title":"Trips ssss",
-        "desc":"View your trips here",
-        "noTrips":"You have no trips",
-        "noTripsDesc":"You have no trips. Please book a trip to view it here",
-        "cancel": "ei swe reservation"
-    },
-    "favorites":{
-        "title":"Favorites",
-        "desc":"View your favorites here",
-        "noFavorites":"You have no favorites",
-        "noFavoritesDesc":"Looks like you havent favorited any trips.",
-        "cancel": "remove from favorites"
-    },
-    "reservations":{
-        "title":"Reservations",
-        "desc":"View your reservations here",
-        "noReservations":"You have no reservations",
-        "noReservationsDesc":"Looks like you have no reservations.",
-        "cancel": "Cancel sv reservation"
-    },
-    "cars":{
-        "title":"Cars",
-        "desc":"View your cars here",
-        "noCars":"You have no cars",
-        "noCarsDesc":"Looks like you have no cars available for rent.",
-        "cancel": "remove from database",
-        "removed":"'Car is removed from the database",
-        "delete":"Delete a car",
-        "favYes":"Car has been added to your favorites.",
-        "favNo":"Car has been removed from your favorites.",
-        "error":"Something went wrong. Please try again later."
-    },
-    "rentModal":{
-        "main":"hyra en bil",
-        "title":"Vilken av dessa beskriver din bil bäst?",
-        "pick":"Pick a category",
-        "Lsuv":"List of SUVs",
-        "Lconv":"List of Convertibles",
-        "Lelec":"List of Electric cars",
-        "Lminivan":"List of Minivans",
-        "Lpickup":"List of Pickup trucks",
-        "L4wheel":"List of 4-wheel drives",
-        "Lsports":"List of Sports cars",
-        "locationTitle":"Where is your car parked?",
-        "locationDesc":"Help renters find your car",
-        "infoTitle":"Share some basics about your car",
-        "passangerTitle":"Passanger",
-        "passangerDesc":"How many passangers can fit in your car?",
-        "cylinderTitle":"Cylinder",
-        "cylinderDesc":"How many cylinders does your car have?",
-        "mileageTitle":"Mileage",
-        "mileageDesc":"How many miles has your car been driven?",
-        "fuelTitle":"Select Fuel Type",
-        "drivenTitle":"Select Driven Type",
-        "autoTitle": "Auto / Manual",
-        "imageTitle":"Add a photo of your car",
-        "imageUpload":"Click to upload",
-        "citySelect":"Anywhere",
-        "descTitle":"Describe your car",
-        "descDesc":"Short and sweet works best!",
-        "titleTitle":"Title",
-        "modal":"Model of the car",
-        "maker":"Maker of the car",
-        "made":"When was it made?",
-        "priceTitle":"Now, set your price",
-        "priceDesc":"How much do you charge per hour?",
-        "price":"Price",
-        "created":"Car listing is created!",
-        "failed":"Something went wrong. Please try again later.",
-        "create":"Create sv",
-        "next":"Next sv",
-        "back":"Back sv"
-    },
-    "navBar":{
-        "trips":"My trips",
-        "reservations":"My reservations",
-        "favorites":"My favorites",
-        "cars":"My cars",
-        "car":"Add a car",
-        "service":"Add a service",
-        "reservedOffers":"My reserved services",
-        "offers":"My offers",
-        "equipment":"Add a equipment",
-        "reservedEquipment":"Things I bought",
-        "myEquipment":"My equipments",
-        "logout":"Logout",
-        "login":"Login",
-        "signup":"Signup"
-    },
-    "serviceReservation":{
-        "title":"Reserve a service",
-        "desc":"Reserve a service here",
-        "noServices":"You have no services",
-        "noServicesDesc":"Looks like you havent reserved any services.",
-        "cancel": "Cancel reservation"
-    },
-    "serviceOffers":{
-        "title":"Offers",
-        "desc":"Offers on your service",
-        "noServices":"You have no offers",
-        "noServicesDesc":"Looks like you havent received any offers.",
-        "cancel": "Cancel reservation"
-    },
-    "repairModal":{
-        "title":"Which of these best describes your service?",
-        "pick":"Pick a category",
-        "locationTitle":"Where is your you located?",
-        "locationDesc":"Help renters find your service",
-        "photoTitle":"Add a photo of your service",
-        "descTitle":"Describe your service",
-        "descDesc":"Short and sweet works best!",
-        "titleTitle":"Title",
-        "desc":"Description",
-        "priceTitle":"Now, set your price",
-        "priceDesc":"How much do you charge per hour?",
-        "price":"Price",
-        "createService":"Create a new service",
-        "created":"Service listing is created!",
-        "failed":"Something went wrong. Please try again later.",
-        "create":"Create",
-        "next":"Next",
-        "back":"Back"
-    },
-    "equipmentModal":{
-        "categoryTitle":"What type of equipment are you selling?",
-        "pick":"Pick a category",
-        "photoTitle":"Add a photo of your equipment",
-        "descTitle":"Describe your equipment",
-        "descDesc":"Short and sweet works best!",
-        "titleTitle":"Title",
-        "desc":"Description",
-        "priceTitle":"Now, set your price and quantity",
-        "price":"Price",
-        "quantity":"Quantity",
-        "quantityDesc":"How many of these you are selling?",
-        "createEquipment":"Sell your equipment",
-        "created":"Equipment listing is created!",
-        "failed":"Something went wrong. Please try again later.",
-        "create":"Create",
-        "next":"Next",
-        "back":"Back"
-    },
-    "equipmentReservation":{
-        "title":"Reserved equipments",
-        "desc":"Bookings on your equipment",
-        "noServices":"No equipments found",
-        "noServicesDesc":"Looks like you havent bought any equipments.",
-        "cancel": "Cancel reservation"
-    },
-    "myEquipment":{
-        "title":"My equipments",
-        "desc":"List of your equipments",
-        "noEquipment":"No equipments found",
-        "noEquipmentDesc":"Looks like you havent advertize any equipments.",
-        "cancel": "Cancel reservation",
-        "removed":"Equipment is removed from database",
-        "delete":"Delete equipment"
-    },
-    "login":{
-        "title":"Welcome back!",
-        "desc":"Login to your account",
-        "email":"Email",
-        "password":"Password",
-        "login":"Login",
-        "signup":"Create an account",
-        "signupTitle":"First time using Turbo?",
-        "failed":"Login failed. Please try again later.",
-        "success":"You are now logged in!",
-        "google":"Login with Google",
-        "github":"Login with Github",
-        "continue":"Continue"
-    },
-    "register":{
-        "title":"Create an account",
-        "desc":"Welcome to Turbo Car Rental",
-        "toast":"Account created successfully!",
-        "name":"Name",
-        "google":"Continue with Google",
-        "github":"Continue with Github",
-        "account":"Already have an account?",
-        "login":"Login",
-        "register":"Register"
-    },
-    "searchModal":{
-        "search":"Search",
-        "next":"Next",
-        "back":"Back",
-        "headingTitle":"Where are you going?",
-        "headingDesc":"Find the perfect car for your next trip",
-        "dateTitle":"When do you plan to go?",
-        "dateDesc":"Select the dates you need the car",
-        "infoTitle":"More information",
-        "infoDesc":"Find the perfect car for your next trip",
-        "passangerTitle":"Passanger",
-        "passangerDesc":"How many people are traveling?",
-        "fuelType":"Fuel Type",
-        "transmissionType":"Transmission Type",
-        "cylinderTitle":"Cylinder",
-        "cylinderDesc":"How many cylinders does your car have?",
-        "title":"Filters"
-    },
-    "repairSearchModal":{
-        "search":"Search",
-        "next":"Next",
-        "back":"Back",
-        "headingTitle":"Where are you now?",
-        "headingDesc":"Find the perfect service for your car",
-        "dateTitle":"When do you need the service?",
-        "filters":"Filters"
-    },
-    "empty":{
-        "title":"No exact matches",
-        "desc":"Try changing or removing some of your filters.",
-        "button":"Remove all filters"
-    },
-    "listingClient":{
-        "back": "Back",
-        "order": "Order by",
-        "by": "by",
-        "day": "per day",
-        "reserve": "Reserve",
-        "total": "Total",
-        "offer": "Offered by",
-        "buy"  : "Buy",
-        "youB":"You bought this on",
-        "price":"per price"
-
-    },
-    "equipmentModel":{
-        "breakTitle":"Break",
-        "breakDesc":"Breaks items for your car",
-        "wheelTitle":"Wheel",
-        "wheelDesc":"Wheel items for your car",
-        "batteryTitle":"Battery",
-        "batteryDesc":"Battery items for your car",
-        "doorTitle":"Door",
-        "doorDesc":"Door items for your car",
-        "seatTitle":"Seat",
-        "seatDesc":"Seat items for your car"
+    "testimonials": {
+        "Leslie": "Jag älskar hur användarvänlig den här biluthyrningsappen är. Den gjorde det otroligt enkelt att hitta och boka en bil. Appens gränssnitt är intuitivt och hela hyrprocessen var smidig.",
+        "Ethan":"Imponerad av det breda utbudet av bilalternativ som finns tillgängliga i appen. Från budgetvänligt till lyx, det finns något för alla. Dessutom var kundtjänsten lyhörd och hjälpsam.",
+        "Olivia":"Hade en fantastisk roadtrip tack vare denna biluthyrningsapp. Upphämtning och avlämning var bekvämt och priserna var rimliga. Rekommenderar den definitivt till vänner och familj",
+        "Lindsay":"Appens realtidsuppdateringar om fordonstillgänglighet sparade mig mycket tid. Jag kunde hitta och boka en bil med kort varsel. Bra service och transparent prissättning!",
+        "Courtney":"Smidig hyresupplevelse från början till slut. Appens funktioner, som GPS-navigering och bränslespårning, gav ett mervärde till min resa. Kommer att vara min favorit för framtida uthyrningar.",
+        "Tom":"Snabbt svar från kundsupport när jag hade en fråga. Teamet var vänligt och löste mitt problem snabbt. Uppskattar den utmärkta servicen!",
+        "Whitney":"Biluthyrningsappen överträffade mina förväntningar. Hyrprocessen var snabb och bilen var ren och välskött. Kommer säkert att använda den igen!",
+        "Leonard":"Biluthyrningsappen är enkel att använda och har ett enkelt, okomplicerat gränssnitt. Jag kunde boka min bil på under en minut. Rekommenderas varmt!",
+        "Floyd":"Älskar lojalitetsprogrammet! Fick poäng på min hyra och fick rabatt på min nästa bokning. Det är fantastiskt att se att appen belönar lojala kunder.",
+        "Emily":"Jag uppskattade flexibiliteten att enkelt ändra min bokning via appen. Det gjorde det stressfritt att justera mina resplaner. Rekommenderas varmt för bekvämligheten."
     }
+  },
+  "notFound": {
+    "title": "Det verkar som att du har hittat dörren till det stora ingenting",
+    "desc": "Förlåt för det! "
+  },
+  "unauthorized": {
+    "title": "Du har inte behörighet att se den här sidan",
+    "desc": "Logga in för att se den här sidan"
+  },
+  "trips": {
+    "title": "Resor",
+    "desc": "Se dina resor här",
+    "noTrips": "Du har inga resor",
+    "noTripsDesc": "Det verkar som att du inte har bokat några resor.",
+    "cancel": "Avboka bokning"
+  },
+  "favorites": {
+    "title": "Favoriter",
+    "desc": "Lista över bilar du favorit!",
+    "noFavorites": "Du har inga favoriter",
+    "noFavoritesDesc": "Du verkar inte ha favoritmarkerat några resor. ",
+    "cancel": "ta bort från favoriter"
+  },
+  "reservations": {
+    "title": "Bokningar",
+    "desc": "Se dina bokningar här",
+    "noReservations": "Du har inga reservationer",
+    "noReservationsDesc": "Du verkar inte ha några reservationer.",
+    "cancel": "Avboka bokning"
+  },
+  "cars": {
+    "title": "Bilar",
+    "desc": "Se dina bilar här",
+    "noCars": "Du har inga bilar",
+    "noCarsDesc": "Det verkar som att du inte har några bilar att hyra.",
+    "cancel": "ta bort från databasen",
+    "removed": "'Bilen har tagits bort från databasen",
+    "delete": "Ta bort en bil",
+    "favYes": "Bil har lagts till i dina favoriter.",
+    "favNo": "Bilen har tagits bort från dina favoriter.",
+    "error": "Något gick fel. "
+  },
+  "rentModal": {
+    "main": "Hyra en bil",
+    "title": "Vilken av dessa beskriver din bil bäst?",
+    "pick": "Välj en kategori",
+    "Lsuv": "Lista över stadsjeepar",
+    "Lconv": "Lista över konvertibler",
+    "Lelec": "Lista över elbilar",
+    "Lminivan": "Lista över minivans",
+    "Lpickup": "Lista över pickupbilar",
+    "L4wheel": "Lista över 4-hjulsdrifter",
+    "Lsports": "Lista över sportbilar",
+    "locationTitle": "Var står din bil parkerad?",
+    "locationDesc": "Hjälp hyresgäster att hitta din bil",
+    "infoTitle": "Dela några grunder om din bil",
+    "passangerTitle": "Passagerare",
+    "passangerDesc": "Hur många passagerare får du plats i din bil?",
+    "cylinderTitle": "Cylinder",
+    "cylinderDesc": "Hur många cylindrar har din bil?",
+    "mileageTitle": "Miltal",
+    "mileageDesc": "Hur många mil har din bil körts?",
+    "fuelTitle": "Välj Bränsletyp",
+    "drivenTitle": "Välj Driven Type",
+    "autoTitle": "Auto / Manuell",
+    "imageTitle": "Lägg till ett foto av din bil",
+    "imageUpload": "Klicka för att ladda upp",
+    "citySelect": "Var som helst",
+    "descTitle": "Beskriv din bil",
+    "descDesc": "Kort och gott funkar bäst!",
+    "titleTitle": "Titel",
+    "modal": "Modell av bilen",
+    "maker": "Tillverkare av bilen",
+    "made": "När gjordes den?",
+    "priceTitle": "Nu, ställ in ditt pris",
+    "priceDesc": "Hur mycket laddar du per timme?",
+    "price": "Pris",
+    "created": "Billista har skapats!",
+    "failed": "Något gick fel. ",
+    "create": "Skapa",
+    "next": "Nästa",
+    "back": "Tillbaka"
+  },
+  "navBar": {
+    "trips": "Mina resor",
+    "reservations": "Mina reservationer",
+    "favorites": "Mina favoriter",
+    "cars": "Mina bilar",
+    "car": "Lägg till en bil",
+    "service": "Lägg till en tjänst",
+    "reservedOffers": "Mina reserverade tjänster",
+    "offers": "Mina erbjudanden",
+    "equipment": "Lägg till en utrustning",
+    "reservedEquipment": "Saker jag köpt",
+    "myEquipment": "Min utrustning",
+    "logout": "Logga ut",
+    "login": "Logga in",
+    "signup": "Bli Medlem"
+  },
+  "serviceReservation": {
+    "title": "Reserverade tjänster",
+    "desc": "Bokningar på din tjänst",
+    "noServices": "Du har inga tjänster",
+    "noServicesDesc": "Det verkar som att du inte har reserverat några tjänster.",
+    "cancel": "Avboka bokning"
+  },
+  "serviceOffers": {
+    "title": "Erbjudanden",
+    "desc": "Lista över dina erbjudanden",
+    "noServices": "Inga tjänster hittades",
+    "noServicesDesc": "Du verkar inte ha annonserat några tjänster.",
+    "cancel": "Avboka bokning"
+  },
+  "repairModal": {
+    "title": "Vilken av dessa beskriver bäst din tjänst?",
+    "pick": "Välj en kategori",
+    "locationTitle": "Var ligger du?",
+    "locationDesc": "Hjälp hyresgäster att hitta din tjänst",
+    "photoTitle": "Lägg till ett foto av din tjänst",
+    "descTitle": "Beskriv din tjänst",
+    "descDesc": "Kort och gott funkar bäst!",
+    "titleTitle": "Titel",
+    "desc": "Beskrivning",
+    "priceTitle": "Nu, ställ in ditt pris",
+    "priceDesc": "Hur mycket laddar du per timme?",
+    "price": "Pris",
+    "createService": "Skapa en ny tjänst",
+    "created": "Tjänsteförteckning har skapats!",
+    "failed": "Något gick fel. ",
+    "create": "Skapa",
+    "next": "Nästa",
+    "back": "Tillbaka"
+  },
+  "equipmentModal": {
+    "categoryTitle": "Vilken typ av utrustning säljer du?",
+    "pick": "Välj en kategori",
+    "photoTitle": "Lägg till ett foto av din utrustning",
+    "descTitle": "Beskriv din utrustning",
+    "descDesc": "Kort och gott funkar bäst!",
+    "titleTitle": "Titel",
+    "desc": "Beskrivning",
+    "priceTitle": "Nu, ställ in ditt pris och kvantitet",
+    "price": "Pris",
+    "quantity": "Kvantitet",
+    "quantityDesc": "Hur många av dessa säljer du?",
+    "createEquipment": "Sälj din utrustning",
+    "created": "Utrustningslista är skapad!",
+    "failed": "Något gick fel. ",
+    "create": "Skapa",
+    "next": "Nästa",
+    "back": "Tillbaka"
+  },
+  "equipmentReservation": {
+    "title": "Köpte utrustning",
+    "desc": "Lista över din köpta utrustning",
+    "noServices": "Ingen utrustning hittades",
+    "noServicesDesc": "Du verkar inte ha köpt någon utrustning.",
+    "cancel": "Avboka bokning"
+  },
+  "myEquipment": {
+    "title": "Min utrustning",
+    "desc": "Lista över din utrustning",
+    "noEquipment": "Ingen utrustning hittades",
+    "noEquipmentDesc": "Du verkar inte ha annonserat någon utrustning.",
+    "cancel": "Avboka bokning",
+    "removed": "Utrustning tas bort från databasen",
+    "delete": "Ta bort utrustning"
+  },
+  "login": {
+    "title": "Välkommen tillbaka!",
+    "desc": "Logga in på ditt konto",
+    "email": "E-post",
+    "password": "Lösenord",
+    "login": "Logga in",
+    "signup": "Skapa ett konto",
+    "signupTitle": "Första gången du använder Turbo?",
+    "failed": "Inloggningen misslyckades. ",
+    "success": "Du är nu inloggad!",
+    "google": "Logga in med Google",
+    "github": "Logga in med Github",
+    "continue": "Fortsätta"
+  },
+  "register": {
+    "title": "Skapa ett konto",
+    "desc": "Välkommen till Turbo Car Rental",
+    "toast": "Kontot har skapats!",
+    "name": "namn",
+    "google": "Fortsätt med Google",
+    "github": "Fortsätt med Github",
+    "account": "Har du redan ett konto?",
+    "login": "Logga in",
+    "register": "Registrera"
+  },
+  "searchModal": {
+    "search": "Sök",
+    "next": "Nästa",
+    "back": "Tillbaka",
+    "headingTitle": "Vart ska du?",
+    "headingDesc": "Hitta den perfekta bilen för din nästa resa",
+    "dateTitle": "När planerar du att åka?",
+    "dateDesc": "Välj de datum du behöver bilen",
+    "infoTitle": "Mer information",
+    "infoDesc": "Hitta den perfekta bilen för din nästa resa",
+    "passangerTitle": "Passagerare",
+    "passangerDesc": "Hur många människor reser?",
+    "fuelType": "Bränsletyp",
+    "transmissionType": "Transmissionstyp",
+    "cylinderTitle": "Cylinder",
+    "cylinderDesc": "Hur många cylindrar har din bil?",
+    "title": "Filter"
+  },
+  "repairSearchModal": {
+    "search": "Sök",
+    "next": "Nästa",
+    "back": "Tillbaka",
+    "headingTitle": "Var är du nu?",
+    "headingDesc": "Hitta den perfekta servicen för din bil",
+    "dateTitle": "När behöver du tjänsten?",
+    "filters": "Filter"
+  },
+  "empty": {
+    "title": "Inga exakta matchningar",
+    "desc": "Försök att ändra eller ta bort några av dina filter.",
+    "button": "Ta bort alla filter"
+  },
+  "listingClient": {
+    "back": "Tillbaka",
+    "order": "Sortera efter",
+    "by": "förbi",
+    "day": "per dag",
+    "reserve": "Boka",
+    "total": "Total",
+    "offer": "Erbjuds av",
+    "buy": "köpa",
+    "youB": "Du köpte den här",
+    "price": "per pris"
+  },
+  "equipmentModel": {
+    "breakTitle": "Ha sönder",
+    "breakDesc": "Bryter föremål till din bil",
+    "wheelTitle": "Hjul",
+    "wheelDesc": "Hjulartiklar till din bil",
+    "batteryTitle": "Batteri",
+    "batteryDesc": "Batteriartiklar till din bil",
+    "doorTitle": "Dörr",
+    "doorDesc": "Dörrartiklar till din bil",
+    "seatTitle": "Plats",
+    "seatDesc": "Sätesartiklar till din bil"
+  }
 }

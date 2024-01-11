@@ -26,26 +26,26 @@ const Home = async ({
       description: `${dictionary.Home.services.services[0].desc}`,
       imageSrc: 'https://images.unsplash.com/photo-1555695232-57d88cacdfa5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       imageAlt: `${dictionary.Home.services.services[0].title}`,
-      href: '/search',
+      href: `${lang}/searchCar`,
     },
     {
       name: `${dictionary.Home.services.services[1].title}`,
       description: `${dictionary.Home.services.services[1].desc}`,
       imageSrc: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       imageAlt: `${dictionary.Home.services.services[1].title}`,
-      href: '/searchRepair',
+      href: `${lang}/searchRepair`,
     },
     {
       name: `${dictionary.Home.services.services[2].title}`,
       description: `${dictionary.Home.services.services[2].desc}`,
       imageSrc: 'https://images.unsplash.com/photo-1606577924006-27d39b132ae2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhciUyMHNlcnZpY2V8ZW58MHx8MHx8fDA%3D',
       imageAlt: `${dictionary.Home.services.services[2].title}`,
-      href: '/searchEquipment',
+      href: `${lang}/searchEquipment`,
     },
   ]
 
   const featuredTestimonial = {
-    body: 'Excellent experience with the car rental app! The booking process was quick and hassle-free, and the car was in great condition. Will definitely use it again!',
+    body: `${dictionary.Home.featuredTestimonial.title}`,
     author: {
       name: 'Brenna Goyette',
       handle: 'brennagoyette',
@@ -195,7 +195,7 @@ const Home = async ({
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
               <h2 id="cservices-heading" className="text-2xl font-bold text-gray-900">
-                Services
+                {dictionary.Home.services.title}
               </h2>
 
               <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
@@ -278,7 +278,7 @@ const Home = async ({
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-xl sm:text-center">
                 <p className="mt-2 pt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  We have worked with thousands of amazing people
+                  {dictionary.Home.testimonialsTitle}
                 </p>
               </div>
               <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">

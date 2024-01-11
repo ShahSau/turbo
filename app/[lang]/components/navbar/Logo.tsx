@@ -4,12 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-function Logo() {
+function Logo({
+  lang
+}:{
+  lang: any
+}) {
   const router = useRouter();
 
   return (
     <Image
-      onClick={() => router.push('/')}
+      onClick={() => router.push('/'+lang+'/')}
       className="block cursor-pointer"
       src="/images/logo.png"
       height="100"
