@@ -9,7 +9,7 @@ import { IoMdSearch } from "react-icons/io";
 function Search() {
   const searchModel = useRepairSearchModal();
   const pathname = usePathname();
-  console.log(pathname);
+  
   const isMainPage = pathname === '/en/searchRepair' || pathname === '/fi/searchRepair' || pathname === '/sv/searchRepair' || pathname === '/de/searchRepair';
 
   if (!isMainPage) {
