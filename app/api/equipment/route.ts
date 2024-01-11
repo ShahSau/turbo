@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import { NextResponse } from 'next/server';
 
-import prisma from '@/app/libs/prismadb';
-import getCurrentUser from '@/app/actions/getCurrentUser';
+import prisma from '@/app/[lang]/libs/prismadb';
+import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 
 export async function POST(
   request: Request,

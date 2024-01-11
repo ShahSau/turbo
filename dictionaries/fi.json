@@ -1,0 +1,286 @@
+{
+    "Home":{
+        "title":"Focus on what matters fi",
+        "desc":"Welcome to Turbo, where convenience meets mobility! Our user-friendly platform empowers you to explore the world on your terms, offering a seamless and hassle-free car rental experience. Discover the freedom to go wherever your journey takes you with our diverse fleet of vehicles, ranging from sleek sedans to spacious SUVs.",
+        "services":{
+            "title":"Our Services",
+            "services":[
+                {
+                    "title":"Car Rental",
+                    "desc":"Car rental made easy with Turbo."
+                },
+                {
+                    "title":"Car Repair",
+                    "desc":"Best car repair services in town."
+                },
+                {
+                    "title":"Shop",
+                    "desc":"Premium gear for professionals and hobbyists alike."
+                }
+            ]
+        },
+        "featuredTestimonial":{
+            "title":"Excellent experience with the car rental app! The booking process was quick and hassle-free, and the car was in great condition. Will definitely use it again!"
+        },
+        "testimonials":{
+            "Leslie": "I love how user-friendly this car rental app is. It made finding and reserving a car incredibly easy. The app's interface is intuitive, and the entire rental process was smooth.",
+            "Ethan":"Impressed with the wide range of car options available on the app. From budget-friendly to luxury, there's something for everyone. Plus, the customer service was responsive and helpful.",
+            "Olivia":"Had a fantastic road trip thanks to this car rental app. The pick-up and drop-off were convenient, and the rates were reasonable. Definitely recommending it to friends and family",
+            "Lindsay":"The app's real-time updates on vehicle availability saved me a lot of time. I was able to find and book a car on short notice. Great service and transparent pricing!",
+            "Courtney":"Smooth rental experience from start to finish. The app's features, like GPS navigation and fuel tracking, added value to my journey. Will be my go-to for future rentals.",
+            "Tom":"Quick response from customer support when I had a query. The team was friendly and resolved my issue promptly. Appreciate the excellent service!",
+            "Whitney":"The car rental app exceeded my expectations. The rental process was quick, and the car was clean and well-maintained. Will use it again for sure!",
+            "Leonard":"The car rental app is easy to use and has a simple, straightforward interface. I was able to book my car in under a minute. Highly recommended!",
+            "Floyd":"Love the loyalty program! Earned points on my rental and got a discount on my next booking. It's great to see the app rewarding loyal customers.",
+            "Emily":"I appreciated the flexibility to modify my reservation easily through the app. It made adjusting my travel plans stress-free. Highly recommended for its convenience."
+        }
+    },
+    "notFound":{
+        "title":"Looks like you've found the doorway to the great nothing",
+        "desc":"Sorry about that! Please visit our homepage to get where you need to go"
+    },
+    "unauthorized":{
+        "title":"You are not authorized to view this page",
+        "desc":"Please login to view this page"
+    },
+    "trips":{
+        "title":"Trips finn",
+        "desc":"View your trips here",
+        "noTrips":"You have no trips",
+        "noTripsDesc":"You have no trips. Please book a trip to view it here",
+        "cancel": "EI reservation"
+    },
+    "favorites":{
+        "title":"Favorites",
+        "desc":"View your favorites here",
+        "noFavorites":"You have no favorites",
+        "noFavoritesDesc":"Looks like you havent favorited any trips.",
+        "cancel": "remove from favorites"
+    },
+    "reservations":{
+        "title":"Reservations",
+        "desc":"View your reservations here",
+        "noReservations":"You have no reservations",
+        "noReservationsDesc":"Looks like you have no reservations.",
+        "cancel": "Cancel fi reservation"
+    },
+    "cars":{
+        "title":"Cars",
+        "desc":"View your cars here",
+        "noCars":"You have no cars",
+        "noCarsDesc":"Looks like you have no cars available for rent.",
+        "cancel": "remove from database",
+        "removed":"'Car is removed from the database",
+        "delete":"Delete a car",
+        "favYes":"Car has been added to your favorites.",
+        "favNo":"Car has been removed from your favorites.",
+        "error":"Something went wrong. Please try again later."
+    },
+    "rentModal":{
+        "main":"Vuokrata auton",
+        "title":"Mikä näistä kuvaa parhaiten autoasi?",
+        "pick":"Pick a category",
+        "Lsuv":"List of SUVs",
+        "Lconv":"List of Convertibles",
+        "Lelec":"List of Electric cars",
+        "Lminivan":"List of Minivans",
+        "Lpickup":"List of Pickup trucks",
+        "L4wheel":"List of 4-wheel drives",
+        "Lsports":"List of Sports cars",
+        "locationTitle":"Where is your car parked?",
+        "locationDesc":"Help renters find your car",
+        "infoTitle":"Share some basics about your car",
+        "passangerTitle":"Passanger",
+        "passangerDesc":"How many passangers can fit in your car?",
+        "cylinderTitle":"Cylinder",
+        "cylinderDesc":"How many cylinders does your car have?",
+        "mileageTitle":"Mileage",
+        "mileageDesc":"How many miles has your car been driven?",
+        "fuelTitle":"Select Fuel Type",
+        "drivenTitle":"Select Driven Type",
+        "autoTitle": "Auto / Manual",
+        "imageTitle":"Add a photo of your car",
+        "imageUpload":"Click to upload",
+        "citySelect":"Anywhere",
+        "descTitle":"Describe your car",
+        "descDesc":"Short and sweet works best!",
+        "titleTitle":"Title",
+        "modal":"Model of the car",
+        "maker":"Maker of the car",
+        "made":"When was it made?",
+        "priceTitle":"Now, set your price",
+        "priceDesc":"How much do you charge per hour?",
+        "price":"Price",
+        "created":"Car listing is created!",
+        "failed":"Something went wrong. Please try again later.",
+        "create":"Create fi",
+        "next":"Next fi",
+        "back":"Back fi"
+    },
+    "navBar":{
+        "trips":"My trips",
+        "reservations":"My reservations",
+        "favorites":"My favorites",
+        "cars":"My cars",
+        "car":"Add a car",
+        "service":"Add a service",
+        "reservedOffers":"My reserved services",
+        "offers":"My offers",
+        "equipment":"Add a equipment",
+        "reservedEquipment":"Things I bought",
+        "myEquipment":"My equipments",
+        "logout":"Logout",
+        "login":"Login",
+        "signup":"Signup"
+    },
+    "serviceReservation":{
+        "title":"Reserve a service",
+        "desc":"Reserve a service here",
+        "noServices":"You have no services",
+        "noServicesDesc":"Looks like you havent reserved any services.",
+        "cancel": "Cancel reservation"
+    },
+    "serviceOffers":{
+        "title":"Offers",
+        "desc":"Offers on your service",
+        "noServices":"You have no offers",
+        "noServicesDesc":"Looks like you havent received any offers.",
+        "cancel": "Cancel reservation"
+    },
+    "repairModal":{
+        "title":"Which of these best describes your service?",
+        "pick":"Pick a category",
+        "locationTitle":"Where is your you located?",
+        "locationDesc":"Help renters find your service",
+        "photoTitle":"Add a photo of your service",
+        "descTitle":"Describe your service",
+        "descDesc":"Short and sweet works best!",
+        "titleTitle":"Title",
+        "desc":"Description",
+        "priceTitle":"Now, set your price",
+        "priceDesc":"How much do you charge per hour?",
+        "price":"Price",
+        "createService":"Create a new service",
+        "created":"Service listing is created!",
+        "failed":"Something went wrong. Please try again later.",
+        "create":"Create",
+        "next":"Next",
+        "back":"Back"
+    },
+    "equipmentModal":{
+        "categoryTitle":"What type of equipment are you selling?",
+        "pick":"Pick a category",
+        "photoTitle":"Add a photo of your equipment",
+        "descTitle":"Describe your equipment",
+        "descDesc":"Short and sweet works best!",
+        "titleTitle":"Title",
+        "desc":"Description",
+        "priceTitle":"Now, set your price and quantity",
+        "price":"Price",
+        "quantity":"Quantity",
+        "quantityDesc":"How many of these you are selling?",
+        "createEquipment":"Sell your equipment",
+        "created":"Equipment listing is created!",
+        "failed":"Something went wrong. Please try again later.",
+        "create":"Create",
+        "next":"Next",
+        "back":"Back"
+    },
+    "equipmentReservation":{
+        "title":"Reserved equipments",
+        "desc":"Bookings on your equipment",
+        "noServices":"No equipments found",
+        "noServicesDesc":"Looks like you havent bought any equipments.",
+        "cancel": "Cancel reservation"
+    },
+    "myEquipment":{
+        "title":"My equipments",
+        "desc":"List of your equipments",
+        "noEquipment":"No equipments found",
+        "noEquipmentDesc":"Looks like you havent advertize any equipments.",
+        "cancel": "Cancel reservation",
+        "removed":"Equipment is removed from database",
+        "delete":"Delete equipment"
+    },
+    "login":{
+        "title":"Welcome back!",
+        "desc":"Login to your account",
+        "email":"Email",
+        "password":"Password",
+        "login":"Login",
+        "signup":"Create an account",
+        "signupTitle":"First time using Turbo?",
+        "failed":"Login failed. Please try again later.",
+        "success":"You are now logged in!",
+        "google":"Login with Google",
+        "github":"Login with Github",
+        "continue":"Continue"
+    },
+    "register":{
+        "title":"Create an account",
+        "desc":"Welcome to Turbo Car Rental",
+        "toast":"Account created successfully!",
+        "name":"Name",
+        "google":"Continue with Google",
+        "github":"Continue with Github",
+        "account":"Already have an account?",
+        "login":"Login",
+        "register":"Register"
+    },
+    "searchModal":{
+        "search":"Search",
+        "next":"Next",
+        "back":"Back",
+        "headingTitle":"Where are you going?",
+        "headingDesc":"Find the perfect car for your next trip",
+        "dateTitle":"When do you plan to go?",
+        "dateDesc":"Select the dates you need the car",
+        "infoTitle":"More information",
+        "infoDesc":"Find the perfect car for your next trip",
+        "passangerTitle":"Passanger",
+        "passangerDesc":"How many people are traveling?",
+        "fuelType":"Fuel Type",
+        "transmissionType":"Transmission Type",
+        "cylinderTitle":"Cylinder",
+        "cylinderDesc":"How many cylinders does your car have?",
+        "title":"Filters"
+    },
+    "repairSearchModal":{
+        "search":"Search",
+        "next":"Next",
+        "back":"Back",
+        "headingTitle":"Where are you now?",
+        "headingDesc":"Find the perfect service for your car",
+        "dateTitle":"When do you need the service?",
+        "filters":"Filters"
+    },
+    "empty":{
+        "title":"No exact matches",
+        "desc":"Try changing or removing some of your filters.",
+        "button":"Remove all filters"
+    },
+    "listingClient":{
+        "back": "Back",
+        "order": "Order by",
+        "by": "by",
+        "day": "per day fi",
+        "reserve": "Reserve",
+        "total": "Total",
+        "offer": "Offered by",
+        "buy": "Buy",
+        "youB":"You bought this on",
+        "price":"per price"
+    },
+    "equipmentModel":{
+        "breakTitle":"Break",
+        "breakDesc":"Breaks items for your car",
+        "wheelTitle":"Wheel",
+        "wheelDesc":"Wheel items for your car",
+        "batteryTitle":"Battery",
+        "batteryDesc":"Battery items for your car",
+        "doorTitle":"Door",
+        "doorDesc":"Door items for your car",
+        "seatTitle":"Seat",
+        "seatDesc":"Seat items for your car"
+    }
+}
