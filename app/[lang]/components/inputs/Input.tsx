@@ -12,7 +12,7 @@ import {
   UseFormRegister,
 } from 'react-hook-form';
 import { BiDollar } from 'react-icons/bi';
-
+import { LuEuro } from "react-icons/lu";
 interface InputProps {
   id: string;
   label: string;
@@ -20,8 +20,9 @@ interface InputProps {
   disabled?: boolean;
   formatPrice?: boolean;
   required?: boolean;
-  register: UseFormRegister<FieldValues>,
-  errors: FieldErrors
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors;
+  lang?: any;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -33,13 +34,25 @@ const Input: React.FC<InputProps> = ({
   register,
   required,
   errors,
+  lang,
 }) => (
   <div className="w-full relative">
-    {formatPrice && (
+    {formatPrice && lang === 'en' && (
     <BiDollar
       size={24}
       className=" text-neutral-700 absolute top-5 left-2"
     />
+    )}
+    {formatPrice && (lang === 'de' || lang ==='fi')  && (
+    <LuEuro
+      size={24}
+      className=" text-neutral-700 absolute top-5 left-2"
+    />
+    )}
+    {formatPrice && lang === 'sv' && (
+    <div className=" text-neutral-700 absolute top-5 left-2">
+      kr
+    </div>
     )}
     <input
       id={id}

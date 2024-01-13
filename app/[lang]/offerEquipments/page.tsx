@@ -21,6 +21,7 @@ const page = async({
         <EmptyState
           title={dictionary.unauthorized.title}
           subtitle={dictionary.unauthorized.desc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );
@@ -34,6 +35,7 @@ const page = async({
         <EmptyState
           title={dictionary.myEquipment.noEquipment}
           subtitle={dictionary.myEquipment.noEquipmentDesc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );

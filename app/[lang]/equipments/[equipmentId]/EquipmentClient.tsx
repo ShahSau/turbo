@@ -151,7 +151,7 @@ useEffect(() => {
       method: 'POST',
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
-        'X-RapidAPI-Key': '4306260519mshb7dc78a7fc080c9p1e7722jsnf1f17f91c9db',
+        'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || '',
         'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com'
       },
       body: new URLSearchParams({

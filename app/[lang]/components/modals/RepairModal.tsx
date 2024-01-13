@@ -26,7 +26,15 @@ enum STEPS {
     PRICE = 3,
 }
 
-
+const translate = async (url: RequestInfo | URL, options: RequestInit | undefined) => {
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 const RepairModal: React.FC<RepairModalProps>  = ({
   dictionary,
@@ -88,6 +96,14 @@ const RepairModal: React.FC<RepairModalProps>  = ({
     }
 
     setIsLoading(true);
+    if(lang !== 'en'){
+      if(lang === 'de' || lang === 'fi'){
+        data.price = Math.ceil(data.price * 1.10)
+      }
+      if(lang === 'sv'){
+        data.price = Math.ceil(data.price * 0.098)
+      }
+    }
 
     axios.post('/api/services', data)
       .then(() => {
@@ -209,6 +225,7 @@ const RepairModal: React.FC<RepairModalProps>  = ({
           register={register}
           errors={errors}
           required
+          lang={lang}
         />
       </div>
     );

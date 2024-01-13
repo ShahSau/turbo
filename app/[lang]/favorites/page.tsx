@@ -23,6 +23,7 @@ const ListingPage = async ({
         <EmptyState
           title={dictionary.unauthorized.title}
           subtitle={dictionary.unauthorized.desc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );
@@ -34,6 +35,7 @@ const ListingPage = async ({
         <EmptyState
           title={dictionary.favorites.noFavorites}
           subtitle={dictionary.favorites.noFavoritesDesc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );

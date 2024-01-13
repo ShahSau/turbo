@@ -26,6 +26,7 @@ const ListingPage = async ({
         <EmptyState
           title={dictionary.unauthorized.title}
           subtitle={dictionary.unauthorized.desc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );

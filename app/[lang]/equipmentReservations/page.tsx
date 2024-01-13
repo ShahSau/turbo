@@ -22,6 +22,7 @@ const ReservationsPage = async ({
         <EmptyState
           title={dictionary.unauthorized.title}
           subtitle={dictionary.unauthorized.desc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );
@@ -29,7 +30,7 @@ const ReservationsPage = async ({
 
   const reservations = await getEquipmentReservations({ authorId: currentUser.id });
 
-  console.log(lang)
+
 
   if (reservations.length === 0) {
     return (
@@ -37,6 +38,7 @@ const ReservationsPage = async ({
         <EmptyState
           title={dictionary.equipmentReservation.noServices}
           subtitle={dictionary.equipmentReservation.noServicesDesc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );

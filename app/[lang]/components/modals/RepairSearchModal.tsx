@@ -34,7 +34,7 @@ const RepairSearchModal: React.FC<RepairSearchModalProps> = ({
     const params = useSearchParams();
     const pathname = usePathname();
     const path = pathname?.split('/')[1];
-    console.log(path)
+    
   
     const [step, setStep] = useState(STEPS.LOCATION);
   

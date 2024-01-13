@@ -120,6 +120,15 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
 
     setIsLoading(true);
 
+    if(lang !== 'en'){
+      if(lang === 'de' || lang === 'fi'){
+        data.price = Math.ceil(data.price * 1.10)
+      }
+      if(lang === 'sv'){
+        data.price = Math.ceil(data.price * 0.098)
+      }
+    }
+
     axios.post('/api/equipment', data)
       .then(() => {
         toast.success(`${dictionary.equipmentModal.created}`);
@@ -237,6 +246,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
           register={register}
           errors={errors}
           required
+          lang = {lang}
         />
         <Counter
           onChange={(value) => setCustomValue('amount', value)}

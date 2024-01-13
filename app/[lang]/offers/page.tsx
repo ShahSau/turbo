@@ -19,6 +19,7 @@ const page = async({
         <EmptyState
           title={dictionary.unauthorized.title}
           subtitle={dictionary.unauthorized.desc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );
@@ -32,6 +33,7 @@ const page = async({
         <EmptyState
           title={dictionary.serviceOffers.noServices}
           subtitle={dictionary.serviceOffers.noServicesDesc}
+          dictionary={dictionary}
         />
       </ClientOnly>
     );

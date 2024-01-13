@@ -196,6 +196,14 @@ const RentModal: React.FC<RentModalProps> = ({
     }
 
     setIsLoading(true);
+    if(lang !== 'en'){
+      if(lang === 'de' || lang === 'fi'){
+        data.price = Math.ceil(data.price * 1.10)
+      }
+      if(lang === 'sv'){
+        data.price = Math.ceil(data.price * 0.098)
+      }
+    }
 
     axios.post('/api/listings', data)
       .then(() => {
@@ -350,7 +358,7 @@ const RentModal: React.FC<RentModalProps> = ({
         <hr />
         <Input
           id="model"
-          label={dictionary.rentModal.model}
+          label={dictionary.rentModal.modal}
           disabled={isLoading}
           register={register}
           errors={errors}
@@ -394,6 +402,7 @@ const RentModal: React.FC<RentModalProps> = ({
           register={register}
           errors={errors}
           required
+          lang = {lang}
         />
       </div>
     );
