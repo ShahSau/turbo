@@ -65,7 +65,7 @@ const CarsClient: React.FC<CarsClientProps> = ({
               actionId={car.id}
               onAction={onCancel}
               disabled={deletingId === car.id}
-              actionLabel={dictionary.listings.delete}
+              actionLabel={dictionary.delete}
               currentUser={currentUser}
               dictionary={dictionary}
               lang={language}

@@ -9,23 +9,23 @@ import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/dictionary';
 
 
-interface HomeProps {
+interface SearchProps {
     searchParams: IEquipmentParams,
-    lang: Locale
+    params: { lang: Locale }
   }
 
   const Search = async ({ 
     searchParams,
-    lang
-   }: HomeProps) => {
+    params,
+   }: SearchProps) => {
     const equipments = await getEquipments(searchParams);
     const currentUser = await getCurrentUser();
-    const dictionary = await getDictionary(lang);
+    const dictionary = await getDictionary(params.lang);
   
     if (equipments.length === 0) {
       return (
         <ClientOnly>
-          <EmptyState showReset urlLink='/searchEquipment'/>
+          <EmptyState showReset urlLink={`/${params.lang}/searchEquipment`} dictionary={dictionary}/>
         </ClientOnly>
       );
     }
@@ -41,7 +41,7 @@ interface HomeProps {
                 currentUser={currentUser}
                 key={equipment.id}
                 data={equipment}
-                lang={lang}
+                lang={params.lang}
                 dictionary={dictionary}
               />
             ))}

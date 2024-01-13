@@ -4,8 +4,6 @@ import React from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 import { FcAutomotive } from "react-icons/fc";
-import { FaCarTunnel } from "react-icons/fa6";
-import { IoSnowSharp } from "react-icons/io5";
 import { GiCarWheel,GiCarBattery,GiCarDoor,GiCarSeat } from "react-icons/gi";
 
 import Container from '../Container';
@@ -45,6 +43,7 @@ function CategoriesRepair() {
   const params = useSearchParams();
   const category = params?.get('category');
   const pathname = usePathname();
+  const path = pathname?.split('/')[1];
   const isMainPage = pathname === '/en/searchEquipment' || pathname === '/fi/searchEquipment' || pathname === '/sv/searchEquipment' || pathname === '/de/searchEquipment';
 
   //categories is only shown on the search page
@@ -63,6 +62,7 @@ function CategoriesRepair() {
             label={item.label}
             icon={item.icon}
             selected={category === item.label}
+            lang={path}
           />
         ))}
       </div>

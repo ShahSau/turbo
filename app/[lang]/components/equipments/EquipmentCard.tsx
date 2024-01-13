@@ -63,7 +63,7 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
     onAction?.(actionId);
   }, [disabled, onAction, actionId]);
 
-  const price = useMemo(() => {
+  let price = useMemo(() => {
     if (reservation) {
       return reservation.totalPrice;
     }
@@ -83,6 +83,13 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
   }, [reservation]);
 
 
+  if(lang === 'de' || lang === 'fi'){
+    price = data.price * 0.95
+  }
+  if(lang === 'sv'){
+    price = data.price * 10.26
+  }
+
 const dateTimeFormat = new Intl.DateTimeFormat('en', {
   year: 'numeric',
   month: 'long',
@@ -91,7 +98,7 @@ const dateTimeFormat = new Intl.DateTimeFormat('en', {
 
   return (
     <div
-      onClick={() => router.push(`/equipments/${data.id}`)}
+      onClick={() => router.push(`/${lang}/equipments/${data.id}`)}
       className="col-span-1 cursor-pointer group"
     >
       <div className="flex flex-col gap-2 w-full">
@@ -116,7 +123,7 @@ const dateTimeFormat = new Intl.DateTimeFormat('en', {
         </div>
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">
-            $
+            {dictionary.moneySign}
             {' '}
             {price}
           </div>

@@ -14,12 +14,14 @@ interface CategoryBoxRepairProps {
   icon: IconType,
   label: string;
   selected?: boolean;
+  lang?: string;
 }
 
 const CategoryBoxRepair: React.FC<CategoryBoxRepairProps> = ({
   icon: Icon,
   label,
   selected,
+  lang,
 }) => {
   const router = useRouter();
   const params = useSearchParams();
@@ -41,7 +43,7 @@ const CategoryBoxRepair: React.FC<CategoryBoxRepairProps> = ({
     }
 
     const url = qs.stringifyUrl({
-      url: '/searchEquipment',
+      url: `/${lang}/searchEquipment`,
       query: updatedQuery,
     }, { skipNull: true });
 

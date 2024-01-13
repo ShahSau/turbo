@@ -65,6 +65,8 @@ const ServiceReservationsClient: React.FC<ReservationsClientProps> = ({
                 reservation={reservation}
                 onAction={()=>onCancel(reservation.id)}
                 actionLabel={dictionary.serviceReservation.cancel}
+                dictionary={dictionary}
+                lang={locale}
             />
           ))}
         </div>

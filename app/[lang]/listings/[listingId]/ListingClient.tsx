@@ -6,6 +6,7 @@
 
 import axios from 'axios';
 import React, {
+  use,
   useCallback, useEffect, useMemo, useState,
 } from 'react';
 import { Range } from 'react-date-range';
@@ -114,6 +115,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
   
   ];
 
+
   const category = useMemo(() => categories.find((items) => items.label === listing.category), [listing.category]);
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
@@ -173,12 +175,33 @@ const ListingClient: React.FC<ListingClientProps> = ({
       ) + 1;
 
       if (dayCount && listing.price) {
-        setTotalPrice(dayCount * listing.price);
+        const days = dayCount * listing.price;
+        if(lang === 'en'){
+          setTotalPrice(days);
+        }
+        if (lang === 'de' || lang === 'fi'){
+          setTotalPrice(Math.ceil(days * 0.91));
+        }
+        if(lang === 'sv'){
+          setTotalPrice(Math.ceil(days * 10.26));
+        }
       } else {
-        setTotalPrice(listing.price);
+        if(lang === 'en'){
+          setTotalPrice(listing.price);
+        }
+        if (lang === 'de' || lang === 'fi'){
+          setTotalPrice(Math.ceil(listing.price * 0.91));
+        }
+        if(lang === 'sv'){
+          setTotalPrice(Math.ceil(listing.price * 10.26));
+        }
+        
+        //setTotalPrice(listing.price);
       }
     }
-  }, [dateRange, listing.price]);
+  }, [dateRange, listing.price, lang]);
+
+
 
   return (
     <Container>

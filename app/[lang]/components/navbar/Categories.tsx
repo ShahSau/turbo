@@ -61,6 +61,7 @@ function Categories() {
   const params = useSearchParams();
   const category = params?.get('category');
   const pathname = usePathname();
+  const path = pathname?.split('/')[1];
   const isMainPage = pathname === '/en/search' || pathname === '/fi/search' || pathname === '/sv/search' || pathname === '/de/search';
 
   //categories is only shown on the search page
@@ -79,6 +80,7 @@ function Categories() {
             label={item.label}
             icon={item.icon}
             selected={category === item.label}
+            lang={path}
           />
         ))}
       </div>

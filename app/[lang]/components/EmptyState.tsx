@@ -46,6 +46,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
           <Button
             outline
             label={dictionary.empty.button}
+            // label="Reset filters"
             onClick={() => router.push(`${urlLink}`)}
           />
         )}

@@ -10,23 +10,23 @@ import ClientOnly from '../components/ClientOnly';
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/dictionary';
 
-interface HomeProps {
+interface SearchProps {
     searchParams: IListingsParams,
-    lang: Locale
+    params: { lang: Locale }
   }
 
   const Search = async ({ 
+    params,
     searchParams,
-    lang
-  }: HomeProps) => {
+  }: SearchProps) => {
     const listings = await getListings(searchParams);
     const currentUser = await getCurrentUser();
-    const dictionary = await getDictionary(lang);
-  
+    const dictionary = await getDictionary(params.lang);
+    
     if (listings.length === 0) {
       return (
         <ClientOnly>
-          <EmptyState showReset urlLink='/search'/>
+          <EmptyState showReset urlLink={`/${params.lang}/search`} dictionary={dictionary}/>
         </ClientOnly>
       );
     }
@@ -43,7 +43,7 @@ interface HomeProps {
                 currentUser={currentUser}
                 key={listing.id}
                 data={listing}
-                lang={lang}
+                lang={params.lang}
                 dictionary={dictionary}
               />
             ))}

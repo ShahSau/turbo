@@ -48,6 +48,7 @@ const ServiceClient: React.FC<ListingClientProps> = ({
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
+  const [translateText, setTranslateText] = useState('');
 
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
@@ -120,12 +121,63 @@ const ServiceClient: React.FC<ListingClientProps> = ({
       ) + 1;
 
       if (dayCount && service.price) {
-        setTotalPrice(dayCount * service.price);
+        const days = dayCount * service.price;
+        if(lang === 'en'){
+          setTotalPrice(days);
+        }
+        if (lang === 'de' || lang === 'fi'){
+          setTotalPrice(Math.ceil(days * 0.91));
+        }
+        if(lang === 'sv'){
+          setTotalPrice(Math.ceil(days * 10.26));
+        }
       } else {
-        setTotalPrice(service.price);
+        if (lang === 'en'){
+          setTotalPrice(service.price);
+        }
+        if (lang === 'de' || lang === 'fi'){
+          setTotalPrice(Math.ceil(service.price * 0.91));
+        }
+        if (lang === 'sv'){
+          setTotalPrice(Math.ceil(service.price * 10.26));
+        }
       }
     }
   }, [dateRange, service.price]);
+
+  const translate = async (url: RequestInfo | URL, options: RequestInit | undefined) => {
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      setTranslateText(result.trans);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    if(lang !== 'en'){
+      const url = 'https://google-translate113.p.rapidapi.com/api/v1/translator/text';
+      const options = {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'X-RapidAPI-Key': '4306260519mshb7dc78a7fc080c9p1e7722jsnf1f17f91c9db',
+          'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com'
+        },
+        body: new URLSearchParams({
+          from: 'auto',
+          to: lang,
+          text: service.description
+        })
+      };
+      translate(url, options);
+  
+    }
+  
+  }, [dictionary]);
+
+
 
   return (
     <Container>
@@ -150,7 +202,7 @@ const ServiceClient: React.FC<ListingClientProps> = ({
             <ServiceInfo
               user={service.user}
               title={service.title}
-              description={service.description}
+              description={lang!== 'en' ? translateText :service.description}
               locationValue={service.locationValue}
               dictionary={dictionary}
               lang={lang}

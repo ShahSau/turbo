@@ -65,6 +65,8 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
               disabled={deletingId === reservation.id}
               actionLabel={dictionary.reservations.cancel}
               currentUser={currentUser}
+              lang={language}
+              dictionary={dictionary}
             />
           ))}
         </div>

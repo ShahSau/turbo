@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from "react";
 import { Range } from 'react-date-range';
 import { formatISO } from 'date-fns';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 import useSearchModal from "@/app/[lang]/hooks/useSearchModal";
 
@@ -59,6 +59,8 @@ const SearchModal: React.FC<SearchModalProps> = ({
     const router = useRouter();
     const searchModal = useSearchModal();
     const params = useSearchParams();
+    const pathname = usePathname();
+    const path = pathname?.split('/')[1];
   
     const [step, setStep] = useState(STEPS.LOCATION);
   
@@ -114,7 +116,7 @@ const SearchModal: React.FC<SearchModalProps> = ({
       }
   
       const url = qs.stringifyUrl({
-        url: '/search',
+        url: `/${path}/search`,
         query: updatedQuery,
       }, { skipNull: true });
   

@@ -42,6 +42,7 @@ const EqupimentClient: React.FC<ListingClientProps> = ({
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
+  const [translateText, setTranslateText] = useState('');
 
 const disabledDates =  service.amount !== 0 ? false : true;
 
@@ -123,9 +124,48 @@ const categories = [
 useEffect(() => {
   
 if(service.price && service.amount){
-    setTotalPrice(service.price * 1)  // for now we are allowing user to buy only one item at a time
+    //setTotalPrice(service.price * 1)  // for now we are allowing user to buy only one item at a time
+    if(lang === 'de' || lang === 'fi'){
+      setTotalPrice(service.price * 0.95)
+    }
+    if(lang === 'sv'){
+      setTotalPrice(service.price * 10.26)
+    }
 }
 }, [service.price, service.amount])
+
+const translate = async (url: RequestInfo | URL, options: RequestInit | undefined) => {
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    setTranslateText(result.trans);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+useEffect(() => {
+  if(lang !== 'en'){
+    const url = 'https://google-translate113.p.rapidapi.com/api/v1/translator/text';
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'X-RapidAPI-Key': '4306260519mshb7dc78a7fc080c9p1e7722jsnf1f17f91c9db',
+        'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com'
+      },
+      body: new URLSearchParams({
+        from: 'auto',
+        to: lang,
+        text: service.description
+      })
+    };
+    translate(url, options);
+
+  }
+
+}, [dictionary]);
+
 
 
   return (
@@ -150,7 +190,7 @@ if(service.price && service.amount){
             <EquipmentInfo
               user={service.user}
               title={service.title}
-              description={service.description}
+              description={lang !== 'en'? translateText : service.description}
               category={category}
               dictionary={dictionary}
               lang={lang}

@@ -82,7 +82,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <div
-      onClick={() => router.push(`/services/${data.id}`)}
+      onClick={() => router.push(`/${lang}/services/${data.id}`)}
       className="col-span-1 cursor-pointer group"
     >
       <div className="flex flex-col gap-2 w-full">
@@ -108,9 +108,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </div>
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">
-            $
+            {dictionary.moneySign}
             {' '}
-            {price}
+            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? Math.ceil(price*10.26) : price}
           </div>
           {!reservation && (
             <div className="font-light">{dictionary.listingClient.day}</div>

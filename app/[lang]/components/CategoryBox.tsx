@@ -14,12 +14,14 @@ interface CategoryBoxProps {
   icon: IconType,
   label: string;
   selected?: boolean;
+  lang?: string;
 }
 
 const CategoryBox: React.FC<CategoryBoxProps> = ({
   icon: Icon,
   label,
   selected,
+  lang,
 }) => {
   const router = useRouter();
   const params = useSearchParams();
@@ -41,7 +43,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     }
 
     const url = qs.stringifyUrl({
-      url: '/search',
+      url: `/${lang}/search`,
       query: updatedQuery,
     }, { skipNull: true });
 

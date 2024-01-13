@@ -78,17 +78,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
   }, [reservation]);
 
     if(lang === 'de' || lang === 'fi'){
-      data.price = data.price * 0.85
+      data.price = Math.ceil(data.price * 0.9)
     }
     if(lang === 'sv'){
-      data.price = data.price * 0.9
+      data.price = Math.ceil(data.price * 10.26)
      }
 
-    console.log(lang)
 
   return (
     <div
-      onClick={() => router.push(`/listings/${data.id}`)}
+      onClick={() => router.push(`/${lang}/listings/${data.id}`)}
       className="col-span-1 cursor-pointer group"
     >
       <div className="flex flex-col gap-2 w-full">
@@ -126,10 +125,10 @@ const ListingCard: React.FC<ListingCardProps> = ({
             {' '}
             {/* {price} */}
 
-            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? (price*0.9) : price}
+            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? Math.ceil(price*10.26) : price}
           </div>
           {!reservation && (
-            <div className="font-light">day</div>
+            <div className="font-light">{dictionary.listingClient.day}</div>
           )}
         </div>
         {onAction && actionLabel && (

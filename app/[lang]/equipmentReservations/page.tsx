@@ -29,6 +29,7 @@ const ReservationsPage = async ({
 
   const reservations = await getEquipmentReservations({ authorId: currentUser.id });
 
+  console.log(lang)
 
   if (reservations.length === 0) {
     return (

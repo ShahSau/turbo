@@ -10,21 +10,21 @@ import { getDictionary } from '@/dictionary';
 
 interface SearchProps {
   searchParams: IServicesParams,
-  lang: Locale
+  params: { lang: Locale }
 }
 
 const Search = async ({ 
   searchParams,
-  lang
+  params,
  }: SearchProps) => {
   const services = await getServices(searchParams);
   const currentUser = await getCurrentUser();
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(params.lang);
 
   if (services.length === 0) {
     return (
       <ClientOnly>
-        <EmptyState showReset urlLink='/searchRepair'/>
+        <EmptyState showReset urlLink={`/${params.lang}/searchRepair`} dictionary={dictionary}/>
       </ClientOnly>
     );
   }
@@ -41,7 +41,7 @@ const Search = async ({
               currentUser={currentUser}
               key={listing.id}
               data={listing}
-              lang={lang}
+              lang={params.lang}
               dictionary={dictionary}
             />
           ))}

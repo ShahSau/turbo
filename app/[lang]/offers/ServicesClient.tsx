@@ -66,6 +66,8 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
               disabled={deletingId === service.id}
               actionLabel={dictionary.serviceOffers.cancel}
               currentUser={currentUser}
+              lang={lang}
+              dictionary={dictionary}
             />
             )
           })}

@@ -36,7 +36,7 @@ EquipmentReservationProps
       <div className="text-2xl font-semibold">
         {dictionary.moneySign}
         {' '}
-        {price}
+        {totalPrice}
       </div>
     </div>
     <hr />

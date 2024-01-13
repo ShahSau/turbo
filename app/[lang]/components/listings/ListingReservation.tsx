@@ -40,7 +40,8 @@ ListingReservationProps
       <div className="text-2xl font-semibold">
         {dictionary.moneySign}
         {' '}
-        {price}
+        {/* {price} */}
+        {lang === 'en' ? price : lang === 'sv' ? Math.ceil(price * 10.26) : Math.ceil(price * 0.91)}
       </div>
       <div className="font-light text-neutral-600">
         {dictionary.listingClient.day}
