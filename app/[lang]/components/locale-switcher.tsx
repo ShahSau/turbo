@@ -66,7 +66,7 @@ export default function LocaleSwitcher() {
                       locale === 'en' ? <Flag code='us' height='24' width='24'/> : locale === 'sv' ? <Flag code={'se'} height='24' width='24'/> : <Flag code={locale} height='24' width='24'/>
                     }
                     {
-                      locale === 'en'? 'USA' : locale === 'sv' ? 'SE' : locale === 'de' ? 'DE' : 'FI'
+                      locale === 'en'? 'US' : locale === 'sv' ? 'SE' : locale === 'de' ? 'DE' : 'FI'
                     }
                     
                     {locale == language ?<div className='w-full h-full text-blue-700'><IoCheckmarkSharp /></div>  : null}

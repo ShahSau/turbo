@@ -41,6 +41,7 @@
     "react-select": "^5.7.2",
     "react-spinners": "^0.13.8",
     "react-world-flags": "^1.6.0",
+    "sharp": "^0.33.2",
     "stripe": "^14.10.0",
     "swr": "^2.1.1",
     "typescript": "5.0.2",
