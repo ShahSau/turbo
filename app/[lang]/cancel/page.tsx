@@ -46,3 +46,5 @@ const page = () => {
         </Container>
     )
 }
+
+export default page;
