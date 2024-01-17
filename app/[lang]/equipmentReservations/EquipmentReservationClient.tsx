@@ -3,22 +3,18 @@
 'use client';
 
 import React from 'react';
-import { SafeUser } from '@/app/[lang]/types';
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
 import EquipmentCard from '../components/equipments/EquipmentCard';
 
 interface ReservationsClientProps {
   reservations: any[],
-  // eslint-disable-next-line react/require-default-props
-  currentUser?: SafeUser | null,
   lang:string,
   dictionary: any,
 }
 
 const EquipmentReservationsClient: React.FC<ReservationsClientProps> = ({
   reservations,
-  currentUser,
   lang,
   dictionary,
 }) => (
@@ -34,7 +30,6 @@ const EquipmentReservationsClient: React.FC<ReservationsClientProps> = ({
 
         {reservations.map((reservation: any) => (
           <EquipmentCard
-            currentUser={currentUser}
             key={reservation.id}
             data={reservation.equipment}
             date={reservation.equipment.createdAt}

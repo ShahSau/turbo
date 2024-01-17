@@ -9,7 +9,7 @@ import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { SafeUser, SafeEquipment } from '@/app/[lang]/types';
+import { SafeEquipment } from '@/app/[lang]/types';
 
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
@@ -17,15 +17,12 @@ import EquipmentCard from '../components/equipments/EquipmentCard';
 
 interface ServicesClientProps {
   equipments: SafeEquipment[],
-  // eslint-disable-next-line react/require-default-props
-  currentUser?: SafeUser | null,
   lang: string,
   dictionary: any,
 }
 
 const EqupimentClient: React.FC<ServicesClientProps> = ({
   equipments,
-  currentUser,
   lang,
   dictionary,
 }) => {
@@ -67,7 +64,6 @@ const EqupimentClient: React.FC<ServicesClientProps> = ({
                 onAction={onCancel}
                 disabled={deletingId === service.id}
                 actionLabel={dictionary.myEquipment.delete}
-                currentUser={currentUser}
                 dictionary={dictionary}
                 lang={lang}
               />

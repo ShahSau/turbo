@@ -1,7 +1,7 @@
 import Container from '@/app/[lang]/components/Container';
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import React from 'react';
-import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
+
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import ClientOnly from '../components/ClientOnly';
@@ -18,7 +18,6 @@ const Search = async ({
   params,
 }: SearchProps) => {
   const equipments = await getEquipments(searchParams);
-  const currentUser = await getCurrentUser();
   const dictionary = await getDictionary(params.lang);
   if (equipments.length === 0) {
     return (
@@ -35,7 +34,6 @@ const Search = async ({
         >
           {equipments.map((equipment: any) => (
             <EquipmentCard
-              currentUser={currentUser}
               key={equipment.id}
               data={equipment}
               lang={params.lang}

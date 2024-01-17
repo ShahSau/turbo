@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
-import Image from 'next/image';
 import ClientOnly from './components/ClientOnly';
 
 function classNames(...classes: string[]) {
@@ -179,7 +178,7 @@ const Home = async ({
               </div>
             </div>
             <div className="h-48 w-full sm:h-64 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
-              <Image
+              <img
                 src="https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
                 className="h-full w-full object-cover object-center"
@@ -199,7 +198,7 @@ const Home = async ({
                   {services.map((service) => (
                     <div key={service.name} className="group relative">
                       <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                        <Image
+                        <img
                           src={service.imageSrc}
                           alt={service.imageAlt}
                           className="h-full w-full object-cover object-center"
@@ -283,7 +282,7 @@ const Home = async ({
                       <p>{`“${featuredTestimonial.body}”`}</p>
                     </blockquote>
                     <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
-                      <Image
+                      <img
                         className="h-10 w-10 flex-none rounded-full bg-gray-50"
                         src={featuredTestimonial.author.imageUrl}
                         alt="featured testimonial "
@@ -317,7 +316,7 @@ const Home = async ({
                                 <p>{`“${testimonial.body}”`}</p>
                               </blockquote>
                               <figcaption className="mt-6 flex items-center gap-x-4">
-                                <Image
+                                <img
                                   className="h-10 w-10 rounded-full bg-gray-50"
                                   src={testimonial.author.imageUrl}
                                   alt="testimonial author"

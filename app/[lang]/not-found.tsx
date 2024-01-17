@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 
 function NotFound() {
   return (
@@ -18,12 +18,12 @@ function NotFound() {
             </div>
           </div>
           <div>
-            <Image src="https://i.ibb.co/G9DC8S0/404-2.png" alt="404-page" />
+            <img src="https://i.ibb.co/G9DC8S0/404-2.png" alt="404-page" />
           </div>
         </div>
       </div>
       <div>
-        <Image src="https://i.ibb.co/ck1SGFJ/Group.png" alt="not found" />
+        <img src="https://i.ibb.co/ck1SGFJ/Group.png" alt="not found" />
       </div>
     </div>
   );
