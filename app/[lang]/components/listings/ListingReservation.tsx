@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/require-default-props */
 
@@ -31,7 +32,7 @@ ListingReservationProps
   disabled,
   disabledDates,
   dictionary,
-  lang
+  lang,
 }) => (
   <div
     className="bg-white rounded-xl border-[1px] border-neutral-200 overflow-hidden "

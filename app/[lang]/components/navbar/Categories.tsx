@@ -64,7 +64,7 @@ function Categories() {
   const path = pathname?.split('/')[1];
   const isMainPage = pathname === '/en/search' || pathname === '/fi/search' || pathname === '/sv/search' || pathname === '/de/search';
 
-  //categories is only shown on the search page
+  // categories is only shown on the search page
   if (!isMainPage) {
     return null;
   }

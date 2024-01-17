@@ -3,12 +3,12 @@ import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 import getListings from '@/app/[lang]/actions/getListings';
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import CarsClient from './CarsClient';
 
 const CarsPage = async ({
-  params: { lang }
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {
@@ -28,7 +28,7 @@ const CarsPage = async ({
   }
 
   const cars = await getListings({ userId: currentUser.id });
-  
+
   if (cars.length === 0) {
     return (
       <ClientOnly>

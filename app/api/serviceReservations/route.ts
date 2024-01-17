@@ -30,7 +30,7 @@ export async function POST(
       id: serviceId,
     },
     data: {
-        serviceReservation: {
+      serviceReservation: {
         create: {
           userId: currentUser.id,
           startDate,

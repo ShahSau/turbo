@@ -44,9 +44,9 @@ const useFavorite = ({ listingId, currentUser, dictionary }: IUseFavorite) => {
 
         await request();
         router.refresh();
-        if(hasFavorited){
+        if (hasFavorited) {
           toast.success(`${dictionary.cars.favNo}`);
-        }else{
+        } else {
           toast.success(`${dictionary.cars.favYes}`);
         }
       } catch (error) {

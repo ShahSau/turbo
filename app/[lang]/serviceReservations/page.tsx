@@ -1,14 +1,14 @@
-
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
-import getServiceReservations from '../actions/getServiceReservation';
-import { Locale } from '@/i18n.config'
-import ServiceReservationsClient from './ServiceReservationsClient';
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
+import getServiceReservations from '../actions/getServiceReservation';
+import ServiceReservationsClient from './ServiceReservationsClient';
+
 const ReservationsPage = async ({
-  params: { lang }
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {
@@ -40,7 +40,7 @@ const ReservationsPage = async ({
       </ClientOnly>
     );
   }
-  
+
   return (
     <ClientOnly>
       <ServiceReservationsClient

@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/function-component-definition */
 
 'use client';
@@ -5,8 +6,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { IconType } from 'react-icons';
-
-import useCountries from '@/app/[lang]/hooks/useCountries';
 import { SafeUser } from '@/app/[lang]/types';
 
 import cities from '@/app/[lang]/components/CityData';
@@ -42,7 +41,6 @@ interface ListingInfoProps {
   year:number;
   driveType:string;
   dictionary?: any;
-  lang?: any;
 }
 
 const ListingInfo: React.FC<ListingInfoProps> = ({
@@ -60,10 +58,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   category,
   locationValue,
   dictionary,
-  lang,
 }) => {
-  const { getByValue } = useCountries();
-
   const cityValue = cities.find((item) => item.label === locationValue);
   const coordinates = cityValue?.latlng;
 

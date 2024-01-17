@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -9,8 +11,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useMemo } from 'react';
 import { format } from 'date-fns';
-
-import useCountries from '@/app/[lang]/hooks/useCountries';
 import {
   SafeListing,
   SafeReservation,
@@ -42,11 +42,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
   actionId = '',
   currentUser,
   dictionary,
-  lang
+  lang,
 }) => {
   const router = useRouter();
-  const { getByValue } = useCountries();
-  const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -77,13 +75,12 @@ const ListingCard: React.FC<ListingCardProps> = ({
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [reservation]);
 
-    if(lang === 'de' || lang === 'fi'){
-      data.price = Math.ceil(data.price * 0.9)
-    }
-    if(lang === 'sv'){
-      data.price = Math.ceil(data.price * 10.26)
-     }
-
+  if (lang === 'de' || lang === 'fi') {
+    data.price = Math.ceil(data.price * 0.9);
+  }
+  if (lang === 'sv') {
+    data.price = Math.ceil(data.price * 10.26);
+  }
 
   return (
     <div
@@ -99,14 +96,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
             className="object-cover h-full w-full group-hover:scale-110 transition"
             src={data.imageSrc}
             alt="Listing"
-            sizes='auto'
+            sizes="auto"
           />
           <div className=" absolute top-3 right-3">
             <HeartButton
               listingId={data.id}
               currentUser={currentUser}
               dictionary={dictionary}
-              lang={lang}
+
             />
           </div>
         </div>
@@ -125,7 +122,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             {' '}
             {/* {price} */}
 
-            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? Math.ceil(price*10.26) : price}
+            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price * 0.85) : lang === 'sv' ? Math.ceil(price * 10.26) : price}
           </div>
           {!reservation && (
             <div className="font-light">{dictionary.listingClient.day}</div>

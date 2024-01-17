@@ -1,8 +1,8 @@
 import prisma from '@/app/[lang]/libs/prismadb';
 
 interface IParams {
-    equipmentId?: string;
-    lang?: string;
+  equipmentId?: string;
+  lang?: string;
 }
 
 export default async function getEquipmentById(

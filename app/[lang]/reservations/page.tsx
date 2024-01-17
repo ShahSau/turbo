@@ -3,12 +3,12 @@ import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 import getReservations from '@/app/[lang]/actions/getReservations';
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import ReservationsClient from './ReservationsClient';
 
 const ReservationsPage = async ({
-  params: { lang }
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable react/function-component-definition */
 
@@ -10,6 +11,13 @@ import React, { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { IoCarSportSharp } from 'react-icons/io5';
+import { TbSteeringWheel } from 'react-icons/tb';
+import { LiaTruckSolid, LiaShuttleVanSolid } from 'react-icons/lia';
+import { FaVanShuttle } from 'react-icons/fa6';
+import { MdOutlineElectricCar } from 'react-icons/md';
+import { GiJeep } from 'react-icons/gi';
+import { PiJeepBold } from 'react-icons/pi';
 import Modal from './Modal';
 import Heading from '../Heading';
 import ImageUpload from '../inputs/ImageUpload';
@@ -17,13 +25,6 @@ import Input from '../inputs/Input';
 import Counter from '../inputs/Counter';
 import CategoryInput from '../inputs/CategoryInput';
 import CitySelect from '../inputs/CitySelect';
-import { IoCarSportSharp } from 'react-icons/io5';
-import { TbSteeringWheel } from 'react-icons/tb';
-import { LiaTruckSolid, LiaShuttleVanSolid } from 'react-icons/lia';
-import { FaVanShuttle } from 'react-icons/fa6';
-import { MdOutlineElectricCar } from 'react-icons/md';
-import { GiJeep } from 'react-icons/gi';
-import { PiJeepBold } from 'react-icons/pi'
 import SelectInput from '../inputs/SelectInput';
 
 interface RentModalProps {
@@ -128,7 +129,7 @@ const RentModal: React.FC<RentModalProps> = ({
       icon: IoCarSportSharp,
       description: `${dictionary.rentModal.Lsports}`,
     },
-  
+
   ];
   const {
     register,
@@ -196,12 +197,12 @@ const RentModal: React.FC<RentModalProps> = ({
     }
 
     setIsLoading(true);
-    if(lang !== 'en'){
-      if(lang === 'de' || lang === 'fi'){
-        data.price = Math.ceil(data.price * 1.10)
+    if (lang !== 'en') {
+      if (lang === 'de' || lang === 'fi') {
+        data.price = Math.ceil(data.price * 1.10);
       }
-      if(lang === 'sv'){
-        data.price = Math.ceil(data.price * 0.098)
+      if (lang === 'sv') {
+        data.price = Math.ceil(data.price * 0.098);
       }
     }
 
@@ -402,7 +403,7 @@ const RentModal: React.FC<RentModalProps> = ({
           register={register}
           errors={errors}
           required
-          lang = {lang}
+          lang={lang}
         />
       </div>
     );

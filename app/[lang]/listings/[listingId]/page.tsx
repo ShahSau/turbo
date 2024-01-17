@@ -4,21 +4,20 @@ import EmptyState from '@/app/[lang]/components/EmptyState';
 import React from 'react';
 import getListingById from '@/app/[lang]/actions/getListingById';
 import getReservations from '@/app/[lang]/actions/getReservations';
-import ListingClient from './ListingClient';
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
+import ListingClient from './ListingClient';
 
-
-const ListingPage = async ({ 
-  params
- }: { params: {
+const ListingPage = async ({
+  params,
+}: { params: {
   listingId: string;
   lang: Locale;
- } }) => {
-    const listing = await getListingById(params);
-    const reservations = await getReservations(params);
-    const currentUser = await getCurrentUser();
-    const dictionary = await getDictionary(params.lang);
+} }) => {
+  const listing = await getListingById(params);
+  const reservations = await getReservations(params);
+  const currentUser = await getCurrentUser();
+  const dictionary = await getDictionary(params.lang);
 
   if (!currentUser) {
     return (
@@ -35,7 +34,7 @@ const ListingPage = async ({
   if (!listing) {
     return (
       <ClientOnly>
-        <EmptyState dictionary={dictionary}/>
+        <EmptyState dictionary={dictionary} />
       </ClientOnly>
     );
   }

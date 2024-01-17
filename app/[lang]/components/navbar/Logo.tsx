@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 function Logo({
-  lang
+  lang,
 }:{
   lang: any
 }) {
@@ -13,7 +13,7 @@ function Logo({
 
   return (
     <Image
-      onClick={() => router.push('/'+lang+'/')}
+      onClick={() => router.push(`/${lang}/`)}
       className="block cursor-pointer"
       src="/images/logo.png"
       height="100"

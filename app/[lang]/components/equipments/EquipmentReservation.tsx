@@ -3,31 +3,25 @@
 
 'use client';
 
-
 import React from 'react';
 import Button from '../Button';
 
-
 interface EquipmentReservationProps {
-  price: number;
   totalPrice: number;
   onSubmit: () => void;
   disabled?: boolean;
   disabledAmount: boolean;
   dictionary?: any;
-  lang?: any;
 }
 
 const EquipmentReservation: React.FC<
 EquipmentReservationProps
 > = ({
-  price,
   totalPrice,
   onSubmit,
   disabled,
   disabledAmount,
   dictionary,
-  lang,
 }) => (
   <div
     className="bg-white rounded-xl border-[1px] border-neutral-200 overflow-hidden "

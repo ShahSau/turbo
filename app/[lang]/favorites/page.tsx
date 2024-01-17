@@ -4,12 +4,12 @@ import ClientOnly from '@/app/[lang]/components/ClientOnly';
 
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 import getFavoriteListings from '@/app/[lang]/actions/getFavoriteListings';
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import FavoritesClient from './FavoritesClient';
 
 const ListingPage = async ({
-  params: { lang }
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {

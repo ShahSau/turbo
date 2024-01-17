@@ -15,11 +15,9 @@ import useRegisterModal from '@/app/[lang]/hooks/useRegisterModal';
 import useLoginModal from '@/app/[lang]/hooks/useLoginModal';
 import useRentModal from '@/app/[lang]/hooks/useRentModal';
 import useRepairModal from '@/app/[lang]/hooks/useRepairModal';
+import useEquipmentModal from '@/app/[lang]/hooks/useEquipmentModal';
 import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
-import useEquipmentModal from '@/app/[lang]/hooks/useEquipmentModal';
-
-
 
 interface UserMenuProps {
   currentUser?: SafeUser | null,
@@ -45,19 +43,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
-  // eslint-disable-next-line consistent-return
-  const onRent = useCallback(() => {
-    if (!currentUser) {
-      return loginModal.onOpen();
-    }
-
-    rentModal.onOpen();
-  }, [loginModal, rentModal, currentUser]);
-
   const logout = () => {
     signOut();
     router.replace('/');
-  }
+  };
 
   return (
     <div className="relative">
@@ -66,7 +55,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
           {/* Add a car */}
-          
         </div>
         <div
           onClick={toggleOpen}
@@ -91,7 +79,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                 />
                 <MenuItem
                   label={dictionary.navBar.favorites}
-                  onClick={()=> router.push(`/${lang}/favorites`)}
+                  onClick={() => router.push(`/${lang}/favorites`)}
                 />
                 <MenuItem
                   label={dictionary.navBar.reservations}

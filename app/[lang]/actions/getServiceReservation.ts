@@ -1,6 +1,5 @@
 import prisma from '@/app/[lang]/libs/prismadb';
 
-
 interface IParams {
   serviceId?: string;
   userId?: string;
@@ -11,10 +10,9 @@ export default async function getServiceReservations(
   params: IParams,
 ) {
   try {
-    let { serviceId, userId, authorId } = params;
+    const { serviceId, authorId } = params;
     const query: any = {};
 
-    
     if (serviceId) {
       query.serviceId = serviceId;
     }
@@ -24,7 +22,8 @@ export default async function getServiceReservations(
     //   query.userId = userId;
     // }
 
-    // in case of equipment reservations, userId is the authorId and equipment.uerserId is the creator of the equipment
+    // in case of equipment reservations,
+    // userId is the authorId and equipment.uerserId is the creator of the equipment
     if (authorId) {
       query.userId = authorId;
     }
@@ -38,7 +37,7 @@ export default async function getServiceReservations(
         createdAt: 'desc',
       },
     });
-    
+
     const safeReservations = reservations.map(
       (reservation) => ({
         ...reservation,

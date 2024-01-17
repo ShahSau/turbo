@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -10,18 +11,13 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback, useMemo } from 'react';
 import { format } from 'date-fns';
 
-import useCountries from '@/app/[lang]/hooks/useCountries';
 import {
   SafeListing,
-  SafeReservation,
-  SafeUser,
   SafeServiceReservation,
-  SafeService
 
 } from '@/app/[lang]/types';
 
 import Button from '../Button';
-
 
 interface ServiceCardProps {
   data: SafeListing;
@@ -30,7 +26,6 @@ interface ServiceCardProps {
   disabled?: boolean;
   actionLabel?: string;
   actionId?: string;
-  currentUser?: SafeUser | null;
   lang?: string;
   dictionary?: any;
 
@@ -43,13 +38,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   disabled,
   actionLabel,
   actionId = '',
-  currentUser,
   lang,
-  dictionary
+  dictionary,
 }) => {
   const router = useRouter();
-  const { getByValue } = useCountries();
-  const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -91,7 +83,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         >
           <Image
             fill
-            sizes='auto'
+            sizes="auto"
             className="object-cover h-full w-full group-hover:scale-110 transition"
             src={data.imageSrc}
             alt="Listing"
@@ -110,12 +102,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <div className="font-semibold">
             {dictionary.moneySign}
             {' '}
-            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price*0.85) : lang === 'sv' ? Math.ceil(price*10.26) : price}
+            {lang === 'en' ? price : lang === 'de' ? (price * 0.85) : lang === 'fi' ? (price * 0.85) : lang === 'sv' ? Math.ceil(price * 10.26) : price}
           </div>
           {!reservation && (
             <div className="font-light">{dictionary.listingClient.day}</div>
           )}
-          
+
         </div>
         {onAction && actionLabel && (
           <Button

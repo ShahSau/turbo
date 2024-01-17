@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/function-component-definition */
 
 'use client';
@@ -6,9 +7,8 @@ import React from 'react';
 import { IconType } from 'react-icons';
 import { SafeUser } from '@/app/[lang]/types';
 
-import Avatar from '../Avatar'; 
+import Avatar from '../Avatar';
 import ListingCategory from '../listings/ListingCategory';
-
 
 interface ListingInfoProps {
   user: SafeUser,
@@ -17,38 +17,32 @@ interface ListingInfoProps {
     label: string;
     description: string;
   } | undefined
-  title: string;
   description: string;
   dictionary?: any;
-  lang?: any;
 }
 
 const EquipmentInfo: React.FC<ListingInfoProps> = ({
   user,
-  title,
   description,
   category,
   dictionary,
-  lang,
-}) => {
-
-  return (
-    <div className="col-span-4 flex flex-col gap-8">
-      <div className="flex flex-col gap-2">
-        <div
-          className=" text-xl font-semibold flex flex-row items-center gap-2 "
-        >
-          <div>
-            {dictionary.listingClient.offer}
-            {' '}
-            {user?.name}
-          </div>
-          <Avatar src={user?.image} />
+}) => (
+  <div className="col-span-4 flex flex-col gap-8">
+    <div className="flex flex-col gap-2">
+      <div
+        className=" text-xl font-semibold flex flex-row items-center gap-2 "
+      >
+        <div>
+          {dictionary.listingClient.offer}
+          {' '}
+          {user?.name}
         </div>
-        <div className=" flex flex-row items-center gap-4 font-light text-neutral-500 ">
-          {description}
-        </div>
-        {category && (
+        <Avatar src={user?.image} />
+      </div>
+      <div className=" flex flex-row items-center gap-4 font-light text-neutral-500 ">
+        {description}
+      </div>
+      {category && (
         <ListingCategory
           icon={category.icon}
           label={category?.label}
@@ -56,10 +50,9 @@ const EquipmentInfo: React.FC<ListingInfoProps> = ({
         />
       )}
 
-      </div>
-      <hr />
     </div>
-  );
-};
+    <hr />
+  </div>
+);
 
 export default EquipmentInfo;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/function-component-definition */

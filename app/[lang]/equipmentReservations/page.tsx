@@ -1,15 +1,14 @@
-
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
+import { getDictionary } from '@/dictionary';
+import { Locale } from '@/i18n.config';
 import getEquipmentReservations from '../actions/getEquipmentReservation';
 import EquipmentReservationsClient from './EquipmentReservationClient';
-import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/dictionary';
 
 const ReservationsPage = async ({
-  params: { lang }
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {
@@ -30,8 +29,6 @@ const ReservationsPage = async ({
 
   const reservations = await getEquipmentReservations({ authorId: currentUser.id });
 
-
-
   if (reservations.length === 0) {
     return (
       <ClientOnly>
@@ -43,7 +40,7 @@ const ReservationsPage = async ({
       </ClientOnly>
     );
   }
-  
+
   return (
     <ClientOnly>
       <EquipmentReservationsClient

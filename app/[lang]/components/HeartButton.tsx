@@ -11,19 +11,17 @@ import useFavorite from '@/app/[lang]/hooks/useFavorite';
 import { SafeUser } from '@/app/[lang]/types';
 import React from 'react';
 
-
 interface HeartButtonProps {
   listingId: string
   currentUser?: SafeUser | null
   dictionary?: any
-  lang?: any
+
 }
 
 const HeartButton: React.FC<HeartButtonProps> = ({
   listingId,
   currentUser,
   dictionary,
-  lang
 }) => {
   const { hasFavorited, toggleFavorite } = useFavorite({
     listingId,

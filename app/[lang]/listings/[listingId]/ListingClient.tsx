@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/require-default-props */
@@ -6,7 +7,6 @@
 
 import axios from 'axios';
 import React, {
-  use,
   useCallback, useEffect, useMemo, useState,
 } from 'react';
 import { Range } from 'react-date-range';
@@ -20,7 +20,7 @@ import Container from '@/app/[lang]/components/Container';
 import ListingHead from '@/app/[lang]/components/listings/ListingHead';
 import ListingInfo from '@/app/[lang]/components/listings/ListingInfo';
 import ListingReservation from '@/app/[lang]/components/listings/ListingReservation';
-import { loadStripe } from '@stripe/stripe-js';
+
 import { FaArrowLeft } from 'react-icons/fa';
 import { IoCarSportSharp } from 'react-icons/io5';
 import { TbSteeringWheel } from 'react-icons/tb';
@@ -28,7 +28,7 @@ import { LiaTruckSolid, LiaShuttleVanSolid } from 'react-icons/lia';
 import { FaVanShuttle } from 'react-icons/fa6';
 import { MdOutlineElectricCar } from 'react-icons/md';
 import { GiJeep } from 'react-icons/gi';
-import { PiJeepBold } from 'react-icons/pi'
+import { PiJeepBold } from 'react-icons/pi';
 
 const initialDateRange = {
   startDate: new Date(),
@@ -112,20 +112,13 @@ const ListingClient: React.FC<ListingClientProps> = ({
       icon: IoCarSportSharp,
       description: `${dictionary.rentModal.Lsports}`,
     },
-  
-  ];
 
+  ];
 
   const category = useMemo(() => categories.find((items) => items.label === listing.category), [listing.category]);
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
-
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
-  );
-
-  
 
   const onCreateReservation = useCallback(
 
@@ -135,27 +128,25 @@ const ListingClient: React.FC<ListingClientProps> = ({
         return loginModal.onOpen();
       }
       setIsLoading(true);
-      axios.post('/api/payment',
-      {
-        totalPrice: totalPrice,
-        listingId: listing?.id || 0,
-        startDate: dateRange.startDate,
-        endDate: dateRange.endDate,
-        type: 'rental',
-        lang: lang,
-      },
-      {
-        headers:{
-          "Content-Type": "application/json",
+      axios.post(
+        '/api/payment',
+        {
+          totalPrice,
+          listingId: listing?.id || 0,
+          startDate: dateRange.startDate,
+          endDate: dateRange.endDate,
+          type: 'rental',
+          lang,
         },
-      }
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
       )
-      .then((res) => {
-        const stripe = stripePromise;
-        router.push(res.data.url);
-      }
-      )
-
+        .then((res) => {
+          router.push(res.data.url);
+        });
     },
     [
       totalPrice,
@@ -176,32 +167,28 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
       if (dayCount && listing.price) {
         const days = dayCount * listing.price;
-        if(lang === 'en'){
+        if (lang === 'en') {
           setTotalPrice(days);
         }
-        if (lang === 'de' || lang === 'fi'){
+        if (lang === 'de' || lang === 'fi') {
           setTotalPrice(Math.ceil(days * 0.91));
         }
-        if(lang === 'sv'){
+        if (lang === 'sv') {
           setTotalPrice(Math.ceil(days * 10.26));
         }
       } else {
-        if(lang === 'en'){
+        if (lang === 'en') {
           setTotalPrice(listing.price);
         }
-        if (lang === 'de' || lang === 'fi'){
+        if (lang === 'de' || lang === 'fi') {
           setTotalPrice(Math.ceil(listing.price * 0.91));
         }
-        if(lang === 'sv'){
+        if (lang === 'sv') {
           setTotalPrice(Math.ceil(listing.price * 10.26));
         }
-        
-        //setTotalPrice(listing.price);
       }
     }
   }, [dateRange, listing.price, lang]);
-
-
 
   return (
     <Container>
@@ -209,8 +196,9 @@ const ListingClient: React.FC<ListingClientProps> = ({
         className="max-w-screen-lg mx-auto md:mt-10"
       >
         <div className="flex flex-col gap-6">
-          <div className='flex items-center gap-1 text-sm'>
-            <FaArrowLeft /><button onClick={() => router.back() } className='text-lg'>{dictionary.listingClient.back}</button>
+          <div className="flex items-center gap-1 text-sm">
+            <FaArrowLeft />
+            <button onClick={() => router.back()} className="text-lg">{dictionary.listingClient.back}</button>
           </div>
           <ListingHead
             title={listing.title}

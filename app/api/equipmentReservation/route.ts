@@ -28,7 +28,7 @@ export async function POST(
       id: equipmentId,
     },
     data: {
-        equipmentReservation: {
+      equipmentReservation: {
         create: {
           userId: currentUser.id,
           amount,

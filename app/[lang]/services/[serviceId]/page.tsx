@@ -3,56 +3,52 @@ import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import React from 'react';
 import getServiceById from '@/app/[lang]/actions/getServiceById';
-import ServiceClient from './ServiceClient';
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
+import ServiceClient from './ServiceClient';
 
-interface IServiceParams {
-    serviceId?: string;
-  }
+const ServicePage = async ({
+  params,
+}: { params: {
+  serviceId: string;
+  lang: Locale;
 
-  const ServicePage = async ({ 
-    params 
-  }: { params: {
-    serviceId: string;
-    lang: Locale;
-  
-  } }) => {
-    const listing = await getServiceById(params);
-    const currentUser = await getCurrentUser();
-    const dictionary = await getDictionary(params.lang);
+} }) => {
+  const listing = await getServiceById(params);
+  const currentUser = await getCurrentUser();
+  const dictionary = await getDictionary(params.lang);
 
-    if (!currentUser) {
-      return (
-        <ClientOnly>
-          <EmptyState
-            title={dictionary.unauthorized.title}
-            subtitle={dictionary.unauthorized.desc}
-            dictionary={dictionary}
-          />
-        </ClientOnly>
-      );
-    }
-  
-    if (!listing) {
-      return (
-        <ClientOnly>
-          <EmptyState dictionary={dictionary} />
-        </ClientOnly>
-      );
-    }
-  
+  if (!currentUser) {
     return (
       <ClientOnly>
-        <ServiceClient
-          service={listing}
-          reservations={[]}
-          currentUser={currentUser}
+        <EmptyState
+          title={dictionary.unauthorized.title}
+          subtitle={dictionary.unauthorized.desc}
           dictionary={dictionary}
-          lang={params.lang}
         />
       </ClientOnly>
     );
-  };
-  
-  export default ServicePage;
+  }
+
+  if (!listing) {
+    return (
+      <ClientOnly>
+        <EmptyState dictionary={dictionary} />
+      </ClientOnly>
+    );
+  }
+
+  return (
+    <ClientOnly>
+      <ServiceClient
+        service={listing}
+        reservations={[]}
+        currentUser={currentUser}
+        dictionary={dictionary}
+        lang={params.lang}
+      />
+    </ClientOnly>
+  );
+};
+
+export default ServicePage;

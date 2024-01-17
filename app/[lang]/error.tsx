@@ -1,25 +1,19 @@
+/* eslint-disable react/function-component-definition */
+
 'use client';
 
-import { useEffect } from "react";
+import React from 'react';
 
-import EmptyState from "@/app/[lang]/components/EmptyState";
-
+import EmptyState from '@/app/[lang]/components/EmptyState';
 
 interface ErrorStateProps {
   error: Error
 }
 
-const ErrorState: React.FC<ErrorStateProps> = ({ error }) => {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
-  return ( 
-    <EmptyState
-      title="Uh Oh"
-      subtitle="Something went wrong!"
-    />
-   );
-}
- 
+const ErrorState: React.FC<ErrorStateProps> = () => (
+  <EmptyState
+    title="Uh Oh"
+    subtitle="Something went wrong!"
+  />
+);
 export default ErrorState;

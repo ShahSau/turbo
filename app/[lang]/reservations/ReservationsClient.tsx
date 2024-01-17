@@ -46,7 +46,7 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
 
   return (
     <Container>
-      <div className='mt-10'>
+      <div className="mt-10">
         <Heading
           title={dictionary.reservations.title}
           subtitle={dictionary.reservations.desc}

@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/function-component-definition */
@@ -25,12 +26,10 @@ import Button from '../Button';
 
 interface LoginProps {
   dictionary?: any;
-  lang?: any;
 }
 
 const LoginModal: React.FC<LoginProps> = ({
   dictionary,
-  lang,
 }) => {
   const router = useRouter();
   const loginModal = useLoginModal();

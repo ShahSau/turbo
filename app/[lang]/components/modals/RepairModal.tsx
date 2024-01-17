@@ -1,14 +1,17 @@
-'use client'
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/function-component-definition */
+
+'use client';
 
 import React, { useMemo, useState } from 'react';
-import Modal from './Modal'
-import useRepairModal from '@/app/[lang]/hooks/useRepairModal'
+import useRepairModal from '@/app/[lang]/hooks/useRepairModal';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import Modal from './Modal';
 import Heading from '../Heading';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
@@ -20,27 +23,17 @@ interface RepairModalProps {
 }
 
 enum STEPS {
-    LOCATION = 0,
-    IMAGES = 1,
-    DESCRIPTION = 2,
-    PRICE = 3,
+  LOCATION = 0,
+  IMAGES = 1,
+  DESCRIPTION = 2,
+  PRICE = 3,
 }
 
-const translate = async (url: RequestInfo | URL, options: RequestInit | undefined) => {
-  try {
-    const response = await fetch(url, options);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-const RepairModal: React.FC<RepairModalProps>  = ({
+const RepairModal: React.FC<RepairModalProps> = ({
   dictionary,
   lang,
 }) => {
-  const repairModal = useRepairModal()
+  const repairModal = useRepairModal();
   const router = useRouter();
   const [step, setStep] = useState(STEPS.LOCATION);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,52 +49,51 @@ const RepairModal: React.FC<RepairModalProps>  = ({
     reset,
   } = useForm<FieldValues>({
     defaultValues: {
-        location: null,
-        imageSrc: '',
-        price: 50,
-        title: '',
-        description: '',
-      },
+      location: null,
+      imageSrc: '',
+      price: 50,
+      title: '',
+      description: '',
+    },
+  });
+
+  const location = watch('location');
+  const imageSrc = watch('imageSrc');
+
+  const Map = useMemo(() => dynamic(() => import('../Map'), {
+    ssr: false,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [location]);
+
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
     });
+  };
 
-    const location = watch('location');
-    const imageSrc = watch('imageSrc');
-    const description = watch('description');
+  const onBack = () => {
+    setStep((value) => value - 1);
+  };
 
-    const Map = useMemo(() => dynamic(() => import('../Map'), {
-        ssr: false,
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }), [location]);
-    
-    const setCustomValue = (id: string, value: any) => {
-        setValue(id, value, {
-          shouldDirty: true,
-          shouldTouch: true,
-          shouldValidate: true,
-        });
-    };
+  const onNext = () => {
+    setStep((value) => value + 1);
+  };
 
-    const onBack = () => {
-        setStep((value) => value - 1);
-    };
-
-    const onNext = () => {
-        setStep((value) => value + 1);
-    };
-
-    // eslint-disable-next-line consistent-return
+  // eslint-disable-next-line consistent-return
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step !== STEPS.PRICE) {
       return onNext();
     }
 
     setIsLoading(true);
-    if(lang !== 'en'){
-      if(lang === 'de' || lang === 'fi'){
-        data.price = Math.ceil(data.price * 1.10)
+    if (lang !== 'en') {
+      if (lang === 'de' || lang === 'fi') {
+        data.price = Math.ceil(data.price * 1.10);
       }
-      if(lang === 'sv'){
-        data.price = Math.ceil(data.price * 0.098)
+      if (lang === 'sv') {
+        data.price = Math.ceil(data.price * 0.098);
       }
     }
 
@@ -129,13 +121,12 @@ const RepairModal: React.FC<RepairModalProps>  = ({
     return `${dictionary.repairModal.next}`;
   }, [step]);
 
-
   const secondaryActionLabel = useMemo(() => {
-        if (step === STEPS.LOCATION) {
-        return undefined;
-        }
-    
-        return `${dictionary.repairModal.back}`;
+    if (step === STEPS.LOCATION) {
+      return undefined;
+    }
+
+    return `${dictionary.repairModal.back}`;
   }, [step]);
 
   let bodyContent = (
@@ -205,11 +196,11 @@ const RepairModal: React.FC<RepairModalProps>  = ({
           errors={errors}
           required
         />
-        </div>
+      </div>
     );
- }
+  }
 
- if (step === STEPS.PRICE) {
+  if (step === STEPS.PRICE) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
@@ -230,7 +221,7 @@ const RepairModal: React.FC<RepairModalProps>  = ({
       </div>
     );
   }
-    
+
   return (
     <Modal
       disabled={isLoading}
@@ -243,7 +234,7 @@ const RepairModal: React.FC<RepairModalProps>  = ({
       secondaryAction={step === STEPS.LOCATION ? undefined : onBack}
       body={bodyContent}
     />
-  )
-}
+  );
+};
 
-export default RepairModal
+export default RepairModal;

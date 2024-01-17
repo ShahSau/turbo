@@ -8,9 +8,9 @@ interface SearchModalStore {
 
 const useRepairSearchModal = create<SearchModalStore>((set) => (
   {
-  isOpenR: false,
-  onOpenR: () => set({ isOpenR: true }),
-  onCloseR: () => set({ isOpenR: false }),
-}));
+    isOpenR: false,
+    onOpenR: () => set({ isOpenR: true }),
+    onCloseR: () => set({ isOpenR: false }),
+  }));
 
 export default useRepairSearchModal;

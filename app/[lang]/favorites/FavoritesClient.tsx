@@ -20,7 +20,7 @@ const FavoritesClient: React.FC<FavoritesClientProps> = ({
   dictionary,
 }) => (
   <Container>
-    <div className='mt-10'>
+    <div className="mt-10">
       <Heading
         title={dictionary.favorites.title}
         subtitle={dictionary.favorites.desc}

@@ -12,7 +12,8 @@ import {
   UseFormRegister,
 } from 'react-hook-form';
 import { BiDollar } from 'react-icons/bi';
-import { LuEuro } from "react-icons/lu";
+import { LuEuro } from 'react-icons/lu';
+
 interface InputProps {
   id: string;
   label: string;
@@ -43,7 +44,7 @@ const Input: React.FC<InputProps> = ({
       className=" text-neutral-700 absolute top-5 left-2"
     />
     )}
-    {formatPrice && (lang === 'de' || lang ==='fi')  && (
+    {formatPrice && (lang === 'de' || lang === 'fi') && (
     <LuEuro
       size={24}
       className=" text-neutral-700 absolute top-5 left-2"

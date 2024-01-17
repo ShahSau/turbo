@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
 /* eslint-disable react/function-component-definition */
 /* eslint-disable react/require-default-props */
@@ -18,7 +19,7 @@ import { SafeUser, SafeService, SafeServiceReservation } from '@/app/[lang]/type
 import Container from '@/app/[lang]/components/Container';
 
 import ListingReservation from '@/app/[lang]/components/listings/ListingReservation';
-import { loadStripe } from '@stripe/stripe-js';
+
 import { FaArrowLeft } from 'react-icons/fa';
 import ServiceHead from '@/app/[lang]/components/services/ServiceHead';
 import ServiceInfo from '@/app/[lang]/components/services/ServiceInfo';
@@ -44,7 +45,7 @@ const ServiceClient: React.FC<ListingClientProps> = ({
   reservations = [],
   currentUser,
   dictionary,
-  lang
+  lang,
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
@@ -69,10 +70,6 @@ const ServiceClient: React.FC<ListingClientProps> = ({
   const [totalPrice, setTotalPrice] = useState(service.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
-  );
-
   const onCreateReservation = useCallback(
 
     // eslint-disable-next-line consistent-return
@@ -81,27 +78,25 @@ const ServiceClient: React.FC<ListingClientProps> = ({
         return loginModal.onOpen();
       }
       setIsLoading(true);
-      axios.post('/api/payment',
-      {
-        totalPrice: totalPrice,
-        listingId: service?.id || 0,
-        startDate: dateRange.startDate,
-        endDate: dateRange.endDate,
-        type: 'service',
-        lang: lang,
-      },
-      {
-        headers:{
-          "Content-Type": "application/json",
+      axios.post(
+        '/api/payment',
+        {
+          totalPrice,
+          listingId: service?.id || 0,
+          startDate: dateRange.startDate,
+          endDate: dateRange.endDate,
+          type: 'service',
+          lang,
         },
-      }
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
       )
-      .then((res) => {
-        const stripe = stripePromise;
-        router.push(res.data.url);
-      }
-      )
-
+        .then((res) => {
+          router.push(res.data.url);
+        });
     },
     [
       totalPrice,
@@ -122,23 +117,23 @@ const ServiceClient: React.FC<ListingClientProps> = ({
 
       if (dayCount && service.price) {
         const days = dayCount * service.price;
-        if(lang === 'en'){
+        if (lang === 'en') {
           setTotalPrice(days);
         }
-        if (lang === 'de' || lang === 'fi'){
+        if (lang === 'de' || lang === 'fi') {
           setTotalPrice(Math.ceil(days * 0.91));
         }
-        if(lang === 'sv'){
+        if (lang === 'sv') {
           setTotalPrice(Math.ceil(days * 10.26));
         }
       } else {
-        if (lang === 'en'){
+        if (lang === 'en') {
           setTotalPrice(service.price);
         }
-        if (lang === 'de' || lang === 'fi'){
+        if (lang === 'de' || lang === 'fi') {
           setTotalPrice(Math.ceil(service.price * 0.91));
         }
-        if (lang === 'sv'){
+        if (lang === 'sv') {
           setTotalPrice(Math.ceil(service.price * 10.26));
         }
       }
@@ -150,34 +145,30 @@ const ServiceClient: React.FC<ListingClientProps> = ({
       const response = await fetch(url, options);
       const result = await response.json();
       setTranslateText(result.trans);
-    } catch (error) {
-      console.error(error);
+    } catch (error:any) {
+      throw new Error(error);
     }
-  }
+  };
 
   useEffect(() => {
-    if(lang !== 'en'){
+    if (lang !== 'en') {
       const url = 'https://google-translate113.p.rapidapi.com/api/v1/translator/text';
       const options = {
         method: 'POST',
         headers: {
           'content-type': 'application/x-www-form-urlencoded',
           'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || '',
-          'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com'
+          'X-RapidAPI-Host': 'google-translate113.p.rapidapi.com',
         },
         body: new URLSearchParams({
           from: 'auto',
           to: lang,
-          text: service.description
-        })
+          text: service.description,
+        }),
       };
       translate(url, options);
-  
     }
-  
   }, [dictionary]);
-
-
 
   return (
     <Container>
@@ -185,8 +176,9 @@ const ServiceClient: React.FC<ListingClientProps> = ({
         className="max-w-screen-lg mx-auto md:mt-10"
       >
         <div className="flex flex-col gap-6">
-          <div className='flex items-center gap-1 text-sm'>
-            <FaArrowLeft /><button onClick={() => router.back() } className='text-lg'>{dictionary.listingClient.back}</button>
+          <div className="flex items-center gap-1 text-sm">
+            <FaArrowLeft />
+            <button onClick={() => router.back()} className="text-lg">{dictionary.listingClient.back}</button>
           </div>
           <ServiceHead
             title={service.title}
@@ -198,11 +190,11 @@ const ServiceClient: React.FC<ListingClientProps> = ({
           <div
             className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6 "
           >
-            
+
             <ServiceInfo
               user={service.user}
               title={service.title}
-              description={lang!== 'en' ? translateText :service.description}
+              description={lang !== 'en' ? translateText : service.description}
               locationValue={service.locationValue}
               dictionary={dictionary}
               lang={lang}

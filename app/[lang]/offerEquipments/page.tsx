@@ -2,13 +2,13 @@ import EmptyState from '@/app/[lang]/components/EmptyState';
 import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
+import { getDictionary } from '@/dictionary';
+import { Locale } from '@/i18n.config';
 import getEquipments from '../actions/getEquipments';
 import EqupimentClient from './EqupimentClient';
-import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/dictionary';
 
-const page = async({
-  params: { lang }
+const page = async ({
+  params: { lang },
 }: {
   params: { lang: Locale }
 }) => {
@@ -43,15 +43,14 @@ const page = async({
 
   return (
     <ClientOnly>
-        <EqupimentClient
-            equipments={equipment}
-            currentUser={currentUser}
-            dictionary={dictionary}
-            lang={lang}
-            />
+      <EqupimentClient
+        equipments={equipment}
+        currentUser={currentUser}
+        dictionary={dictionary}
+        lang={lang}
+      />
     </ClientOnly>
   );
-  
-}
+};
 
-export default page
+export default page;

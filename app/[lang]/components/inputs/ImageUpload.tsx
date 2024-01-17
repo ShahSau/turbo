@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/function-component-definition */
@@ -26,7 +27,7 @@ interface ImageUploadProps {
 const ImageUpload: React.FC<ImageUploadProps> = ({
   onChange,
   value,
-  dictionary
+  dictionary,
 }) => {
   const handleUpload = useCallback((result: any) => {
     onChange(result.info.secure_url);

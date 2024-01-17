@@ -1,15 +1,16 @@
-import { NextResponse } from "next/server";
+/* eslint-disable import/prefer-default-export */
+import { NextResponse } from 'next/server';
 
-import getCurrentUser from "@/app/[lang]/actions/getCurrentUser";
-import prisma from "@/app/[lang]/libs/prismadb";
+import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
+import prisma from '@/app/[lang]/libs/prismadb';
 
 interface IParams {
   equipmentId?: string;
 }
 
 export async function DELETE(
-  request: Request, 
-  { params }: { params: IParams }
+  request: Request,
+  { params }: { params: IParams },
 ) {
   const currentUser = await getCurrentUser();
 
@@ -26,8 +27,8 @@ export async function DELETE(
   const service = await prisma.equipment.deleteMany({
     where: {
       id: equipmentId,
-      userId: currentUser.id
-    }
+      userId: currentUser.id,
+    },
   });
 
   return NextResponse.json(service);

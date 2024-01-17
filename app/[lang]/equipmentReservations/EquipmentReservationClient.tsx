@@ -2,11 +2,8 @@
 
 'use client';
 
-import { toast } from 'react-hot-toast';
-import axios from 'axios';
-import React, {  useState } from 'react';
-import { useRouter } from 'next/navigation';
-import {  SafeUser } from '@/app/[lang]/types';
+import React from 'react';
+import { SafeUser } from '@/app/[lang]/types';
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
 import EquipmentCard from '../components/equipments/EquipmentCard';
@@ -24,36 +21,31 @@ const EquipmentReservationsClient: React.FC<ReservationsClientProps> = ({
   currentUser,
   lang,
   dictionary,
-}) => {
-  const router = useRouter();
-  const [deletingId, setDeletingId] = useState('');
+}) => (
+  <Container>
+    <div className="mt-10">
+      <Heading
+        title={dictionary.equipmentReservation.title}
+        subtitle={dictionary.equipmentReservation.desc}
+      />
+      <div
+        className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
+      >
 
-  return (
-    <Container>
-      <div className='mt-10'>
-        <Heading
-          title={dictionary.equipmentReservation.title}
-          subtitle={dictionary.equipmentReservation.desc}
-        />
-        <div
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
-        >
+        {reservations.map((reservation: any) => (
+          <EquipmentCard
+            currentUser={currentUser}
+            key={reservation.id}
+            data={reservation.equipment}
+            date={reservation.equipment.createdAt}
+            dictionary={dictionary}
+            lang={lang}
+          />
 
-          {reservations.map((reservation: any) => (
-            <EquipmentCard
-                currentUser={currentUser}
-                key={reservation.id}
-                data={reservation.equipment}
-                date={reservation.equipment.createdAt}
-                dictionary={dictionary}
-                lang={lang}
-            />
-
-          ))}
-        </div>
+        ))}
       </div>
-    </Container>
-  );
-};
+    </div>
+  </Container>
+);
 
 export default EquipmentReservationsClient;

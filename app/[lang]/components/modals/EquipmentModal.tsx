@@ -1,22 +1,30 @@
-'use client'
+/* eslint-disable no-param-reassign */
+/* eslint-disable consistent-return */
+/* eslint-disable react/function-component-definition */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react-hooks/exhaustive-deps */
+
+'use client';
 
 import React, { useMemo, useState } from 'react';
-import Modal from './Modal'
-import useRepairModal from '@/app/[lang]/hooks/useRepairModal'
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
-import { FcAutomotive } from "react-icons/fc";
-import { GiCarWheel,GiCarBattery,GiCarDoor,GiCarSeat } from "react-icons/gi";
+import { FcAutomotive } from 'react-icons/fc';
+import {
+  GiCarWheel, GiCarBattery, GiCarDoor, GiCarSeat,
+} from 'react-icons/gi';
 import { useRouter } from 'next/navigation';
 
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import useEquipmentModal from '@/app/[lang]/hooks/useEquipmentModal';
 import Heading from '../Heading';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Counter from '../inputs/Counter';
 import CategoryInput from '../inputs/CategoryInput';
-import useEquipmentModal from '@/app/[lang]/hooks/useEquipmentModal';
+import Modal from './Modal';
 
 interface EquipmentModalProps {
   dictionary: any;
@@ -24,20 +32,18 @@ interface EquipmentModalProps {
 }
 
 enum STEPS {
-    CATEGORY = 0,
-    IMAGES = 1,
-    DESCRIPTION = 2,
-    PRICE = 3,
+  CATEGORY = 0,
+  IMAGES = 1,
+  DESCRIPTION = 2,
+  PRICE = 3,
 }
-
-
 
 const EquipmentModal: React.FC<EquipmentModalProps> = ({
   dictionary,
   lang,
 
 }) => {
-  const equipmentModal = useEquipmentModal()
+  const equipmentModal = useEquipmentModal();
   const router = useRouter();
   const [step, setStep] = useState(STEPS.CATEGORY);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,7 +74,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
       icon: GiCarSeat,
       description: `${dictionary.equipmentModal.seatDesc}`,
     },
-  
+
   ];
 
   const {
@@ -82,37 +88,36 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
     reset,
   } = useForm<FieldValues>({
     defaultValues: {
-        category: '',
-        amount: 1,
-        imageSrc: '',
-        price: 50,
-        title: '',
-        description: '',
-      },
+      category: '',
+      amount: 1,
+      imageSrc: '',
+      price: 50,
+      title: '',
+      description: '',
+    },
+  });
+
+  const amount = watch('amount');
+  const category = watch('category');
+  const imageSrc = watch('imageSrc');
+
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
     });
+  };
 
-    const amount = watch('amount');
-    const category = watch('category');
-    const imageSrc = watch('imageSrc');
-    const description = watch('description');
-    
-    const setCustomValue = (id: string, value: any) => {
-        setValue(id, value, {
-          shouldDirty: true,
-          shouldTouch: true,
-          shouldValidate: true,
-        });
-    };
+  const onBack = () => {
+    setStep((value) => value - 1);
+  };
 
-    const onBack = () => {
-        setStep((value) => value - 1);
-    };
+  const onNext = () => {
+    setStep((value) => value + 1);
+  };
 
-    const onNext = () => {
-        setStep((value) => value + 1);
-    };
-
-    // eslint-disable-next-line consistent-return
+  // eslint-disable-next-line consistent-return
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step !== STEPS.PRICE) {
       return onNext();
@@ -120,12 +125,12 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
 
     setIsLoading(true);
 
-    if(lang !== 'en'){
-      if(lang === 'de' || lang === 'fi'){
-        data.price = Math.ceil(data.price * 1.10)
+    if (lang !== 'en') {
+      if (lang === 'de' || lang === 'fi') {
+        data.price = Math.ceil(data.price * 1.10);
       }
-      if(lang === 'sv'){
-        data.price = Math.ceil(data.price * 0.098)
+      if (lang === 'sv') {
+        data.price = Math.ceil(data.price * 0.098);
       }
     }
 
@@ -153,13 +158,12 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
     return `${dictionary.equipmentModal.next}`;
   }, [step]);
 
-
   const secondaryActionLabel = useMemo(() => {
-        if (step === STEPS.CATEGORY) {
-        return undefined;
-        }
-    
-        return `${dictionary.equipmentModal.back}`;
+    if (step === STEPS.CATEGORY) {
+      return undefined;
+    }
+
+    return `${dictionary.equipmentModal.back}`;
   }, [step]);
 
   let bodyContent = (
@@ -174,7 +178,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
-              onClick={(category) => setCustomValue('category', category)}
+              onClick={(cat) => setCustomValue('category', cat)}
               selected={category === item.label}
               label={item.label}
               icon={item.icon}
@@ -184,7 +188,6 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
       </div>
     </div>
   );
-
 
   if (step === STEPS.IMAGES) {
     bodyContent = (
@@ -226,11 +229,11 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
           errors={errors}
           required
         />
-        </div>
+      </div>
     );
- }
+  }
 
- if (step === STEPS.PRICE) {
+  if (step === STEPS.PRICE) {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
@@ -246,7 +249,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
           register={register}
           errors={errors}
           required
-          lang = {lang}
+          lang={lang}
         />
         <Counter
           onChange={(value) => setCustomValue('amount', value)}
@@ -257,7 +260,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
       </div>
     );
   }
-    
+
   return (
     <Modal
       disabled={isLoading}
@@ -270,7 +273,7 @@ const EquipmentModal: React.FC<EquipmentModalProps> = ({
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
       body={bodyContent}
     />
-  )
-}
+  );
+};
 
-export default EquipmentModal
+export default EquipmentModal;

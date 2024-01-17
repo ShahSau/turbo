@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 
@@ -13,6 +14,7 @@ import { SafeUser, SafeService } from '@/app/[lang]/types';
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
 import ServiceCard from '../components/services/ServiceCard';
+
 interface ServicesClientProps {
   services: SafeService[],
   // eslint-disable-next-line react/require-default-props
@@ -48,7 +50,7 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
 
   return (
     <Container>
-      <div className='mt-10'>
+      <div className="mt-10">
         <Heading
           title={dictionary.serviceOffers.title}
           subtitle={dictionary.serviceOffers.desc}
@@ -57,19 +59,19 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
           className=" mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8"
         >
           {services.map((service: any) => {
-            return(
-            <ServiceCard
-              key={service.id}
-              data={service}
-              actionId={service.id}
-              onAction={onCancel}
-              disabled={deletingId === service.id}
-              actionLabel={dictionary.serviceOffers.cancel}
-              currentUser={currentUser}
-              lang={lang}
-              dictionary={dictionary}
-            />
-            )
+            return (
+              <ServiceCard
+                key={service.id}
+                data={service}
+                actionId={service.id}
+                onAction={onCancel}
+                disabled={deletingId === service.id}
+                actionLabel={dictionary.serviceOffers.cancel}
+                currentUser={currentUser}
+                lang={lang}
+                dictionary={dictionary}
+              />
+            );
           })}
         </div>
       </div>

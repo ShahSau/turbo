@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/function-component-definition */
 
@@ -25,11 +26,11 @@ const EmptyState: React.FC<EmptyStateProps> = ({
 }) => {
   const router = useRouter();
 
-  if(title === 'No exact matches'){
-    title = dictionary.empty.title
+  if (title === 'No exact matches') {
+    title = dictionary.empty.title;
   }
-  if(subtitle === 'Try changing or removing some of your filters.'){
-    subtitle = dictionary.empty.desc
+  if (subtitle === 'Try changing or removing some of your filters.') {
+    subtitle = dictionary.empty.desc;
   }
 
   return (

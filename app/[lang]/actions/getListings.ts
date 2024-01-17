@@ -36,7 +36,6 @@ export default async function getListings(
       year,
     } = params;
 
-    
     const query: any = {};
 
     if (userId) {

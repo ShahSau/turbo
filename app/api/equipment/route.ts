@@ -17,7 +17,7 @@ export async function POST(
   const {
     title,
     imageSrc,
-    amount, 
+    amount,
     category,
     description,
     price,

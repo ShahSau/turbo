@@ -1,18 +1,19 @@
 'use client';
 
-import { BeatLoader } from "react-spinners";
+import React from 'react';
+import { BeatLoader } from 'react-spinners';
 
-const Loader = () => {
-  return ( 
+function Loader() {
+  return (
     <div
-    className="h-[70vh] flex flex-col justify-center items-center"
+      className="h-[70vh] flex flex-col justify-center items-center"
     >
       <BeatLoader
         size={50}
         color="blue"
       />
     </div>
-   );
+  );
 }
- 
+
 export default Loader;

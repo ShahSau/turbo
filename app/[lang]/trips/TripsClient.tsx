@@ -49,7 +49,7 @@ const TripsClient: React.FC<TripsClientProps> = ({
 
   return (
     <Container>
-      <div className='mt-10'>
+      <div className="mt-10">
         <Heading
           title={dictionary.trips.title}
           subtitle={dictionary.trips.desc}

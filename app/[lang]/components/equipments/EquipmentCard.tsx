@@ -10,18 +10,13 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback, useMemo } from 'react';
 import { format } from 'date-fns';
 
-import useCountries from '@/app/[lang]/hooks/useCountries';
 import {
   SafeListing,
-  SafeReservation,
-  SafeUser,
   SafeServiceReservation,
-  SafeService
 
 } from '@/app/[lang]/types';
 
 import Button from '../Button';
-
 
 interface ServiceCardProps {
   data: SafeListing;
@@ -30,7 +25,6 @@ interface ServiceCardProps {
   disabled?: boolean;
   actionLabel?: string;
   actionId?: string;
-  currentUser?: SafeUser | null;
   date?: Date;
   lang: string;
   dictionary: any;
@@ -45,13 +39,10 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
   actionLabel,
   actionId = '',
   date,
-  currentUser,
   lang,
-  dictionary
+  dictionary,
 }) => {
   const router = useRouter();
-  const { getByValue } = useCountries();
-  const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -82,19 +73,18 @@ const EquipmentCard: React.FC<ServiceCardProps> = ({
     return `${format(start, 'PP')} - ${format(end, 'PP')}`;
   }, [reservation]);
 
-
-  if(lang === 'de' || lang === 'fi'){
-    price = data.price * 0.95
+  if (lang === 'de' || lang === 'fi') {
+    price = data.price * 0.95;
   }
-  if(lang === 'sv'){
-    price = data.price * 10.26
+  if (lang === 'sv') {
+    price = data.price * 10.26;
   }
 
-const dateTimeFormat = new Intl.DateTimeFormat('en', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+  const dateTimeFormat = new Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
     <div
@@ -132,8 +122,12 @@ const dateTimeFormat = new Intl.DateTimeFormat('en', {
           )}
         </div>
         {date && (
-            <div className="font-light">{dictionary.listingClient.youB} {dateTimeFormat.format(date)}</div>
-          )}
+        <div className="font-light">
+          {dictionary.listingClient.youB}
+          {' '}
+          {dateTimeFormat.format(date)}
+        </div>
+        )}
         {onAction && actionLabel && (
           <Button
             disabled={disabled}

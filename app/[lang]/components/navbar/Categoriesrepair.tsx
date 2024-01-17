@@ -3,12 +3,13 @@
 import React from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-import { FcAutomotive } from "react-icons/fc";
-import { GiCarWheel,GiCarBattery,GiCarDoor,GiCarSeat } from "react-icons/gi";
+import { FcAutomotive } from 'react-icons/fc';
+import {
+  GiCarWheel, GiCarBattery, GiCarDoor, GiCarSeat,
+} from 'react-icons/gi';
 
 import Container from '../Container';
 import CategoryBoxRepair from '../CategoryBoxRepair';
-
 
 export const categories = [
   {
@@ -46,7 +47,7 @@ function CategoriesRepair() {
   const path = pathname?.split('/')[1];
   const isMainPage = pathname === '/en/searchEquipment' || pathname === '/fi/searchEquipment' || pathname === '/sv/searchEquipment' || pathname === '/de/searchEquipment';
 
-  //categories is only shown on the search page
+  // categories is only shown on the search page
   if (!isMainPage) {
     return null;
   }
