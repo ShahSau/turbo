@@ -44,7 +44,6 @@ const page = async ({
     <ClientOnly>
       <ServicesClient
         services={services}
-        currentUser={currentUser}
         lang={lang}
         dictionary={dictionary}
       />

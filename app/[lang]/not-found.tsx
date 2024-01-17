@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-
 function NotFound() {
   return (
     <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16 bg-gray-700 text-indigo-300 h-screen">

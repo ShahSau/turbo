@@ -207,7 +207,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
             id={listing.id}
             currentUser={currentUser}
             dictionary={dictionary}
-            lang={lang}
           />
           <div
             className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6 "
@@ -227,7 +226,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
               driveType={listing.driveType}
               locationValue={listing.locationValue}
               dictionary={dictionary}
-              lang={lang}
             />
             <div
               className="order-first mb-10 md:order-last md:col-span-3"

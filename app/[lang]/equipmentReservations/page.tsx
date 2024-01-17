@@ -45,7 +45,6 @@ const ReservationsPage = async ({
     <ClientOnly>
       <EquipmentReservationsClient
         reservations={reservations}
-        currentUser={currentUser}
         dictionary={dictionary}
         lang={lang}
       />

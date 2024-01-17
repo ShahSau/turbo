@@ -6,22 +6,19 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { SafeUser, SafeServiceReservation } from '@/app/[lang]/types';
+import { SafeServiceReservation } from '@/app/[lang]/types';
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
 import ServiceCard from '../components/services/ServiceCard';
 
 interface ReservationsClientProps {
   reservations: SafeServiceReservation[],
-  // eslint-disable-next-line react/require-default-props
-  currentUser?: SafeUser | null,
   locale: string,
   dictionary: any,
 }
 
 const ServiceReservationsClient: React.FC<ReservationsClientProps> = ({
   reservations,
-  currentUser,
   locale,
   dictionary,
 }) => {
@@ -58,7 +55,6 @@ const ServiceReservationsClient: React.FC<ReservationsClientProps> = ({
 
           {reservations.map((reservation: any) => (
             <ServiceCard
-              currentUser={currentUser}
               key={reservation.id}
               data={reservation.service}
               reservation={reservation}

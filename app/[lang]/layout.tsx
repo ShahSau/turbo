@@ -33,10 +33,10 @@ export default async function RootLayout({
       <body>
         <ClientOnly>
           <ToasterProvider />
-          <LoginModal dictionary={dictionary} lang={lang} />
-          <RegisterModal dictionary={dictionary} lang={lang} />
-          <SearchModal dictionary={dictionary} lang={lang} />
-          <RepairSearchModal dictionary={dictionary} lang={lang} />
+          <LoginModal dictionary={dictionary} />
+          <RegisterModal dictionary={dictionary} />
+          <SearchModal dictionary={dictionary} />
+          <RepairSearchModal dictionary={dictionary} />
           <RentModal dictionary={dictionary} lang={lang} />
           <RepairModal dictionary={dictionary} lang={lang} />
           <EquipmentModal dictionary={dictionary} lang={lang} />

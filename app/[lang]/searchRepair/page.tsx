@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from '@/app/[lang]/components/Container';
 import EmptyState from '@/app/[lang]/components/EmptyState';
-import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import getServices, { IServicesParams } from '../actions/getServices';
@@ -18,7 +17,6 @@ const Search = async ({
   params,
 }: SearchProps) => {
   const services = await getServices(searchParams);
-  const currentUser = await getCurrentUser();
   const dictionary = await getDictionary(params.lang);
 
   if (services.length === 0) {
@@ -38,7 +36,6 @@ const Search = async ({
 
           {services.map((listing: any) => (
             <ServiceCard
-              currentUser={currentUser}
               key={listing.id}
               data={listing}
               lang={params.lang}

@@ -133,8 +133,8 @@ const EqupimentClient: React.FC<ListingClientProps> = ({
       const response = await fetch(url, options);
       const result = await response.json();
       setTranslateText(result.trans);
-    } catch (error) {
-      console.error(error);
+    } catch (error:any) {
+      throw new Error(error);
     }
   };
 
@@ -171,8 +171,6 @@ const EqupimentClient: React.FC<ListingClientProps> = ({
           <EquipmentHead
             title={service.title}
             imageSrc={service.imageSrc}
-            id={service.id}
-            currentUser={currentUser}
           />
           <div
             className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6 "
@@ -180,23 +178,19 @@ const EqupimentClient: React.FC<ListingClientProps> = ({
 
             <EquipmentInfo
               user={service.user}
-              title={service.title}
               description={lang !== 'en' ? translateText : service.description}
               category={category}
               dictionary={dictionary}
-              lang={lang}
             />
             <div
               className="order-first mb-10 md:order-last md:col-span-3"
             >
               <EquipmentReservation
-                price={service.price}
                 totalPrice={totalPrice}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
                 disabledAmount={disabledDates}
                 dictionary={dictionary}
-                lang={lang}
               />
             </div>
           </div>

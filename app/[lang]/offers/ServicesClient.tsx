@@ -9,7 +9,7 @@ import axios from 'axios';
 import React, { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { SafeUser, SafeService } from '@/app/[lang]/types';
+import { SafeService } from '@/app/[lang]/types';
 
 import Heading from '@/app/[lang]/components/Heading';
 import Container from '@/app/[lang]/components/Container';
@@ -17,15 +17,12 @@ import ServiceCard from '../components/services/ServiceCard';
 
 interface ServicesClientProps {
   services: SafeService[],
-  // eslint-disable-next-line react/require-default-props
-  currentUser?: SafeUser | null,
   lang: string,
   dictionary: any,
 }
 
 const ServicesClient: React.FC<ServicesClientProps> = ({
   services,
-  currentUser,
   lang,
   dictionary,
 }) => {
@@ -67,7 +64,6 @@ const ServicesClient: React.FC<ServicesClientProps> = ({
                 onAction={onCancel}
                 disabled={deletingId === service.id}
                 actionLabel={dictionary.serviceOffers.cancel}
-                currentUser={currentUser}
                 lang={lang}
                 dictionary={dictionary}
               />

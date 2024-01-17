@@ -184,8 +184,6 @@ const ServiceClient: React.FC<ListingClientProps> = ({
             title={service.title}
             imageSrc={service.imageSrc}
             locationValue={service.locationValue}
-            id={service.id}
-            currentUser={currentUser}
           />
           <div
             className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6 "
@@ -193,11 +191,9 @@ const ServiceClient: React.FC<ListingClientProps> = ({
 
             <ServiceInfo
               user={service.user}
-              title={service.title}
               description={lang !== 'en' ? translateText : service.description}
               locationValue={service.locationValue}
               dictionary={dictionary}
-              lang={lang}
             />
             <div
               className="order-first mb-10 md:order-last md:col-span-3"
