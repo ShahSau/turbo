@@ -19,19 +19,19 @@
 	<img src="https://img.shields.io/badge/sharp-99CC00.svg?style=flat&logo=sharp&logoColor=white" alt="sharp">
 	<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black" alt="React">
 	<img src="https://img.shields.io/badge/Axios-5A29E4.svg?style=flat&logo=Axios&logoColor=white" alt="Axios">
-    	<img src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white" alt="nextjs">
-    	<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=TypeScript&logoColor=white" alt="TypeScript">
-    	<img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB" alt="ExpressJS">
+    <img src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=white" alt="nextjs">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=TypeScript&logoColor=white" alt="TypeScript">
+    <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB" alt="ExpressJS">
 	<img src="https://img.shields.io/badge/i18next-26A69A.svg?style=flat&logo=i18next&logoColor=white" alt="i18next">
 	<br>
 	<img src="https://img.shields.io/badge/JWT-black?style=flat&logo=JSON%20web%20tokens" alt="JWT">
-    	<img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white" alt="mongodb">
+    <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white" alt="mongodb">
 	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white" alt="ESLint">
 	<img src="https://img.shields.io/badge/Prisma-2D3748.svg?style=flat&logo=Prisma&logoColor=white" alt="Prisma">
 	<img src="https://img.shields.io/badge/Leaflet-199900.svg?style=flat&logo=Leaflet&logoColor=white" alt="Leaflet">
 	<img src="https://img.shields.io/badge/Stripe-008CDD.svg?style=flat&logo=Stripe&logoColor=white" alt="Stripe">
 	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
-    	<img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=flat&logo=PostCSS&logoColor=white" alt="PostCSS">
+    <img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=flat&logo=PostCSS&logoColor=white" alt="PostCSS">
 	<img src="https://img.shields.io/badge/zustand-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" alt="zustand">
 </p>
 <hr>
@@ -626,6 +626,8 @@ Keep a record of your sold car equipment with a detailed history.
 Ensure you have the following dependencies installed on your system:
 
 * **node**: `version >= 18.0.0`
+* **next**: `version >=14.0.4`
+* **react**: `version >=18.2.0`
 
 ### ⚙️ Installation
 
@@ -648,6 +650,19 @@ npm install
 ```
 
 ### 🤖 Running turbo
+
+Create an .env file with following keys: <br />
+
+`DATABASE_URL` <br />
+`NEXTAUTH_SECRET`<br />
+`GITHUB_ID`<br />
+`GITHUB_SECRET`<br />
+`GOOGLE_CLIENT_ID`<br />
+`GOOGLE_CLIENT_SECRET`<br />
+`NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`<br />
+`NEXT_PUBLIC_RAPID_API_KEY`<br />
+`NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`<br />
+`STRIPE_SECRET_KEY`<br />
 
 Use the following command to run turbo:
 
