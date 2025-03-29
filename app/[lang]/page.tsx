@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/dictionary';
 import ClientOnly from './components/ClientOnly';
+import ShuffleHero from './components/ShuffleHero';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -161,32 +162,8 @@ const Home = async ({
       <Container>
         <div className="">
           {/* Hero */}
-          <div className="relative">
-            <div aria-hidden="true" className="absolute hidden h-full w-1/2 lg:block" />
-            <div className="relative bg-gray-100 lg:bg-transparent">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
-                <div className="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
-                  <div className="lg:pr-16">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
-                      {dictionary.Home.title}
-                    </h1>
-                    <p className="mt-4 text-xl text-gray-600">
-                      {dictionary.Home.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="h-48 w-full sm:h-64 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
-              <img
-                src="https://images.unsplash.com/photo-1502489597346-dad15683d4c2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-          </div>
+          <ShuffleHero dictionary={dictionary} />
           {/* */}
-
           {/* Services */}
           <section aria-labelledby="cservices-heading" className="">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
