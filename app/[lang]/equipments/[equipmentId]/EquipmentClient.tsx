@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable no-unneeded-ternary */

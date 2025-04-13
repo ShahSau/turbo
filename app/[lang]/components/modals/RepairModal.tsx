@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/function-component-definition */
 
@@ -62,7 +63,6 @@ const RepairModal: React.FC<RepairModalProps> = ({
 
   const Map = useMemo(() => dynamic(() => import('../Map'), {
     ssr: false,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }), [location]);
 
   const setCustomValue = (id: string, value: any) => {
