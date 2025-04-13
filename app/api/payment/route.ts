@@ -5,9 +5,10 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request:Request) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
+  const { NEXTROUTE_URL } = process.env;
   const data = await request.json();
   const {
-    totalPrice, id, startDate, endDate, type, lang,
+    totalPrice, listingId, startDate, endDate, type, lang,
   } = data;
 
   const session = await stripe.checkout.sessions.create({
@@ -25,8 +26,8 @@ export async function POST(request:Request) {
       },
     ],
     mode: 'payment',
-    success_url: `http://localhost:3000/${lang}/success?type=${type}&id=${id}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}&lang=${lang}`,
-    cancel_url: `http://localhost:3000/${lang}/cancel`,
+    success_url: `${NEXTROUTE_URL}/${lang}/success?type=${type}&id=${listingId}&startDate=${startDate}&endDate=${endDate}&totalPrice=${totalPrice}&lang=${lang}`,
+    cancel_url: `${NEXTROUTE_URL}/${lang}/cancel`,
   });
   return new NextResponse(JSON.stringify({ url: session.url }));
 }
