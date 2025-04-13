@@ -4,18 +4,19 @@
     "desc": "Välkommen till Turbo, där bekvämlighet möter rörlighet! Vår användarvänliga plattform ger dig möjlighet att utforska världen på dina villkor, och erbjuder en sömlös och problemfri biluthyrningsupplevelse. Upptäck friheten att åka vart än din resa tar dig med vår mångsidiga fordonsflotta, allt från eleganta sedaner till rymliga stadsjeepar.",
     "services": {
       "title": "Våra tjänster",
+      "learnMore": "Lär dig mer",
       "services": [
         {
           "title": "Biluthyrning",
-          "desc": "Biluthyrning på ett enkelt sätt med Turbo."
+          "desc": "Biluthyrning på ett enkelt sätt med Turbo. Välj från vår omfattande fordonsflotta. Konkurrenskraftiga priser och utmärkt service. Boka din bil idag och ge dig ut på vägen med självförtroende!"
         },
         {
           "title": "Bil reparation",
-          "desc": "Bästa bilreparationstjänsterna i stan."
+          "desc": "Bästa bilreparationstjänsterna i stan. Våra erfarna tekniker erbjuder snabb och pålitlig service för alla bilmärken och modeller. Från rutinunderhåll till komplexa reparationer, vi har dig täckt. Boka din tid idag!"
         },
         {
           "title": "affär",
-          "desc": "Premiumutrustning för både proffs och hobbyister."
+          "desc": "Premiumutrustning för både proffs och hobbyister. Vårt breda utbud av högkvalitativa verktyg och tillbehör är utformade för att möta alla dina behov. Oavsett om du är en professionell mekaniker eller en entusiast, har vi det du behöver för att få jobbet gjort. Handla nu!"
         }
       ]
     },

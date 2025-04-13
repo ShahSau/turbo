@@ -4,18 +4,19 @@
     "desc": "Tervetuloa Turboon, jossa mukavuus kohtaa liikkuvuuden! Käyttäjäystävällinen alustamme antaa sinulle mahdollisuuden tutustua maailmaan omilla ehdoillasi tarjoten saumattoman ja vaivattoman autonvuokrauskokemuksen. Löydä vapaus mennä minne tahansa matkasi viekin monipuolisella ajoneuvokalustollamme, joka vaihtelee tyylikkäistä sedaneista tilaviin maastoautoihin. ",
     "services": {
       "title": "palvelumme",
+      "learnMore": "Lue lisää",
       "services": [
         {
           "title": "Autonvuokraus",
-          "desc": "Autonvuokraus on helppoa Turbon avulla."
+          "desc": "Autonvuokraus on helppoa Turbon avulla. Valitse laajasta ajoneuvokannastamme. Kilpailukykyiset hinnat ja erinomainen palvelu. Varaa autosi jo tänään ja lähde tien päälle luottavaisin mielin!"
         },
         {
           "title": "Auton korjaus",
-          "desc": "Kaupungin parhaat autokorjauspalvelut."
+          "desc": "Kaupungin parhaat autokorjauspalvelut. Meidän asiantunteva tiimimme tarjoaa kattavia huolto- ja korjauspalveluja, jotka pitävät ajoneuvosi huippukunnossa. Meiltä saat kaiken öljynvaihdosta moottorikorjauksiin."
         },
         {
           "title": "Myymälä",
-          "desc": "Ensiluokkaiset varusteet niin ammattilaisille kuin harrastajille."
+          "desc": "Ensiluokkaiset varusteet niin ammattilaisille kuin harrastajille. Meiltä löydät kaiken tarvitsemasi, olipa kyseessä varaosat, lisävarusteet tai huoltotarvikkeet. Meidän asiantunteva tiimimme auttaa sinua löytämään täydelliset tuotteet ajoneuvosi tarpeisiin."
         }
       ]
     },

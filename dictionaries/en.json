@@ -4,18 +4,19 @@
         "desc":"Welcome to Turbo, where convenience meets mobility! Our user-friendly platform empowers you to explore the world on your terms, offering a seamless and hassle-free car rental experience. Discover the freedom to go wherever your journey takes you with our diverse fleet of vehicles, ranging from sleek sedans to spacious SUVs.",
         "services":{
             "title":"Our Services",
+            "learnMore":"Learn more",
             "services":[
                 {
                     "title":"Car Rental",
-                    "desc":"Car rental made easy with Turbo."
+                    "desc":"Car rental made easy with Turbo. Choose from our extensive fleet of vehicles.Competitive rates and excellent service. Book your car today and hit the road with confidence!"
                 },
                 {
                     "title":"Car Repair",
-                    "desc":"Best car repair services in town."
+                    "desc":"Best car repair services in town. Certified technicians and quality parts. Quick turnaround times guaranteed. Get your car back on the road safely and efficiently. Book your appointment now!"
                 },
                 {
                     "title":"Shop",
-                    "desc":"Premium gear for professionals and hobbyists alike."
+                    "desc":"Premium gear for professionals and hobbyists alike. Top brands and quality products. Expert advice for all your automotive needs. Shop now and elevate your experience!"
                 }
             ]
         },

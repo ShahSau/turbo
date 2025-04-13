@@ -4,18 +4,19 @@
     "desc": "Willkommen bei Turbo, wo Komfort auf Mobilität trifft! Unsere benutzerfreundliche Plattform ermöglicht es Ihnen, die Welt nach Ihren Wünschen zu erkunden und bietet ein nahtloses und problemloses Mietwagenerlebnis. Entdecken Sie die Freiheit, mit unserer vielfältigen Fahrzeugflotte, die von eleganten Limousinen bis hin zu geräumigen SUVs reicht, dorthin zu fahren, wohin Ihre Reise Sie auch führt.",
     "services": {
       "title": "Unsere Dienstleistungen",
+      "learnMore": "Erfahren Sie mehr",
       "services": [
         {
           "title": "Autovermietung",
-          "desc": "Autovermietung leicht gemacht mit Turbo."
+          "desc": "Autovermietung leicht gemacht mit Turbo.Wählen Sie aus unserer umfangreichen Fahrzeugflotte. Wettbewerbsfähige Preise und exzellenter Service. Buchen Sie Ihr Auto noch heute und starten Sie entspannt durch!"
         },
         {
           "title": "Autoreparatur",
-          "desc": "Beste Autoreparaturdienste in der Stadt."
+          "desc": "Beste Autoreparaturdienste in der Stadt. Erfahrene Mechaniker, die sich um Ihr Fahrzeug kümmern. Von Ölwechsel bis Motorreparaturen - wir haben alles abgedeckt. Vertrauen Sie uns, um Ihr Auto in Topform zu halten!"
         },
         {
           "title": "Geschäft",
-          "desc": "Premium-Ausrüstung für Profis und Hobbyisten gleichermaßen."
+          "desc": "Premium-Ausrüstung für Profis und Hobbyisten gleichermaßen. Entdecken Sie unsere große Auswahl an Werkzeugen, Maschinen und Zubehör. Hochwertige Produkte zu wettbewerbsfähigen Preisen. Kaufen Sie jetzt ein und bringen Sie Ihre Projekte auf die nächste Stufe!"
         }
       ]
     },
