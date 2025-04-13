@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 /* eslint-disable react/no-array-index-key */
 import Container from '@/app/[lang]/components/Container';
 import React from 'react';

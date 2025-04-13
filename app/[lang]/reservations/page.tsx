@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import React from 'react';

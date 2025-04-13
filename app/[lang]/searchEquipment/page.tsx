@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import Container from '@/app/[lang]/components/Container';
 import EmptyState from '@/app/[lang]/components/EmptyState';
 import React from 'react';

@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import Container from '@/app/[lang]/components/Container';
 import ListingCard from '@/app/[lang]/components/listings/ListingCard';
 import EmptyState from '@/app/[lang]/components/EmptyState';

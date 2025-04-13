@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import getCurrentUser from '@/app/[lang]/actions/getCurrentUser';
 import ClientOnly from '@/app/[lang]/components/ClientOnly';
 import EmptyState from '@/app/[lang]/components/EmptyState';
