@@ -20,9 +20,9 @@ import MenuItem from './MenuItem';
 import Avatar from '../Avatar';
 
 interface UserMenuProps {
-  currentUser?: SafeUser | null,
-  lang: any,
-  dictionary: any,
+  currentUser?: SafeUser | null;
+  lang: any;
+  dictionary: any;
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({
@@ -44,16 +44,24 @@ const UserMenu: React.FC<UserMenuProps> = ({
   }, []);
 
   const logout = () => {
+    router.push(`/${lang}`);
     signOut();
-    router.replace('/');
+    setIsOpen(false);
+  };
+
+  const handleClick = (link: string) => {
+    if (currentUser) {
+      router.push(`/${lang}/${link}`);
+      setIsOpen(false);
+    } else {
+      loginModal.onOpen();
+    }
   };
 
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-12">
-        <div
-          className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
-        >
+        <div className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">
           {/* Add a car */}
         </div>
         <div
@@ -67,64 +75,72 @@ const UserMenu: React.FC<UserMenuProps> = ({
         </div>
       </div>
       {isOpen && (
-        <div
-          className="absolute rounded-xl shadow-md w-[145px] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm"
-        >
-          <div className="flex flex-col cursor-pointer">
+        <div className="absolute rounded-xl shadow-md w-[400px] bg-white overflow-hidden right-0 top-12 text-sm p-2">
+          <div className="flex flex-col cursor-pointer p-2">
             {currentUser ? (
-              <>
-                <MenuItem
-                  label={dictionary.navBar.trips}
-                  onClick={() => router.push(`/${lang}/trips`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.favorites}
-                  onClick={() => router.push(`/${lang}/favorites`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.reservations}
-                  onClick={() => router.push(`/${lang}/reservations`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.cars}
-                  onClick={() => router.push(`/${lang}/cars`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.car}
-                  onClick={() => rentModal.onOpen()}
-                />
-                <hr />
-                <MenuItem
-                  label={dictionary.navBar.service}
-                  onClick={() => repairModal.onOpenRe()}
-                />
-                <MenuItem
-                  label={dictionary.navBar.reservedOffers}
-                  onClick={() => router.push(`/${lang}/serviceReservations`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.offers}
-                  onClick={() => router.push(`/${lang}/offers`)}
-                />
-                <hr />
-                <MenuItem
-                  label={dictionary.navBar.equipment}
-                  onClick={() => equipmentModal.onOpenE()}
-                />
-                <MenuItem
-                  label={dictionary.navBar.myEquipment}
-                  onClick={() => router.push(`/${lang}/offerEquipments`)}
-                />
-                <MenuItem
-                  label={dictionary.navBar.reservedEquipment}
-                  onClick={() => router.push(`/${lang}/equipmentReservations`)}
-                />
-                <hr />
-                <MenuItem
-                  label={dictionary.navBar.logout}
-                  onClick={() => logout()}
-                />
-              </>
+              <div>
+                <div className="flex gap-4">
+                  <div>
+                    <MenuItem
+                      label={dictionary.navBar.trips}
+                      onClick={() => handleClick('trips')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.favorites}
+                      onClick={() => handleClick('favorites')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.reservations}
+                      onClick={() => handleClick('reservations')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.cars}
+                      onClick={() => handleClick('cars')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.car}
+                      onClick={() => rentModal.onOpen()}
+                    />
+                  </div>
+                  <hr />
+                  <div>
+                    <MenuItem
+                      label={dictionary.navBar.service}
+                      onClick={() => repairModal.onOpenRe()}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.reservedOffers}
+                      onClick={() => handleClick('serviceReservations')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.offers}
+                      onClick={() => handleClick('offers')}
+                    />
+                  </div>
+                  <hr />
+                  <div>
+                    <MenuItem
+                      label={dictionary.navBar.equipment}
+                      onClick={() => equipmentModal.onOpenE()}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.myEquipment}
+                      onClick={() => handleClick('offerEquipments')}
+                    />
+                    <MenuItem
+                      label={dictionary.navBar.reservedEquipment}
+                      onClick={() => handleClick('equipmentReservations')}
+                    />
+                  </div>
+                </div>
+
+                <span className="ml-auto mt-4 items-center gap-1 text-sm text-indigo-300 flex justify-end">
+                  <MenuItem
+                    label={dictionary.navBar.logout}
+                    onClick={() => logout()}
+                  />
+                </span>
+              </div>
             ) : (
               <>
                 <MenuItem
