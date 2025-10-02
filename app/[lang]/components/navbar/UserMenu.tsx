@@ -44,7 +44,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   }, []);
 
   const logout = () => {
-    await signOut({
+    signOut({
       callbackUrl: `/${lang}`,
     });
     setIsOpen(false);
