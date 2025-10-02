@@ -48,7 +48,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
       callbackUrl: `/${lang}`,
     });
     setIsOpen(false);
-
   };
 
   const handleClick = (link: string) => {
