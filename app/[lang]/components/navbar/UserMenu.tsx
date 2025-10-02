@@ -43,11 +43,12 @@ const UserMenu: React.FC<UserMenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
-  const logout = async () => {
-    await signOut();
+  const logout = () => {
+    await signOut({
+      callbackUrl: `/${lang}`,
+    });
     setIsOpen(false);
 
-    router.push(`/${lang}`);
   };
 
   const handleClick = (link: string) => {
