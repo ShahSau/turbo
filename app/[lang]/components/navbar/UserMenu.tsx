@@ -3,21 +3,21 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/function-component-definition */
 
-'use client';
+"use client";
 
-import React, { useCallback, useState } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { signOut } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import { SafeUser } from '@/app/[lang]/types';
+import React, { useCallback, useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { SafeUser } from "@/app/[lang]/types";
 
-import useRegisterModal from '@/app/[lang]/hooks/useRegisterModal';
-import useLoginModal from '@/app/[lang]/hooks/useLoginModal';
-import useRentModal from '@/app/[lang]/hooks/useRentModal';
-import useRepairModal from '@/app/[lang]/hooks/useRepairModal';
-import useEquipmentModal from '@/app/[lang]/hooks/useEquipmentModal';
-import MenuItem from './MenuItem';
-import Avatar from '../Avatar';
+import useRegisterModal from "@/app/[lang]/hooks/useRegisterModal";
+import useLoginModal from "@/app/[lang]/hooks/useLoginModal";
+import useRentModal from "@/app/[lang]/hooks/useRentModal";
+import useRepairModal from "@/app/[lang]/hooks/useRepairModal";
+import useEquipmentModal from "@/app/[lang]/hooks/useEquipmentModal";
+import MenuItem from "./MenuItem";
+import Avatar from "../Avatar";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -44,9 +44,9 @@ const UserMenu: React.FC<UserMenuProps> = ({
   }, []);
 
   const logout = () => {
-    router.push(`/${lang}`);
     signOut();
     setIsOpen(false);
+    router.push(`/${lang}`);
   };
 
   const handleClick = (link: string) => {
@@ -83,19 +83,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   <div>
                     <MenuItem
                       label={dictionary.navBar.trips}
-                      onClick={() => handleClick('trips')}
+                      onClick={() => handleClick("trips")}
                     />
                     <MenuItem
                       label={dictionary.navBar.favorites}
-                      onClick={() => handleClick('favorites')}
+                      onClick={() => handleClick("favorites")}
                     />
                     <MenuItem
                       label={dictionary.navBar.reservations}
-                      onClick={() => handleClick('reservations')}
+                      onClick={() => handleClick("reservations")}
                     />
                     <MenuItem
                       label={dictionary.navBar.cars}
-                      onClick={() => handleClick('cars')}
+                      onClick={() => handleClick("cars")}
                     />
                     <MenuItem
                       label={dictionary.navBar.car}
@@ -110,11 +110,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     />
                     <MenuItem
                       label={dictionary.navBar.reservedOffers}
-                      onClick={() => handleClick('serviceReservations')}
+                      onClick={() => handleClick("serviceReservations")}
                     />
                     <MenuItem
                       label={dictionary.navBar.offers}
-                      onClick={() => handleClick('offers')}
+                      onClick={() => handleClick("offers")}
                     />
                   </div>
                   <hr />
@@ -125,11 +125,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     />
                     <MenuItem
                       label={dictionary.navBar.myEquipment}
-                      onClick={() => handleClick('offerEquipments')}
+                      onClick={() => handleClick("offerEquipments")}
                     />
                     <MenuItem
                       label={dictionary.navBar.reservedEquipment}
-                      onClick={() => handleClick('equipmentReservations')}
+                      onClick={() => handleClick("equipmentReservations")}
                     />
                   </div>
                 </div>
